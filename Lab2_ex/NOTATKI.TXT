@@ -1,0 +1,49 @@
+na next labach ( nastpene zadanie ) mozna uzywac bootstrap tailwindcss i js 
+
+zad 4 
+buttony hover na odwrót
+Nie trzeba robić tego jako responsywane strona tj. nie trzeba zmieniać nav na hamburgerowe
+lekki blur na img i mniejsze opacity i jest git 
+
+zad 5 strona telehealth.de 
+Efekt przejścia z transition 
+
+Zadanie 6
+zmiana na menau hamburgerowe przy odpowiendim breakpointcie dodać rozne animacje buttona tj zmiennic hamburger na X czy strzałkę
+
+
+Zadanie 7
+Dodać poniezej jakas sekcje aby bylo moglo sie scrollować tj. mozliwość zescrollowania całości
+tj. cały layout "rozmowy" jest u góry, znika (200vh)
+
+Zadanie 8
+
+
+Zad 9
+zmienic animacje na slide up i slide down odpowiendij skecji
+
+Zad 10
+translateY animacja po hover na karte
+animacja button z after i before i scale i opacity 
+Responsywność + Animacja nawet przy rozwiązaniu jednokoloumnowym
+
+
+Zad 11
+Po kliknięciu rozsuwanie i zasuwanie menu 
+2 pkt jest za jeśli jedna max jest rozsunięta tylko jedna karta! Nie moze być rozsunietych dwoch
+kart na raz Tj. zasuwasz tamtą 
++ hover na przyciskach menu (efekt 3D)
+
+Zad 12
+przyciski size sie zmieniają (aktywna klasa)
+Po kliknięciu koloru zmienna się caly motyw
+tj. background but i inne kolory (primary color)
++ responsywność karty 
+
+Zad 13
+1p za layout
+1p za umieszczenie w sidebar swoja wizytówkę (swoja normlaną) ta wizytówka ma byc 
+1p position: fixed
+w mobbile (repsonwyość) zastanów się jak tą wizytówkę zrobić ( moze sie nie da)
+
+Zdjęcie nie moze być prostokątem i aby tekst oblewał kształt zdjęcia
