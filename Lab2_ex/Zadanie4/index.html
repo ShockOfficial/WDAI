@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Zadanie 4</title>
+	</head>
+	<body>
+		<nav class="nav">
+			<a class="nav__logo-box" href="#">
+				<span class="nav__logo-text nav__logo-text--bold">Brand</span
+				><span class="nav__logo-text">Name</span>
+			</a>
+			<div class="nav__menu-box">
+				<a href="#" class="nav__menu-link">Home</a>
+				<div class="nav__menu-link-item">
+					<a href="#" class="nav__menu-link">Menu</a>
+					<svg
+						class="nav__menu-link-chevron"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						class="feather feather-chevron-down"
+					>
+						<polyline points="6 9 12 15 18 9"></polyline>
+					</svg>
+					<div class="nav__dropdown-menu nav__dropdown-menu--main">
+						<ul class="nav__list">
+							<li class="nav__list-item nav__list-item--main">
+								<a href="#" class="nav__list-link">Link 1</a>
+							</li>
+							<li class="nav__list-item">
+								<a href="#" class="nav__list-link">Link 2</a>
+							</li>
+							<li class="nav__list-item">
+								<a href="#" class="nav__list-link">Link 3</a>
+								<svg
+									class="nav__menu-link-chevron nav__menu-link-chevron--right"
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									class="feather feather-chevron-down"
+								>
+									<polyline points="6 9 12 15 18 9"></polyline>
+								</svg>
+								<div class="nav__dropdown-menu nav__dropdown-menu--nested">
+									<ul class="nav__list">
+										<li class="nav__list-item">
+											<a href="#" class="nav__list-link">Sublink 1</a>
+										</li>
+										<li class="nav__list-item">
+											<a href="#" class="nav__list-link">Sublink 2</a>
+										</li>
+										<li class="nav__list-item">
+											<a href="#" class="nav__list-link">Sublink 3</a>
+										</li>
+										<li class="nav__list-item">
+											<a href="#" class="nav__list-link">Sublink 4</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="nav__list-item">
+								<a href="#" class="nav__list-link">Link 4</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="nav__menu-link-item">
+					<a href="#" class="nav__menu-link">Services</a>
+					<svg
+						class="nav__menu-link-chevron"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						class="feather feather-chevron-down"
+					>
+						<polyline points="6 9 12 15 18 9"></polyline>
+					</svg>
+					<div class="nav__dropdown-menu nav__dropdown-menu--services">
+						<ul class="nav__list">
+							<li class="nav__list-item">
+								<a href="#" class="nav__list-link">Link 5</a>
+							</li>
+							<li class="nav__list-item">
+								<a href="#" class="nav__list-link">Link 6</a>
+							</li>
+							<li class="nav__list-item">
+								<a href="#" class="nav__list-link">Link 7</a>
+							</li>
+							<li class="nav__list-item">
+								<a href="#" class="nav__list-link">Link 8</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<a href="#" class="nav__menu-link">About</a>
+			</div>
+			<div class="nav__button-box">
+				<button class="nav__button nav__button--empty">Log in</button
+				><button class="nav__button">Sign Up</button>
+			</div>
+		</nav>
+		<header class="header">
+			<img class="header__img" src="./img/bg.jpg" alt="forest" />
+			<div class="header__img-overlay"></div>
+		</header>
+	</body>
+</html>
+

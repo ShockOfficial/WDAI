@@ -1,0 +1,223 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	--font-color: #fefefe;
+	--primary-color: #62b4e3;
+	--secondary-color: #35a7e9;
+	font-size: 62.5%;
+}
+body {
+	height: 100vh;
+	font-family: 'Lato', sans-serif;
+	color: var(--font-color);
+	font-size: 1.6rem;
+}
+.nav {
+	position: fixed;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	height: 8rem;
+	background-color: var(--primary-color);
+	z-index: 1;
+}
+.nav__logo-text {
+	letter-spacing: 2px;
+	font-weight: 300;
+}
+.nav__logo-text--bold {
+	font-weight: bold;
+}
+.nav__menu-box {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+}
+.nav__logo-box:link,
+.nav__logo-box:visited,
+.nav__menu-link:link,
+.nav__menu-link:visited,
+.nav__logo-box,
+.nav__menu-link {
+	color: var(--font-color);
+	text-decoration: none;
+}
+.nav__menu-link-item {
+	position: relative;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.nav__menu-link-chevron {
+	fill: var(--font-color);
+	width: 1.5rem;
+	height: 1.5rem;
+	stroke-width: 2px;
+	stroke: var(--font-color);
+}
+.nav__menu-link-chevron--right {
+	margin-left: auto;
+	transform: rotate(-90deg);
+	fill: var(--primary-color);
+	stroke: var(--primary-color);
+}
+.nav__button {
+	background-color: var(--font-color);
+	padding: 1rem 2rem;
+	border-radius: 1.5rem;
+	text-transform: uppercase;
+	color: var(--primary-color);
+	border: 2px solid var(--font-color);
+	cursor: pointer;
+	font-size: 1.2rem;
+	transition: color 0.2s, background-color 0.2s, transform 0.2s;
+}
+.nav__button:not(:last-child) {
+	margin-right: 0.5rem;
+}
+.nav__button--empty {
+	color: var(--font-color);
+	background-color: var(--primary-color);
+}
+.nav__button:hover {
+	color: var(--font-color);
+	background-color: var(--primary-color);
+	transform: translateY(-2px);
+}
+.nav__button--empty:hover {
+	color: var(--primary-color);
+	background-color: var(--font-color);
+}
+.nav__dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: -1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	visibility: hidden;
+	opacity: 0;
+	background-color: var(--font-color);
+}
+.nav__dropdown-menu::before {
+	content: '';
+	position: absolute;
+	top: -2.2rem;
+	left: 2.2rem;
+	width: 0;
+	height: 0;
+	border: 0 solid transparent;
+	border-bottom: 0 solid var(--font-color);
+	border-width: 1.2rem;
+	background: transparent;
+	transition: border-bottom-color 0.1s;
+}
+.nav__dropdown-menu--nested {
+	left: 100%;
+	top: 0;
+	color: var(--primary-color);
+}
+.nav__dropdown-menu--nested::before {
+	opacity: 0;
+	visibility: hidden;
+}
+.nav_list {
+	list-style: none;
+	text-decoration: none;
+}
+.nav__list-link,
+.nav__list-link:visited,
+.nav__list-link:link {
+	color: var(--primary-color);
+	text-decoration: none;
+	transition: color 0.2s, background-color 0.2s;
+}
+.nav__list-item {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 15rem;
+	list-style: none;
+	text-decoration: none;
+	padding: 1rem;
+	transition: background-color 0.2s;
+}
+.nav__list-item:not(:last-child) {
+	border-bottom: 1px solid var(--primary-color);
+}
+.nav__list-item:hover {
+	background-color: var(--secondary-color);
+}
+.nav__list-item:hover .nav__menu-link-chevron--right {
+	fill: var(--font-color);
+	stroke: var(--font-color);
+}
+.nav__list-item:hover > .nav__list-link {
+	color: var(--font-color);
+}
+.nav__dropdown-menu:has(.nav__list-item--main:first-child:hover)::before {
+	border-bottom-color: var(--secondary-color);
+}
+.nav__list-item:has(.nav__menu-link-chevron--right):hover
+	.nav__dropdown-menu--nested {
+	opacity: 1;
+	visibility: visible;
+}
+.header {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.header__img-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--primary-color);
+	opacity: 0.5;
+}
+.header__img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.nav__menu-link-item:hover .nav__dropdown-menu {
+	visibility: visible;
+	opacity: 1;
+}
+
+.nav__menu-link-item:hover .nav__dropdown-menu--nested {
+	opacity: 0;
+	visibility: hidden;
+}
+
+@media screen and (max-width: 700px) {
+	html {
+		font-size: 50%;
+	}
+}
+@media screen and (max-width: 570px) {
+	html {
+		font-size: 40%;
+	}
+}
+@media screen and (max-width: 400px) {
+	html {
+		font-size: 30%;
+	}
+}
+
