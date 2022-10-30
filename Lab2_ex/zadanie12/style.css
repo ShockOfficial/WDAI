@@ -94,16 +94,17 @@ body {
 .card {
 	display: flex;
 	justify-content: center;
-	/* width: 800px; */
+	width: 850px;
+	width: 70%;
 	height: 50rem;
 	/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
 }
 .card__left-box {
-	flex-basis: 80%;
-	width: 200px;
+	flex-basis: 60%;
+	/* width: 200px; */
 	margin: 2.5rem;
 	margin-right: 0;
-	/* min-width: 450px; */
+	max-width: 450px;
 	position: relative;
 	padding: 1.5rem;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -130,7 +131,7 @@ body {
 .card__boot {
 	display: none;
 	position: absolute;
-	width: 140%;
+	width: 130%;
 	background-image: url('./img/blue.png');
 	background-size: cover;
 	top: 55%;
@@ -138,7 +139,8 @@ body {
 	transform: translate(-50%, -50%) rotate(-20deg);
 }
 .card__right-box {
-	width: 600px;
+	flex-basis: 45%;
+	/* width: 600px; */
 	background-color: #fff;
 	position: relative;
 	padding: 1.5rem;
