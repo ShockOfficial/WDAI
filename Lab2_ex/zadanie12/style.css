@@ -313,7 +313,7 @@ input#eleven:checked ~ label[for='eleven'] {
 	letter-spacing: 0.5px;
 	background-color: var(--current-color);
 	cursor: pointer;
-	transition: transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
 }
 .card__btn:hover {
 	opacity: 0.8;
