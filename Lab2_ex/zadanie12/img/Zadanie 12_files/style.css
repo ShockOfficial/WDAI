@@ -61,12 +61,11 @@ body {
 	--current-img: var(--blue-img);
 }
 .card__boot[color='blue'] {
-	display: block;
 	opacity: 1;
 	visibility: visible;
 }
 body:has(div:target) .card__boot[color='blue'] {
-	display: none;
+	display: block;
 	opacity: 0;
 	visibility: hidden;
 }
@@ -167,20 +166,9 @@ input#eleven:checked ~ label[for='eleven'] {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	background-image: linear-gradient(45deg, #0136af, #22abfa);
 }
-.card__left-box::before {
-	content: 'NIKE';
-	position: absolute;
-	top: 35%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 19rem;
-	font-weight: bold;
-	color: rgba(255, 255, 255, 0.248);
-}
 .card__logo {
 	position: absolute;
 	left: 2rem;
-	top: 2rem;
 	width: 25%;
 	object-fit: cover;
 }
@@ -211,6 +199,7 @@ input#eleven:checked ~ label[for='eleven'] {
 }
 .card__right-box {
 	flex-basis: 45%;
+	/* width: 600px; */
 	background-color: #fff;
 	position: relative;
 	padding: 2.5rem 3rem;
@@ -312,16 +301,6 @@ input#eleven:checked ~ label[for='eleven'] {
 	gap: 0.5rem;
 	letter-spacing: 0.5px;
 	background-color: var(--current-color);
-	cursor: pointer;
-	transition: transform 0.3s, opacity 0.3s;
-}
-.card__btn:hover {
-	opacity: 0.8;
-	transform: translateY(-3px) scale(1.02);
-}
-.card__btn:active {
-	opacity: 1;
-	transform: translateY(-1px) scale(0.98);
 }
 .card__icon-cart {
 	width: 2rem;
@@ -345,9 +324,6 @@ input#eleven:checked ~ label[for='eleven'] {
 	.card {
 		width: 90%;
 	}
-	.card__left-box::before {
-		font-size: 16rem;
-	}
 	.card__left-box {
 		max-width: 300px;
 	}
@@ -358,15 +334,13 @@ input#eleven:checked ~ label[for='eleven'] {
 @media screen and (max-width: 734px) {
 	.card {
 		flex-direction: column;
-		width: 350px;
+		flex-basis: 50%;
+		height: 50rem;
 	}
 	.card__left-box {
+		/* flex-basis: 100%; */
 		margin: 0;
 		max-width: none;
-	}
-	.card__left-box::before {
-		font-size: 18rem;
-		top: 50%;
 	}
 	.card__right-box {
 		width: 100%;
@@ -374,48 +348,9 @@ input#eleven:checked ~ label[for='eleven'] {
 	.card__boot {
 		display: none;
 		position: relative;
-		width: 100%;
 		top: 50%;
 		left: 50%;
-		transform: translate(-55%, -45%) rotate(-5deg) scale(1.1);
-	}
-	.card__logo {
-		width: 7rem;
-	}
-}
-@media screen and (max-width: 455px) {
-	.card {
-		width: 300px;
-	}
-	.card__left-box::before {
-		font-size: 15rem;
-	}
-	:root {
-		font-size: 50%;
-	}
-}
-@media screen and (max-width: 350px) {
-	.card {
-		width: 95%;
-	}
-	.card__left-box::before {
-		font-size: 16rem;
-	}
-	:root {
-		font-size: 45%;
-	}
-}
-@media screen and (max-width: 290px) {
-	.card__btn {
-		padding: 1rem;
-		font-size: 1.6rem;
-		margin-right: 2rem;
-	}
-	.card__left-box::before {
-		font-size: 14rem;
-	}
-	.card__icon-cart {
-		display: none;
+		transform: translate(-50%, -50%);
 	}
 }
 
