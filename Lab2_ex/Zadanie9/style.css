@@ -16,6 +16,7 @@ body {
 	font-family: 'Lato', 'Roboto', sans-serif;
 	color: white;
 	font-size: 1.6rem;
+	overflow: hidden;
 }
 
 .header {
@@ -122,14 +123,91 @@ body {
 		transform: translateX(0);
 	}
 }
-
-@media screen and (max-width: 900px) {
-	.header__form-box {
-		position: relative;
+@keyframes slide-to-down {
+	from {
+		transform: translateY(-150%);
 	}
+	to {
+		transform: translateY(0);
+	}
+}
+@keyframes slide-to-up {
+	from {
+		transform: translateY(150%) translateX(-50%);
+	}
+	to {
+		transform: translateY(0) translateX(-50%);
+	}
+}
 
+@media screen and (max-width: 1050px) {
 	.header {
+		animation: slide-to-down 1s;
+		padding: 2rem;
+		padding-top: 10rem;
+	}
+	.header__text-box {
+		width: 100%;
+		animation: unset;
+	}
+	.header__form-box {
+		width: min-content;
+		padding: 1rem;
+		position: relative;
+		align-items: end;
+		box-shadow: none;
+		animation: slide-to-up 1s forwards;
+	}
+	.header__form {
+		width: 300px;
+	}
+	.header__form-title {
+		font-size: 3.5rem;
+	}
+	.wrapper {
+		overflow: hidden;
+		width: 100%;
+	}
+	.header__input {
+		width: 400px;
+	}
+	.header {
+		padding-left: 0;
 		flex-direction: column;
+	}
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.header__input {
+		width: 300px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.header__input {
+		width: 250px;
+	}
+	.header__form-box {
+		align-items: center;
+	}
+	.wrapper {
+		justify-content: start;
+		align-items: flex-start;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	:root {
+		font-size: 55%;
+	}
+}
+@media screen and (max-width: 333px) {
+	:root {
+		font-size: 50%;
 	}
 }
 
