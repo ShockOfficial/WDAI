@@ -148,6 +148,12 @@ input#eleven:checked ~ label[for='eleven'] {
 	background-color: var(--current-color);
 	color: #fff;
 }
+body:has(div:target) .card__color {
+	box-shadow: unset;
+}
+.card__color[color='blue'] {
+	box-shadow: 0 0 0 0.5rem #fff, 0 0 5px 1rem rgba(0, 0, 0, 0.1);
+}
 
 /* Styles */
 
@@ -208,6 +214,7 @@ input#eleven:checked ~ label[for='eleven'] {
 	visibility: hidden;
 	transform: translate(-50%, -50%) rotate(-20deg);
 	transition: visibility 0.3s, opacity 0.3s;
+	user-select: none;
 }
 .card__right-box {
 	flex-basis: 45%;
