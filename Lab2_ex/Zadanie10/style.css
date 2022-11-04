@@ -1,0 +1,236 @@
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 62.5%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-family: sans-serif;
+	font-size: 1.6rem;
+	color: #fff;
+	font-family: 'Lato', sans-serif;
+	gap: 2.5rem;
+}
+
+.card {
+	width: 33rem;
+	perspective: 80rem;
+	position: relative;
+	backface-visibility: hidden;
+	height: 54rem;
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+.card__picture {
+	background-size: cover;
+	height: 23rem;
+	background-blend-mode: screen;
+	clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+.card__picture--1 {
+	background-image: linear-gradient(to right bottom, #ffb900, #ff7730),
+		url(/img/image1.jpeg);
+}
+.card__picture--2 {
+	background-image: linear-gradient(to right bottom, #7ed56f, #28b485),
+		url(/img/image2.jpeg);
+}
+
+.card__heading {
+	font-size: 2.8rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-align: right;
+	color: #fff;
+	position: absolute;
+	top: 12rem;
+	right: 1rem;
+	width: 75%;
+}
+.card__span {
+	padding: 1rem 1.5rem;
+	box-decoration-break: clone;
+	margin-bottom: 10rem;
+	line-height: 5rem;
+}
+.card__span--1 {
+	background-image: linear-gradient(
+		to right bottom,
+		rgba(255, 185, 0, 0.85),
+		rgba(255, 119, 48, 0.85)
+	);
+}
+.card__span--2 {
+	background-image: linear-gradient(
+		to right bottom,
+		rgba(126, 213, 111, 0.85),
+		rgba(40, 180, 133, 0.85)
+	);
+}
+.card__side {
+	position: absolute;
+	height: 54rem;
+	width: 100%;
+	top: 0;
+	left: 0;
+	backface-visibility: hidden;
+	border-radius: 3px;
+	overflow: hidden;
+	box-shadow: 0 10rem 40rem rgba(0, 0, 0, 0.1);
+	transition: all 0.8s;
+}
+.card__back {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8rem;
+	flex-direction: column;
+	transform: rotateY(180deg);
+}
+.card__back--1 {
+	background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+.card__back--2 {
+	background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+.card:hover .card__front {
+	transform: rotateY(-180deg);
+}
+.card:hover .card__back {
+	transform: rotateY(0);
+}
+.card__heading--back {
+	text-transform: uppercase;
+	margin-bottom: 1.5rem;
+}
+.card__back-top-box {
+	text-align: center;
+}
+.card__price {
+	font-size: 5rem;
+	font-weight: 100;
+}
+.card__details {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+}
+.card__list {
+	width: 80%;
+	text-align: center;
+	font-weight: 400;
+	list-style: none;
+	font-size: 1.4rem;
+	color: #777;
+}
+.card__list-item {
+	padding: 1.5rem;
+}
+.card__list-item:not(:last-child) {
+	border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 1.5rem 4rem;
+	border-radius: 10rem;
+	position: relative;
+	font-size: 1.5rem;
+	border: none;
+	cursor: pointer;
+	background-color: #fff;
+	color: #777;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.btn::after {
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 10rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	background-color: #fff;
+	transition: transform 0.4s, opacity 0.4s;
+}
+.btn:hover::after {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+
+@media screen and (max-width: 800px) {
+	.card {
+		width: 35rem;
+		height: auto;
+		background-color: #fff;
+		box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+	}
+	.card__front {
+		position: relative;
+	}
+	.card__side {
+		position: relative;
+		height: auto;
+		backface-visibility: visible;
+		background-color: #fff;
+		box-shadow: none;
+	}
+	.card__back {
+		transform: none;
+		padding: 2rem;
+		padding-top: 5rem;
+		gap: 2rem;
+		clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+		transition: none;
+	}
+	.card:hover {
+		transform: scale(1.05) translateY(-5px);
+		box-shadow: 0 5rem 2rem rgba(0, 0, 0, 0.3);
+	}
+	.card:hover .card__front {
+		transform: none;
+	}
+	.card:hover .card__back {
+		transform: none;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	body {
+		flex-wrap: wrap;
+		padding: 2rem;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	:root {
+		font-size: 57%;
+	}
+	.card__price {
+		font-size: 3rem;
+	}
+	.btn {
+		padding: 1rem 2rem;
+	}
+}
+
