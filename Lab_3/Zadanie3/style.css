@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3rem;
+	font-family: sans-serif;
+}
+
+.btn {
+	padding: 1rem 2rem;
+	border: none;
+	background-image: linear-gradient(to right, #74f2ce, #7cffcb);
+	cursor: pointer;
+	margin-bottom: 2rem;
+}
+

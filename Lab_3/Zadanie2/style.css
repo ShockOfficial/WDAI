@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5rem;
+	flex-direction: column;
+}
+
+.img-box {
+	border-radius: 5px;
+	margin-bottom: 2rem;
+}
+.img-box > img {
+	border: 2px dashed red;
+	height: 300px;
+	width: 600px;
+	object-fit: cover;
+	border-radius: 5px;
+	padding: 1rem;
+}
+.btn {
+	padding: 1rem 2rem;
+	border: none;
+	background-image: linear-gradient(to right, #74f2ce, #7cffcb);
+	cursor: pointer;
+}
+

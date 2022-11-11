@@ -1,0 +1,66 @@
+
+Zadanie 2
+
+
+Zad 3
+Dodawanie do listy add itemów. Jeśli usuniemy ileś elementów to dany nr będzie kolejnym najmniejszym elementem
+
+zad 4
+Licnzik + toggle button który usuwa i dodaje ade na button test. 
+
+ZAD 5
+obok jakies komunikaty ktrore mowią co pierwsze sie wydarzylo
+Wyłaczenie bubblepropagation za pomocą btna
+Jeśli bedzie odpowiednia ilość pkt to dany przycisk robi się disabled
+Trzeba wyłaczyć obsługę zdarzenia a nie maskować dodawanie plusów. Tj. trzeba wyłączyć dany sposób działania.
+
+Jeśli wyłączymy propagecję to klikając na dant element w środku to nic nie powinno się wydarzyć tj. nie dodaje się zaden punkt 
+
+Tj. wyłączamy propagację na itemie który jest wyłączony tez. 
+
+Zadanie 6
+
+na starcie mogą być dummy data ale nie musi byc nic mockowane 
+Walidacja. -> Tylko wtedy mozna dodać nwy item do listy.
+Znaki inne niz umlalty dash itp sa zabroniony. Tj. ę,ą 
+
+////
+NIEWAZNE Input numer jesli dodajmey kieurnkowy to na poczatku powinien być plus np. 
+nie moze byc 048, ale moze byc +048
+//////
+
+Trzeba dodać info jeśli coś nie jest tak to dajemy response. Np. ze input imie i naziwsko jest nieprawidlowe. (Po kliknięciu buttona) Imie naziwsko + 
+
+
+Zadanie 7
+Dla danej sekcji 
+
+1. Jakość rozwiązania  (JAKOSC KODU)
+2. Czy zgadza się z odpowiedziami
+
+
+Zadanie 8
+Walidacja do długości hasła. + Mozliwosc pokazania hasla
+Trzeba nacisnać enter w repeat new password. jeśli haslo bedzie juz do konca wpisane
+
+Zadanie 9
+Slider bez cofania sie do pierwszwgo elementu
+
+Zadanie 10
+
+Nacisnales poza boiskiem! komunikaty
+A jak klikasz to przechodzi plynnie 
+
+Zadanie 11
+trzbea stworzyc tablice samemu nie mozna uzywac TailwinCSS i bootstrap 
+Paginacja na ekran np. po 20 elementów
+Filtry powinni zmieniać nam maksymalną ilość stron ( paginacja )
+np. po filtrch z 200 wszystkich jest 10 pageów
+Subregion
+Tam gdzie name to mamy SUBREGION z mozliwoscia rozwinięcia
+Tam gdzie Capital bedzie puste bo Subregion nie ma 
+Po rozwinieciu mamy liste państwa które znajdują się w danym subregionie
+
+
+Zadanie 12
+
