@@ -7,24 +7,35 @@
 }
 
 :root {
+	--invalid-color: #e70303;
 	--background-color: #f6fbfe;
 	--primary-color: #008001;
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 body {
 	display: flex;
 	justify-content: center;
 	font-family: sans-serif;
-	padding: 4rem;
 	height: 100vh;
 	font-size: 1.6rem;
 	background-color: var(--background-color);
 }
 
 .wrapper {
+	padding: 4rem;
 	width: 100%;
 	max-width: 1200px;
+}
+.list-box {
+	width: calc(100% + 4rem);
+	transform: translateX(-2rem);
+	max-height: 80%;
+	padding: 2rem;
+	padding-top: 0;
+	margin-bottom: 2rem;
+	overflow-y: scroll;
 }
 .card {
 	display: flex;
@@ -35,18 +46,13 @@ body {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 	border-radius: 4px;
 	height: 12rem;
-}
-.item {
+	transition: all 0.3s;
 }
 .item:not(:last-child) {
 	margin-bottom: 2rem;
 }
-.item__left-box {
-}
 .item__name {
 	font-weight: bold;
-}
-.item__number {
 }
 .item__icon-box {
 	display: flex;
@@ -55,7 +61,6 @@ body {
 	width: 4rem;
 	height: 4rem;
 	margin-left: auto;
-	/* padding: 1rem; */
 	background-color: var(--primary-color);
 	border-radius: 5px;
 	cursor: pointer;
@@ -133,21 +138,28 @@ body {
 	bottom: 0;
 	margin-top: 1rem;
 	font-size: 1.2rem;
-	color: rgb(231, 3, 3);
+	color: var(--invalid-color);
 	text-transform: uppercase;
 	transform: rotateX(-90deg);
 }
 
 .valid {
-	border-bottom: 4px solid var(--primary-color);
+	border-bottom: 4px solid var(--primary-color) !important;
 }
 
 .invalid {
-	border-bottom: 4px solid rgb(231, 3, 3);
+	border-bottom: 4px solid var(--invalid-color) !important;
 }
 
-.animate {
+.animate-invalid {
 	animation: swipe-down 0.5s ease-in-out forwards;
+}
+.animate-valid {
+	animation: swipe-up 0.5s ease-in-out forwards;
+}
+
+.animate-shake {
+	animation: shake-invalid 0.4s ease-in-out backwards;
 }
 
 @media screen and (max-width: 620px) {
@@ -171,12 +183,44 @@ body {
 @keyframes swipe-down {
 	from {
 		opacity: 0;
-		transform: translateY(0) rotateX(-90deg) scaleY(2);
+		transform: translateY(0) rotateX(-120deg) scaleY(2);
 	}
 
 	to {
 		opacity: 1;
 		transform: translateY(2rem) rotateX(0) scaleY(1);
+	}
+}
+
+@keyframes swipe-up {
+	from {
+		opacity: 1;
+		transform: translateY(2rem) rotateX(0) scaleY(1);
+	}
+
+	to {
+		opacity: 0;
+		transform: translateY(0) rotateX(-120deg) scaleY(2);
+	}
+}
+
+@keyframes shake-invalid {
+	0% {
+		background-color: var(--invalid-color);
+		transform: translateX(-3px);
+	}
+	25% {
+		transform: translateX(3px);
+	}
+
+	50% {
+		transform: translateX(-3px);
+	}
+	75% {
+		transform: translateX(3px);
+	}
+	100% {
+		transform: translateX(0);
 	}
 }
 
