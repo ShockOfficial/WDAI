@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="./script.js" defer></script>
+		<title>Zadanie 8</title>
+	</head>
+	<body>
+		<div class="form-box card">
+			<form class="form">
+				<div class="form__item">
+					<label for="password" class="form__label">New password</label>
+					<input
+						type="text"
+						class="form__input"
+						id="password"
+						required
+						autocomplete="off"
+					/>
+				</div>
+
+				<div class="form__item">
+					<label for="repeatPassword" class="form__label"
+						>Repeat new password</label
+					>
+					<input
+						type="text"
+						class="form__input"
+						id="repeatPassword"
+						required
+						autocomplete="off"
+					/>
+				</div>
+				<button id="formBtn" class="form__button" type="submit">CHANGE</button>
+			</form>
+			<p class="form-box__text">Password requirements</p>
+			<div class="form-box__req-item">
+				<span class="form-box__icon invalid-icon">&nbsp;</span>
+				<p class="form-box__text form-box__text--small">
+					at least 8 characters
+				</p>
+			</div>
+			<div class="form-box__req-item">
+				<span class="form-box__icon valid-icon">&nbsp;</span>
+				<p class="form-box__text form-box__text--small">
+					at least one special character
+				</p>
+			</div>
+			<div class="form-box__req-item">
+				<span class="form-box__icon valid-icon">&nbsp;</span>
+				<p class="form-box__text form-box__text--small">
+					at least one capital letter
+				</p>
+			</div>
+			<div class="form-box__req-item">
+				<span class="form-box__icon invalid-icon">&nbsp;</span>
+				<p class="form-box__text form-box__text--small">at least one digit</p>
+			</div>
+		</div>
+	</body>
+</html>
+
