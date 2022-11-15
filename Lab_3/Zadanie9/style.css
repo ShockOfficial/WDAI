@@ -51,14 +51,6 @@ body {
 	left: -3rem;
 	color: var(--primary-color);
 }
-.carousel__item-wrapper {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-}
 .carousel__item {
 	position: absolute;
 	flex: 100% 0 0;
@@ -118,8 +110,6 @@ body {
 	text-transform: uppercase;
 	color: var(--primary-color);
 	margin-bottom: 0.5rem;
-}
-.carousel__role {
 }
 .carousel__desc {
 	width: 70%;
