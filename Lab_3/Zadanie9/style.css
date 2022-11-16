@@ -65,7 +65,7 @@ body {
 	gap: 1rem;
 	transform: translate(100%, -4rem);
 	z-index: -1;
-	transition: all 0.7s;
+	transition: transform 0.7s, z-index 0.7s;
 }
 .carousel__item::after {
 	position: absolute;
