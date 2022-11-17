@@ -84,6 +84,7 @@ class PasswordValidation {
 		if (this.#isPasswordValid) {
 			this.#passwordInput.classList.add('valid');
 			this.#passwordInput.classList.remove('invalid');
+			this.#validateRepeat();
 		} else if (isValidLenght) {
 			this.#passwordInput.classList.remove('valid');
 			this.#passwordInput.classList.add('invalid');
@@ -98,7 +99,7 @@ class PasswordValidation {
 		this.#addClasses(this.#capitalLetterEl, isCapitalLetter);
 	}
 
-	#validateRepeat(e) {
+	#validateRepeat() {
 		const currIndex = this.#passwordConfirmInput.value.length;
 		console.log(currIndex);
 
@@ -106,14 +107,17 @@ class PasswordValidation {
 			new RegExp(this.#passwordInput.value.slice(0, currIndex)),
 		);
 
-		if (e.target.value === this.#passwordInput.value && this.#isPasswordValid) {
+		if (
+			this.#passwordConfirmInput.value === this.#passwordInput.value &&
+			this.#isPasswordValid
+		) {
 			this.#button.disabled = false;
 			this.#passwordConfirmInput.classList.add('valid');
 			this.#passwordConfirmInput.classList.remove('invalid');
 			this.#handleError(true);
 		} else if (
 			(this.#isPasswordValid && !passwordMatches) ||
-			currIndex > this.#passwordInput.value.length
+			(currIndex > this.#passwordInput.value.length && this.#isPasswordValid)
 		) {
 			this.#handleError(false);
 			this.#passwordConfirmInput.classList.add('invalid');
