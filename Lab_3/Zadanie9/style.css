@@ -19,6 +19,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+	gap: 2rem;
 	font-family: 'Lato', sans-serif;
 	height: 100vh;
 	font-size: 1.6rem;
@@ -141,6 +143,20 @@ body {
 }
 .carousel__btn--right {
 	right: 4rem;
+}
+.btn {
+	border: none;
+	background-color: var(--primary-color);
+	color: #fff;
+	cursor: pointer;
+	padding: 2rem 4rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-radius: 8px;
+	transition: background-color 0.3s;
+}
+.btn:active {
+	background-color: #2497ea;
 }
 
 @media screen and (max-width: 500px) {

@@ -3,7 +3,7 @@ class Carousel {
 	#currentSlideObj;
 	#ANIMATION_TIME = 700;
 
-	constructor(nextBtn, prevBtn) {
+	constructor(nextBtn, prevBtn, randomBtn) {
 		this.#items = [...document.querySelectorAll('.carousel__item')];
 		this.#items = this.#items.map((item, index) => ({
 			...item,
@@ -24,11 +24,15 @@ class Carousel {
 		prevBtn.addEventListener('click', async () => {
 			this.#handleClickEvent(prevBtn, this.previous);
 		});
+
+		randomBtn.addEventListener('click', () => {
+			this.#handleClickEvent(randomBtn, this.random);
+		});
 	}
 	async #handleClickEvent(btn, callback) {
 		btn.disabled = true;
 		callback.apply(this);
-		await this.#wait(this.#ANIMATION_TIME);
+		await this.#wait(this.#ANIMATION_TIME + 100);
 		btn.disabled = false;
 	}
 
@@ -66,12 +70,40 @@ class Carousel {
 		this.#currentSlideObj.prevObj.classList.add('last');
 		this.#currentSlideObj.prevObj.classList.remove('current');
 	}
+
+	async random() {
+		let randomSelectedIndex = this.#currentSlideObj.initialPosition;
+		const currIndex = this.#currentSlideObj.initialPosition;
+		while (randomSelectedIndex === this.#currentSlideObj.initialPosition) {
+			randomSelectedIndex = Math.floor(Math.random() * this.#items.length);
+		}
+		this.#items.forEach((item) =>
+			item.currentObj.classList.remove('last', 'current'),
+		);
+
+		const tmp = this.#currentSlideObj;
+		this.#currentSlideObj.currentObj.classList.add('last');
+		this.#currentSlideObj = this.#items[randomSelectedIndex];
+		this.#currentSlideObj.prevObj.classList.add('last');
+		this.#currentSlideObj.currentObj.classList.add('current');
+		this.#currentSlideObj.nextObj.classList.remove('last', 'current');
+
+		if (
+			Math.abs(currIndex - randomSelectedIndex) >= 2 &&
+			!(currIndex === 0 && randomSelectedIndex === this.#items.length - 1) &&
+			!(currIndex === this.#items.length - 1 && randomSelectedIndex === 0)
+		) {
+			await this.#wait(this.#ANIMATION_TIME);
+			tmp.currentObj.classList.remove('last', 'current');
+		}
+	}
 }
 
 const init = () => {
-	nextBtn = document.querySelector('.carousel__btn--right');
-	prevBtn = document.querySelector('.carousel__btn--left');
-	new Carousel(nextBtn, prevBtn);
+	const nextBtn = document.querySelector('.carousel__btn--right');
+	const prevBtn = document.querySelector('.carousel__btn--left');
+	const randomBtn = document.querySelector('#randomBtn');
+	new Carousel(nextBtn, prevBtn, randomBtn);
 };
 
 document.addEventListener('DOMContentLoaded', init);
