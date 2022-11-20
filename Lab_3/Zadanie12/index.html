@@ -22,6 +22,7 @@
 				</svg>
 				<p class="life-text" id="life">x3</p>
 			</div>
+			<p class="nick score" id="nickName"></p>
 
 			<p class="score" id="score"></p>
 			<!-- <div class="zombie"></div> -->
@@ -34,7 +35,7 @@
 
 			<div class="game-over hide" id="scoreBoard">
 				<p class="scoreboard-title">Ranking</p>
-				<button class="btn">Play Again</button>
+				<button id="restartBtn" class="btn">Play Again</button>
 
 				<div class="list-box">
 					<div class="headings">
@@ -42,12 +43,12 @@
 						<p class="list-heading">Points</p>
 						<p class="list-heading">Date</p>
 					</div>
-					<ul class="list">
-						<li class="list-item">
+					<ul class="list" id="scoreList">
+						<!-- <li class="list-item">
 							<p class="list-name">Name</p>
 							<p class="list-points">120</p>
 							<p class="list-date">12.10.2022</p>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 			</div>

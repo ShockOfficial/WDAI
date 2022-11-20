@@ -218,4 +218,8 @@ body {
 	opacity: 0;
 	visibility: hidden;
 }
+.nick {
+	left: 50%;
+	transform: translateX(-15%);
+}
 

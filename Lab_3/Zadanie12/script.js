@@ -15,6 +15,8 @@ class Game {
 	#inputEl;
 	#formBtn;
 	#isRunning = false;
+	#gameTimer;
+
 	constructor() {
 		this.#gameBox = document.querySelector('#game');
 		this.#cursor = document.querySelector('.crosshair');
@@ -28,29 +30,55 @@ class Game {
 		this.#inputEl.addEventListener('input', this.#handleInput.bind(this));
 		this.#formBtn.addEventListener('click', this.#handleSubmit.bind(this));
 		window.addEventListener('mousemove', this.#moveCursor);
-
-		// this.#run();
 	}
 
 	async #initGame() {
 		this.#gameBox.addEventListener('click', this.#handleClick.bind(this));
-		const data = await this.#fetchScoreboard();
-		console.log(data);
+		const nick = document.querySelector('#nickName');
+		nick.textContent = this.#nickname;
 	}
 
 	#run() {
 		this.#isRunning = true;
-		setInterval(() => {
+		this.#gameTimer = setInterval(() => {
 			if (this.#lifes <= 0) {
-				// TODO show scoreboard and retart
 				this.#isRunning = false;
-				const board = document.querySelector('#scoreBoard');
-				board.classList.remove('hide');
+				this.#endGame();
 				return;
 			}
 			this.#generateZombie();
 		}, this.#gameSpeed);
 		this.#initGame();
+	}
+
+	async #endGame() {
+		clearInterval(this.#gameTimer);
+		const board = document.querySelector('#scoreBoard');
+		const data = (await this.#fetchScoreboard()) || {};
+		console.log(data);
+		const ranking = [...data];
+		console.log(ranking);
+
+		ranking.push({
+			nick: this.#nickname,
+			score: this.#score,
+			date: new Date().toLocaleDateString(),
+		});
+		if (ranking.length > 0) {
+			ranking.sort((a, b) => b.score - a.score);
+
+			ranking.forEach((item) => {
+				this.#fillScoreBoard(this.#generateScoreItem(item));
+			});
+		}
+
+		this.#sendData(ranking.slice(0, 7));
+
+		const restartBtn = document.querySelector('#restartBtn');
+		restartBtn.addEventListener('click', () => {
+			window.location.reload();
+		});
+		board.classList.remove('hide');
 	}
 
 	#animateZombie(zombie, options) {
@@ -145,42 +173,55 @@ class Game {
 	#generateScoreItem(data) {
 		return `
     <li class="list-item">
-    <p class="list-name">${data.name}</p>
+    <p class="list-name">${data.nick}</p>
     <p class="list-points">${data.score}</p>
     <p class="list-date">${data.date}</p>
   </li>`;
 	}
 
+	#fillScoreBoard(item) {
+		const board = document.querySelector('#scoreList');
+		board.insertAdjacentHTML('beforeend', item);
+	}
+
 	async #fetchScoreboard() {
 		try {
 			const res = await fetch(
-				'https://jsonblob.com/api/jsonBlob/1043918860843237376',
+				'https://jsonblob.com/api/jsonBlob/1043930500527570944',
 			);
 			if (!res.ok) throw new Error(res.statusText);
 			return await res.json();
 		} catch (e) {
+			console.log(e);
 			console.log(e.message);
 		}
 	}
 
-	async #sendData() {
+	async #sendData(data) {
 		try {
 			const res = await fetch(
-				'https://jsonblob.com/api/jsonBlob/1043918860843237376',
+				'https://jsonblob.com/api/jsonBlob/1043930500527570944',
 				{
-					body: {
-						nick: this.#nickname,
-						score: this.#score,
-						date: new Date().getDate(),
+					body: JSON.stringify(data),
+					mode: 'cors',
+					cache: 'no-cache',
+					headers: {
+						'Content-Type': 'application/json',
 					},
-					method: 'POST',
+					method: 'PUT',
 				},
 			);
+
+			if (!res.ok) throw new Error(res.statusText);
 		} catch (e) {
 			console.log(e.message);
 		}
 	}
 }
 
-new Game();
+const init = () => {
+	new Game();
+};
+
+document.addEventListener('DOMContentLoaded', init());
 
