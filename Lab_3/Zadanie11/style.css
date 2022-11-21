@@ -74,7 +74,7 @@ body {
 	gap: 5rem;
 	margin-bottom: 3rem;
 	width: 100%;
-	padding: 4rem;
+	padding: 1rem 4rem;
 	border-radius: 8px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
@@ -96,8 +96,8 @@ body {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
+	margin-bottom: 1rem;
 }
-
 .active {
 	opacity: 1;
 	visibility: visible;
