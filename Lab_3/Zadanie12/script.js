@@ -55,9 +55,7 @@ class Game {
 		clearInterval(this.#gameTimer);
 		const board = document.querySelector('#scoreBoard');
 		const data = (await this.#fetchScoreboard()) || {};
-		console.log(data);
 		const ranking = [...data];
-		console.log(ranking);
 
 		ranking.push({
 			nick: this.#nickname,
