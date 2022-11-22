@@ -42,7 +42,6 @@ const createSmallRowEl = (data) => {
 </tr>`;
 };
 
-// TODO add active class to cliked row childs.
 const handleClickRow = (e) => {
 	const subregion = e.target.dataset.subregion;
 
@@ -67,10 +66,8 @@ const handleClickRow = (e) => {
 			.forEach((item) => {
 				const template = createSmallRowEl(item);
 				e.target.parentElement.insertAdjacentHTML('afterend', template);
-				// $currentState.itemToRender = [...$currentState.itemToRender, template];
 			});
 
-		// render(e.target.parentElement);
 		$currPage = 0;
 	}
 };
@@ -119,7 +116,6 @@ const handleFilterClick = (e) => {
 	render(toRender);
 };
 
-// TODO dataaa ??
 const createItems = (dataaa, agregatedData) => {
 	for (const subregion in agregatedData) {
 		if (Object.hasOwnProperty.call(agregatedData, subregion)) {
@@ -262,16 +258,6 @@ const createFilterEl = (filed, filter) => {
 };
 
 const render = (data) => {
-	// const toRender = getNextPage($currentState.itemToRender);
-	// if (parent) {
-	// 	// $tableBody.innerHTML = '';
-	// 	// $tableBody.insertAdjacentHTML('beforeend', parent.outerHTML);
-	// 	toRender.forEach((item) => {
-	// 		parent.insertAdjacentHTML('afterend', item);
-	// 	});
-	// 	return;
-	// }
-
 	$tableBody.innerHTML = '';
 	if (data) {
 		data.forEach((item) => {
@@ -319,13 +305,7 @@ const init = async () => {
 	initEvents();
 	createItems(formatedData, subregionAgregatedData);
 	render();
-
-	// console.log(formatedData);
 };
-
-// TODO render method which will be rendering current page
-
-//TODO implement filtering. Show options above table like a input with opion list. (checkbox) fill it dynamically by getting unique values (subregions, capitals,)
 
 window.addEventListener('DOMContentLoaded', init);
 
