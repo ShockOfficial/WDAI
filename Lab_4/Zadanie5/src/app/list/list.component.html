@@ -1,0 +1,9 @@
+<div class="list">
+  <app-list-item
+    class="list__item"
+    *ngFor="let itemName of uniqList"
+    [isColors]="isColors"
+    [name]="itemName"
+    (click)="handleClick($event)"
+  ></app-list-item>
+</div>

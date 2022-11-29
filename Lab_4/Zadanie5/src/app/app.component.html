@@ -1,0 +1,37 @@
+<div class="app">
+  <div
+    class="app__result"
+    *ngIf="!!markSelected && !!modelSelected && !!colorSelected"
+  >
+    <img src="{{ imgUrl }}" alt="car img" class="app__img" />
+    <p class="app__text">
+      {{ markSelected }} {{ modelSelected
+      }}<span [ngStyle]="{ color: colorSelected }"> {{ colorSelected }}</span>
+    </p>
+
+    <p class="app__price">{{ price }}$</p>
+  </div>
+  <div
+    class="app__box"
+    [ngClass]="{
+      'animate-down': !!markSelected && !!modelSelected && !!colorSelected
+    }"
+  >
+    <app-list
+      [list]="cars"
+      (itemSelected)="onListMarkSelected($event)"
+    ></app-list>
+    <app-list
+      *ngIf="!!markSelected"
+      [list]="carModels"
+      (itemSelected)="onListModelSelected($event)"
+    ></app-list>
+    <app-list
+      *ngIf="!!modelSelected"
+      [list]="colors"
+      (itemSelected)="onListColorSelected($event)"
+      [isColors]="true"
+    >
+    </app-list>
+  </div>
+</div>

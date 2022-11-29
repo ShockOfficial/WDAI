@@ -1,0 +1,59 @@
+.app {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  &__box {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  &__result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: swipe-down 1s forwards;
+    z-index: -1;
+  }
+  &__img {
+    width: 30rem;
+  }
+  &__price {
+    font-size: 2rem;
+    text-align: center;
+  }
+  &__text {
+    text-align: center;
+    margin: 0;
+    padding-top: 0;
+  }
+}
+
+.animate-down {
+  animation: swipe-down 1s forwards;
+}
+
+@keyframes swipe-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes swipe-down {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

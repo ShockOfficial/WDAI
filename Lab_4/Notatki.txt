@@ -1,0 +1,57 @@
+UI nie ma znaczenia ma być ładnie ale nie musi wyglądać tak samo
+( UI jest oceniany )
+
+Na sklepie jest stała wartość produktów.
+
+jeśli nasza wycieczka będzie miała określoną ilość małą np. ostanie 3 wyceieckzi do kupienia
+to npp. napis ze ostatenie sztuki, albo background czy cos zmienić
+
+Jak bedzie 0 to musimy dać info np. sprzedano, niedostępny czy coś aby dać znak że nie jest dostępna dana wycieczka. I znika "+" jeśli jest brak wycieczek aby nie można było tego zamówić.
+
+Jeśli zwrócę wszystkie to wraca nam wycieczka do danego stanu.
+
+Prz kazdym produkcie jest + i - , jeden dodaje do koszyka drugi usuwa.
+
+Wyróżnić jakoś najdroższy i najtańszy produkt. Jeśli obecny najdroższy produkt nie jest dostępny bo np. wykupiliśmy wszystkie to inny najdroższy produkt powinien się podświetlić na ten kolor oznaczający że ten produkt jest najdroższy
+
+
+DANE!
+Dane robimy DUMMY DATA. Dane testowe które od razu mamy na frontendzie. PLIK JSON który jest czytany lokalnie i zaciągany do naszej aplikacji lub jest gotowy plik .js (z kolekcją danych) z którego importujemy dane.
+Nie wolno wstawiać danych od razu w komponencie. 
+Dane wstrzykujemy z zewnątrz do komponentu (?)
+
+
+Nasza wycieczka może być wyświetlana w różnych walutach (zł, $ i Euro)
+
+OCENIANA BĘDZIE RÓWNIEŻ ARCHITEKUTRA!! (PAMIETAJ O SOLID)
+TJ. każdy komponent ma realizować jedną funkcjonalność.
+
+Operacje na liście dodawanie i usuwanie. na wycieczce mamy DELETE. ( po odświeżeniu wracamy do początkowego stanu bo na razie nie ma jak usunąć danych z pliku JSON )
+
+Każdy kto korzysta może dodać wycieczkę
+
+Ocenianie wycieczki 1p jeśli korzystarz z osobnych bibliotek 
+jeśli samemu wszystko napiszesz to masz 2pkt (1 + 1)
+
+Filtrujemy
+Wybór z dostępnych (lokalizacja, cena (jako zakres od do), data (od do) i ocena wycieczki)
+
+Jeśli można filtrować kilka razy z tej listy to jest +1 pkt
+
+tj. 
+za pierwszym razem np. tylko polskie i angielskie i chiny
+za drugim filtrem dajesz oceny -> kolejna wartość listy
+Za trzecim filtrem, filturjemy to co wyszło z drugiego +1 pkt
+
+Jeśli robimy to dynamicznie tj. wartość min. i max z jakiejś puli. np.
+najtańsza od 8k a najdroższa do 12k 
+to za drugim razem we filtrach najdroższa nie będzie juz sie pojawiać więcej
+
+innymi słowy. Dynamiczne wypełnianie filtrów. Jeśli w danym filtrze max jest cena 10k to 10k
+jeśli po np. filtrze o oceny najdrozszy to 4k to zakres na filtrach max ma byc 4k
+
+Koszyk 
+Dodajesz to koszyka, np. ikona koszyka. Jeśli go klikniemy to coś się nam pojawi. (?) nie koniecznie tak trzeba.
+Widok koszyka zmieni się na osobny widok jak wejdzie routing na kolejnych zajęciach. 
+
+2pk Jakość rozwiązań i ocenę estetyki rozwiązania 

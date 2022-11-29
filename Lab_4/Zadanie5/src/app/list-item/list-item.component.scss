@@ -1,0 +1,24 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 18rem;
+  background-color: rgba(246, 246, 246, 0.933);
+  border-bottom: 1px solid grey;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &__name {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  &__color {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3px;
+  }
+  &:hover {
+    background-color: palegoldenrod;
+  }
+}

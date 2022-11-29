@@ -1,0 +1,12 @@
+<div class="item">
+  <p class="item__name">
+    {{ name }}
+  </p>
+  <p
+    class="item__color"
+    *ngIf="isColors"
+    [ngStyle]="{ 'background-color': name }"
+  >
+    &nbsp;
+  </p>
+</div>
