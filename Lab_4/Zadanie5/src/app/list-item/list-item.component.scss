@@ -21,4 +21,8 @@
   &:hover {
     background-color: palegoldenrod;
   }
+
+  @media screen and (max-width: 700px) {
+    width: auto;
+  }
 }

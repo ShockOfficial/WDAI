@@ -3,6 +3,10 @@
 
 :root {
   font-size: 62.5%;
+
+  @media screen and (max-width: 420px) {
+    font-size: 44.5%;
+  }
 }
 
 body {
