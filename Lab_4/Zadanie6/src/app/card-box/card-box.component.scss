@@ -1,0 +1,22 @@
+@import "../variables.scss";
+
+.box {
+  padding: 2rem;
+  width: 100%;
+  box-shadow: 2px 3px 1rem rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding-bottom: 4rem;
+
+  &__bottom-box {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  &__header {
+    text-align: center;
+    color: $primary-color--300;
+    text-transform: uppercase;
+  }
+}

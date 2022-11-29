@@ -1,0 +1,28 @@
+@import "../variables.scss";
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  min-height: 30rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 3px $primary-color;
+  &__title {
+    align-self: start;
+  }
+  &__desc {
+  }
+  &__btn {
+    background-color: $primary-color;
+    border: none;
+    padding: 1.5rem 3rem;
+    color: #fff;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+    &:hover {
+      transform: translateY(-3px) scaleX(1.02);
+    }
+  }
+}
