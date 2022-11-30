@@ -1,0 +1,10 @@
+@import '../variables.scss';
+
+.nav {
+	position: sticky;
+	width: 20rem;
+	min-height: 100vh;
+	height: 100%;
+	background-color: $white-color--nav;
+}
+

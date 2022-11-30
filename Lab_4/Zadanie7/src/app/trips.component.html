@@ -1,0 +1,14 @@
+<div class="trips">
+	<app-nav class="nav"></app-nav>
+	<app-side-nav class="side-nav"></app-side-nav>
+	<div class="trip-list">
+		<app-trip
+			class="trip-item"
+			*ngFor="let trip of trips"
+			[trip]="trip"
+			[isMostExpensive]="trip.isMostExpensive"
+			(distinctTripsHandler)="distinctSpecialTrips()"
+		></app-trip>
+	</div>
+</div>
+

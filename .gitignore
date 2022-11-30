@@ -1,0 +1,6 @@
+Lab_4/Angular clear/*
+node_modules/
+.angular
+.DS_Store
+.*
+!/.gitignore

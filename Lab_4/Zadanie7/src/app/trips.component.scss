@@ -1,0 +1,31 @@
+.trips {
+	display: grid;
+	grid-template-rows: 10rem 1fr;
+	grid-template-columns: min-content 1fr;
+	height: 100%;
+}
+.nav {
+	grid-row: 1 /1;
+	grid-column: 1 / -1;
+}
+.side_nav {
+	grid-row: 2 / -1;
+}
+.trip-list {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 3rem;
+	padding: 2rem;
+	grid-row: 2/ -1;
+	grid-column: 2/ -1;
+}
+.trip-item {
+	display: inline-block;
+	width: min-content;
+}
+
+:host {
+	height: 100%;
+}
+
