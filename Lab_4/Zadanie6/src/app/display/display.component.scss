@@ -5,14 +5,28 @@
   min-height: 10rem;
   box-shadow: 2px 3px 3rem rgba(0, 0, 0, 0.3);
   border-radius: 8px;
+  background-color: #fff;
   &__header {
     text-align: center;
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 3rem;
     color: $primary-color--300;
+    transition: all 0.3s;
   }
 
   &__disabled {
+    font-size: 4rem;
+    user-select: none;
     opacity: 0.2;
+  }
+
+  &__content {
+    padding: 4rem;
+    text-align: center;
+    transition: all 0.3s;
+
+    @media screen and (max-width: 490px) {
+      padding: 0;
+    }
   }
 }

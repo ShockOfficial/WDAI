@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "title": "The Basics",
+    "shortDesc": "Core Angular basics you have to know",
+    "desc": "Angular is a platform and framework for building single-page client applications using HTML and TypeScript. Angular is written in TypeScript. It implements core and optional functionality as a set of TypeScript libraries that you import into your applications.Every Angular application has at least one component, the root component that connects a component hierarchy with the page document object model (DOM)."
+  },
+  {
+    "id": 1,
+    "title": "Components",
+    "shortDesc": "Components is intrinsic part of Angular",
+    "desc": "Every Angular application has at least one component, the root component that connects a component hierarchy with the page document object model (DOM). Each component defines a class that contains application data and logic, and is associated with an HTML template that defines a view to be displayed in a target environment."
+  },
+  {
+    "id": 2,
+    "title": "Services",
+    "shortDesc": "You don't have to always use data binding to pass the data",
+    "desc": "For data or logic that isn't associated with a specific view, and that you want to share across components, you create a service class. A service class definition is immediately preceded by the @Injectable() decorator. The decorator provides the metadata that allows other providers to be injected as dependencies into your class."
+  },
+  {
+    "id": 3,
+    "title": "Routing",
+    "shortDesc": "Thanks that you can change pages on your SPA",
+    "desc": "The Angular Router NgModule provides a service that lets you define a navigation path among the different application states and view hierarchies in your application.The router maps URL-like paths to views instead of pages. When a user performs an action, such as clicking a link, that would load a new page in the browser, the router intercepts the browser's behavior, and shows or hides view hierarchies."
+  },
+  {
+    "id": 4,
+    "title": "Handling events",
+    "shortDesc": "When the component or directive raises the event, the handler executes the template statement. The template statement performs an action in response to the event.",
+    "desc": "A common way to handle events is to pass the event object, $event, to the method handling the event. The $event object often contains information the method needs, such as a user's name or an image URL.The target event determines the shape of the $event object. If the target event is a native DOM element event, then $event is a DOM event object, with properties such as target and target.value."
+  }
+]

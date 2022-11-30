@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 :host {
   display: flex;
   justify-content: center;
@@ -6,11 +8,17 @@
   width: 90%;
   height: 100%;
   gap: 5rem;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+  }
 }
 
 .flex {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .w-100 {
@@ -18,5 +26,28 @@
 }
 
 .card {
-  width: clamp(15rem, 30rem, 35%);
+  background-color: #fff;
+  width: clamp(20rem, 25rem, 35%);
+}
+.box {
+  width: 100%;
+  padding: 2rem;
+  box-shadow: 2px 3px 1rem rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding-bottom: 4rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  &__bottom-box {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  &__header {
+    text-align: center;
+    color: $primary-color--300;
+    text-transform: uppercase;
+  }
 }

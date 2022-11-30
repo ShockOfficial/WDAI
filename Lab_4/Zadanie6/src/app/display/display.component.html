@@ -1,3 +1,11 @@
 <div class="display">
-  <h1 class="display__header display__disabled">Wybierz Temat</h1>
+  <h1
+    class="display__header"
+    [ngClass]="{ display__disabled: card === undefined }"
+  >
+    {{ getTitle() }}
+  </h1>
+  <p class="display__content" *ngIf="!!card">
+    {{ getContent() }}
+  </p>
 </div>

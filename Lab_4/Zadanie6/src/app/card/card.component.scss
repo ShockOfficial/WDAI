@@ -20,9 +20,13 @@
     color: #fff;
     border-radius: 1.5rem;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
     &:hover {
       transform: translateY(-3px) scaleX(1.02);
+    }
+    &:active {
+      transform: translateY(-1px);
+      opacity: 0.9;
     }
   }
 }

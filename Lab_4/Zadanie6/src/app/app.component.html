@@ -1,6 +1,12 @@
-<app-display class="w-100"></app-display>
-<app-card-box class="w-100 flex">
-  <app-card class="card"></app-card>
-  <app-card class="card"></app-card>
-  <app-card class="card"></app-card>
-</app-card-box>
+<app-display class="w-100" [card]="cardToDisplay"></app-display>
+<div class="box">
+  <h2 class="box__header">Dostępne tematy</h2>
+  <div class="box__bottom-box">
+    <app-card
+      class="card"
+      *ngFor="let card of cards"
+      [cardData]="card"
+      (buttonClicked)="displayHandler($event)"
+    ></app-card>
+  </div>
+</div>
