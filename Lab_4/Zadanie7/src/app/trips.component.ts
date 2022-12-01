@@ -1,5 +1,9 @@
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import tripsData from '../data/trips.json';
+import {
+	Currency,
+	CurrencyService,
+} from './currency-switcher/currency-service.service';
 
 export interface Trip {
 	id: number;
@@ -13,7 +17,7 @@ export interface Trip {
 	desc: string;
 	galleryUrl: string;
 	price: number;
-	currency: string;
+	currency: Currency;
 	isMostExpensive?: boolean;
 }
 
@@ -22,18 +26,21 @@ export interface Trip {
 	templateUrl: './trips.component.html',
 	styleUrls: ['./trips.component.scss'],
 })
-export class TripsComponent {
+export class TripsComponent implements OnInit {
 	title = 'Zadanie6';
 	trips: Trip[];
 
-	constructor() {
+	constructor(private currencyService: CurrencyService) {
 		this.trips = tripsData.map((trip) => ({
 			...trip,
 			startDate: new Date(trip.startDate),
 			endDate: new Date(trip.endDate),
+			currency: trip.currency as Currency, // I know that the data is correct at this point
 		}));
 		this.distinctSpecialTrips();
 	}
+
+	ngOnInit(): void {}
 
 	distinctSpecialTrips() {
 		this.trips.forEach((trip) => (trip.isMostExpensive = undefined));

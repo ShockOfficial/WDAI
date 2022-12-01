@@ -6,6 +6,7 @@ import {
 	OnInit,
 	Output,
 } from '@angular/core';
+import { CurrencyService } from '../currency-switcher/currency-service.service';
 import { Trip } from '../trips.component';
 
 @Component({
@@ -18,11 +19,16 @@ export class TripComponent implements OnInit {
 	@Output() distinctTripsHandler = new EventEmitter();
 	@Input() isMostExpensive?: boolean;
 	reservedAmount: number = 0;
-	constructor() {}
+	constructor(private currencyService: CurrencyService) {}
 
 	ngOnInit(): void {}
 
+	getCurrentCurrency() {
+		return this.currencyService.currenctCurrency;
+	}
+
 	onButtonClick(e: Event, isAdding: boolean) {
+		// TODO refactor maybe?
 		if (isAdding) {
 			this.reservedAmount++;
 			this.trip.currentAmount--;
@@ -31,7 +37,6 @@ export class TripComponent implements OnInit {
 			this.reservedAmount--;
 			this.distinctTripsHandler.emit();
 		}
-
 		if (
 			this.trip.currentAmount === 0 &&
 			this.trip.isMostExpensive !== undefined

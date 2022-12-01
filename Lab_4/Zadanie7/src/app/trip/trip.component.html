@@ -33,7 +33,7 @@
 			}}</span>
 		</div>
 		<div class="trip__box-item">
-			<p class="trip__item-name">Ilość miejsc:</p>
+			<p class="trip__item-name">Max Ilość miejsc:</p>
 			<span class="trip__item-content">{{ trip.totalAmount }}</span>
 		</div>
 		<div class="trip__box-item">
@@ -47,9 +47,9 @@
 		<div class="trip__box-item trip__box-item--center">
 			<p class="trip__item-name">cena:</p>
 			<span class="trip__item-content trip__item-content--price">{{
-				trip.price
-			}}</span>
-			<span class="trip__valut">{{ trip.currency }}</span>
+				trip.price | exchangeMoney : trip.currency : getCurrentCurrency()
+			}}</span
+			><span class="trip__valut">{{ getCurrentCurrency() }}</span>
 		</div>
 	</div>
 	<div class="trip__cta-box">
@@ -60,7 +60,7 @@
 		>
 			+
 		</button>
-		<div class="trip__quantity">{{ trip.currentAmount }}</div>
+		<p class="trip__quantity">Dostępnych: {{ trip.currentAmount }}</p>
 		<button
 			class="trip__btn"
 			[ngClass]="{ hidden: reservedAmount === 0 }"

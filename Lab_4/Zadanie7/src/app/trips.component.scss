@@ -1,8 +1,9 @@
 .trips {
 	display: grid;
 	grid-template-rows: 10rem 1fr;
-	grid-template-columns: min-content 1fr;
+	grid-template-columns: 20rem 1fr;
 	height: 100%;
+	background-color: #fdfdfd;
 }
 .nav {
 	grid-row: 1 /1;
