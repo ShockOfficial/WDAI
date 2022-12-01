@@ -7,6 +7,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { TripComponent } from './trip/trip.component';
 import { CurrencySwitcherComponent } from './currency-switcher/currency-switcher.component';
 import { ExchangeMoneyPipe } from './currency-switcher/exchange-money.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
 	declarations: [
@@ -17,7 +18,7 @@ import { ExchangeMoneyPipe } from './currency-switcher/exchange-money.pipe';
 		CurrencySwitcherComponent,
 		ExchangeMoneyPipe,
 	],
-	imports: [BrowserModule],
+	imports: [BrowserModule, BrowserAnimationsModule],
 	providers: [],
 	bootstrap: [TripsComponent],
 })
