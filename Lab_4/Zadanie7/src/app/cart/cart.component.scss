@@ -48,8 +48,19 @@
 
 	&__exit {
 		margin-left: auto;
+		width: min-content;
+		height: min-content;
 		cursor: pointer;
 		font-size: 2rem;
+		transition: opacity 0.2s, transform 0.2s, color 0.2s;
+		user-select: none;
+		&:active {
+			opacity: 0.5;
+		}
+		&:hover {
+			transform: rotate(90deg);
+			color: $primary-color;
+		}
 	}
 }
 

@@ -1,0 +1,84 @@
+@import '../shared.scss';
+
+.filters {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	&__item {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		flex-wrap: wrap;
+		padding: 2rem 0;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	&__item-name {
+		font-weight: bold;
+	}
+	&__top-box {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		margin-bottom: 1.5rem;
+	}
+	&__item-box {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+
+		&--column {
+			flex-direction: column;
+			align-items: start;
+			justify-content: start;
+			max-height: 15rem;
+			overflow-y: scroll;
+		}
+		&--mosaic {
+			flex-wrap: wrap;
+			justify-content: start;
+			gap: 0.5rem;
+			overflow-y: scroll;
+			max-height: 15rem;
+		}
+	}
+	&__span {
+		font-size: 1.4rem;
+		color: rgba(106, 106, 106, 0.733);
+	}
+	&__input {
+		width: 5rem;
+		&--date {
+			width: 5rem;
+		}
+	}
+	&__sort {
+		margin-left: auto;
+		text-transform: uppercase;
+		font-size: 1.2rem;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	&__list-item-name {
+		max-width: 90%;
+		background-color: $white-color;
+		border-radius: 3px;
+		box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+		padding: 1rem;
+		transition: background-color 0.2s, color 0.2s, transform 0.2s;
+		overflow-wrap: break-word;
+		cursor: pointer;
+		&:hover {
+			background-color: $primary-color;
+			color: #fff;
+		}
+	}
+}
+
+.active {
+	background-color: $primary-color;
+	color: #fff;
+	transform: translateY(-2px);
+}
+

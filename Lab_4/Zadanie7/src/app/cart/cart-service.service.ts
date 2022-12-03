@@ -4,14 +4,20 @@ import { Trip } from '../trips.component';
 @Injectable({
 	providedIn: 'root',
 })
-export class CartServiceService {
+export class CartService {
 	items: Trip[] = [];
-	lol = new EventEmitter();
+	onAddToCart = new EventEmitter();
+	onCartOpen = new EventEmitter();
+	isCartOpen: boolean = false;
 	constructor() {}
 
 	addToCart(item: Trip) {
 		this.items.push(item);
-		this.lol.emit();
+		this.onAddToCart.emit();
+	}
+
+	toggleCart(isVisible: boolean) {
+		this.isCartOpen = isVisible;
 	}
 
 	removeFromCart(item: Trip) {

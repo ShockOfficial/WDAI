@@ -7,7 +7,6 @@ export type Currency = 'PLN' | 'USD' | 'EUR';
 })
 export class CurrencyService {
 	currenctCurrency: Currency = 'PLN';
-	onCurrencyChange = new EventEmitter();
 	constructor() {}
 
 	changeCurrency(clickedCurrency: Currency) {

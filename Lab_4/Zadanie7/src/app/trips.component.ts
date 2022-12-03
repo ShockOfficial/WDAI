@@ -1,9 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import tripsData from '../data/trips.json';
-import {
-	Currency,
-	CurrencyService,
-} from './currency-switcher/currency-service.service';
+import { CartService } from './cart/cart-service.service';
+import { Currency } from './currency-switcher/currency-service.service';
 
 export interface Trip {
 	id: number;
@@ -32,7 +30,7 @@ export class TripsComponent implements OnInit {
 	trips: Trip[];
 	isAddingTrip: boolean = false;
 
-	constructor(private currencyService: CurrencyService) {
+	constructor(private cartService: CartService) {
 		this.trips = tripsData.map((trip) => ({
 			...trip,
 			startDate: new Date(trip.startDate),
@@ -69,6 +67,9 @@ export class TripsComponent implements OnInit {
 	}
 	handleFromButton() {
 		this.isAddingTrip = !this.isAddingTrip;
+	}
+	getCartState() {
+		return this.cartService.isCartOpen;
 	}
 }
 

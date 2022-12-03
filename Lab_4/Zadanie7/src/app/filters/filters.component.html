@@ -1,0 +1,176 @@
+<div class="filters">
+	<div class="filters__item">
+		<p class="filters__item-name">Cena</p>
+		<div class="filters__item-box">
+			<span class="filters__span">od</span>
+			<input type="number" class="filters__input" #priceFrom />
+			<span class="filters__span">do</span>
+			<input type="number" class="filters__input" #priceTo />
+		</div>
+	</div>
+	<div class="filters__item">
+		<p class="filters__item-name">Data</p>
+		<div class="filters__item-box">
+			<span class="filters__span">od</span>
+			<input
+				type="date"
+				class="filters__input filters__input--date"
+				#dateFrom
+			/>
+			<span class="filters__span">do</span>
+			<input type="date" class="filters__input filters__input--date" #dateTo />
+		</div>
+	</div>
+	<div class="filters__item">
+		<p class="filters__item-name">Oceny</p>
+		<div class="filters__item-box">
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+				data-rate="1"
+			>
+				1
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(2) }"
+				data-rate="2"
+			>
+				2
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(3) }"
+				data-rate="3"
+			>
+				3
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(4) }"
+				data-rate="4"
+			>
+				4
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(5) }"
+				data-rate="5"
+			>
+				5
+			</p>
+		</div>
+	</div>
+	<div class="filters__item">
+		<div class="filters__top-box">
+			<p class="filters__item-name">Lokalizacja</p>
+			<p class="filters__sort">sort</p>
+		</div>
+		<div class="filters__item-box filters__item-box--mosaic">
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+			>
+				Polska
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+			>
+				Polskaxx
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+			>
+				Polskaasdasd
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+			>
+				Polskaxxx
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+			>
+				Polskaasdashdasdhbassadasdasdas
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+			>
+				Polskaxx
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+			>
+				Polskaasdasd
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+			>
+				Polskaxxx
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+			>
+				Polskaxx
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+			>
+				Polskaasdasd
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+			>
+				Polskaxxx
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+			>
+				Polskaxx
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+			>
+				Polskaasdasd
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: selectedRates.includes(1) }"
+			>
+				Polskaxxx
+			</p>
+		</div>
+	</div>
+</div>
+

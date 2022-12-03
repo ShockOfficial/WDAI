@@ -13,6 +13,7 @@ import { CreateFormComponent } from './create-form/create-form.component';
 import { RatingStarComponent } from './rating-star/rating-star.component';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
+import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
 	declarations: [
@@ -26,6 +27,7 @@ import { CartItemComponent } from './cart-item/cart-item.component';
 		RatingStarComponent,
   CartComponent,
   CartItemComponent,
+  FiltersComponent,
 	],
 	imports: [BrowserModule, BrowserAnimationsModule, ReactiveFormsModule],
 	providers: [],

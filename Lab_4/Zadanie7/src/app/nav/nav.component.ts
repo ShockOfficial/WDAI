@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CartServiceService } from '../cart/cart-service.service';
+import { CartService } from '../cart/cart-service.service';
 
 @Component({
 	selector: 'app-nav',
@@ -8,15 +8,19 @@ import { CartServiceService } from '../cart/cart-service.service';
 })
 export class NavComponent implements OnInit {
 	isShaking = false;
-	constructor(private cartService: CartServiceService) {}
+	constructor(private cartService: CartService) {}
 	ngOnInit(): void {
-		this.cartService.lol.subscribe(() => {
+		this.cartService.onAddToCart.subscribe(() => {
 			this.isShaking = true;
 
 			setTimeout(() => {
 				this.isShaking = false;
 			}, 500);
 		});
+	}
+
+	onCartClick() {
+		this.cartService.toggleCart(true);
 	}
 
 	getCartItmesSize() {

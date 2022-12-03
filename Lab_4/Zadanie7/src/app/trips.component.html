@@ -1,7 +1,7 @@
 <div class="trips">
 	<app-nav class="nav"></app-nav>
 	<app-side-nav class="side-nav"></app-side-nav>
-	<app-cart class="cart"></app-cart>
+	<app-cart class="cart" *ngIf="getCartState()"></app-cart>
 	<div class="trip-list">
 		<div class="trips__btn-box">
 			<button

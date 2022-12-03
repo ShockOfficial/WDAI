@@ -13,7 +13,6 @@
 	border-radius: 8px;
 	box-sizing: border-box;
 	background-image: linear-gradient(-20deg, #e9defa 0%, #feffe3 100%);
-
 	&__box-top {
 		display: flex;
 		justify-content: center;
@@ -132,7 +131,7 @@
 }
 .out-of-stock {
 	position: relative;
-	background-image: linear-gradient(90deg, #d3cce3 0%, #e9e4f0 100%);
+	background-image: linear-gradient(90deg, #aaa5b4 0%, #d0d0d0 100%);
 	&::after {
 		content: 'Brak miejsc';
 		font-size: 4.2rem;

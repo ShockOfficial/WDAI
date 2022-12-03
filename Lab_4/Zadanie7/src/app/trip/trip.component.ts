@@ -6,7 +6,7 @@ import {
 	OnInit,
 	Output,
 } from '@angular/core';
-import { CartServiceService } from '../cart/cart-service.service';
+import { CartService } from '../cart/cart-service.service';
 import { CurrencyService } from '../currency-switcher/currency-service.service';
 import { Trip } from '../trips.component';
 
@@ -24,7 +24,7 @@ export class TripComponent implements OnInit {
 	stars = [1, 2, 3, 4, 5];
 	constructor(
 		private currencyService: CurrencyService,
-		private cartService: CartServiceService,
+		private cartService: CartService,
 	) {}
 
 	ngOnInit(): void {}
