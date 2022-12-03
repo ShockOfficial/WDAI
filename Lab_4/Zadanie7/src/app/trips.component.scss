@@ -1,5 +1,6 @@
 @import './shared.scss';
 .trips {
+	position: relative;
 	display: grid;
 	grid-template-rows: 10rem 1fr;
 	grid-template-columns: 20rem 1fr;
@@ -40,7 +41,17 @@
 	width: 70%;
 	padding: 2rem;
 	border-radius: 8px;
-	box-shadow: 1px 3px 1rem rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 3px 1rem rgba(0, 0, 0, 0.5);
+}
+.cart {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	z-index: 2;
 }
 
 :host {

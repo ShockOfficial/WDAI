@@ -1,4 +1,11 @@
 @import './variables.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 .btn {
 	border: none;
 	border-radius: 5px;

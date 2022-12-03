@@ -1,0 +1,46 @@
+@import '../shared.scss';
+
+.cart {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 100vh;
+	background-color: rgba(0, 0, 0, 0.389);
+	backdrop-filter: blur(5px);
+
+	&__box {
+		width: 90%;
+		box-sizing: border-box;
+		padding: 3rem;
+		border-radius: 5px;
+		background-color: $white-color;
+		max-height: 80vh;
+		overflow: scroll;
+	}
+	&__title {
+		font-size: 3rem;
+		font-weight: bold;
+		color: $primary-color;
+		margin-bottom: 3rem;
+	}
+	&__bottom-box {
+		display: flex;
+		gap: 1rem;
+		padding: 3rem;
+		background-color: $primary-color;
+		border-radius: 0 0 3px 3px;
+		color: #fff;
+	}
+	&__text {
+		text-transform: uppercase;
+	}
+	&__price {
+		margin-left: auto;
+		font-weight: bold;
+	}
+	&__currency {
+		font-weight: bold;
+	}
+}
+

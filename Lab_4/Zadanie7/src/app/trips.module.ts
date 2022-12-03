@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateFormComponent } from './create-form/create-form.component';
 import { RatingStarComponent } from './rating-star/rating-star.component';
+import { CartComponent } from './cart/cart.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
 
 @NgModule({
 	declarations: [
@@ -22,6 +24,8 @@ import { RatingStarComponent } from './rating-star/rating-star.component';
 		ExchangeMoneyPipe,
 		CreateFormComponent,
 		RatingStarComponent,
+  CartComponent,
+  CartItemComponent,
 	],
 	imports: [BrowserModule, BrowserAnimationsModule, ReactiveFormsModule],
 	providers: [],

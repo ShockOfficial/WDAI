@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { Trip } from './trips.component';
+import { Trip } from '../trips.component';
 
 @Injectable({
 	providedIn: 'root',

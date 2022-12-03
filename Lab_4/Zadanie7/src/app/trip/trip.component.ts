@@ -6,7 +6,7 @@ import {
 	OnInit,
 	Output,
 } from '@angular/core';
-import { CartServiceService } from '../cart-service.service';
+import { CartServiceService } from '../cart/cart-service.service';
 import { CurrencyService } from '../currency-switcher/currency-service.service';
 import { Trip } from '../trips.component';
 
