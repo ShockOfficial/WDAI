@@ -42,5 +42,14 @@
 	&__currency {
 		font-weight: bold;
 	}
+	&__top-box {
+		display: flex;
+	}
+
+	&__exit {
+		margin-left: auto;
+		cursor: pointer;
+		font-size: 2rem;
+	}
 }
 
