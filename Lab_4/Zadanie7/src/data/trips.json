@@ -11,11 +11,12 @@
 		"desc": "Niesamowita wycieczka w góry",
 		"galleryUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Tatry_widok_z_Tarasowek.jpg",
 		"price": 2000,
-		"currency": "PLN"
+		"currency": "PLN",
+		"rate": 0
 	},
 	{
 		"id": 1,
-		"title": "Morze",
+		"title": "Morze ci pomoże",
 		"dest": "Gdańsk",
 		"country": "Polska",
 		"startDate": "11/12/2022",
@@ -25,7 +26,8 @@
 		"desc": "Poznaj polskie morze",
 		"galleryUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Pla%C5%BCa_Brze%C5%BAno.jpg/1920px-Pla%C5%BCa_Brze%C5%BAno.jpg",
 		"price": 10000,
-		"currency": "PLN"
+		"currency": "PLN",
+		"rate": 0
 	},
 	{
 		"id": 2,
@@ -39,7 +41,8 @@
 		"desc": "Zobacz obecną stolicę",
 		"galleryUrl": "https://media.zielonamapa.pl/images/europa/polska/warszawa/warszawa-6.jpg",
 		"price": 5299,
-		"currency": "PLN"
+		"currency": "PLN",
+		"rate": 0
 	},
 	{
 		"id": 3,
@@ -53,7 +56,8 @@
 		"desc": "Zobacz poprzednią stolicę",
 		"galleryUrl": "https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcQcAZnojanARDmDVndmnubAd6jIWvXo-t2fkiGhsNg1zEC_7G4NBvbCIIPdmoyupfCP",
 		"price": 1299,
-		"currency": "PLN"
+		"currency": "PLN",
+		"rate": 0
 	},
 	{
 		"id": 4,
@@ -67,7 +71,8 @@
 		"desc": "Zobacz poprzednią stolicę",
 		"galleryUrl": "https://szlakpiastowski.pl/images/katedragniezno.jpg",
 		"price": 499,
-		"currency": "PLN"
+		"currency": "PLN",
+		"rate": 0
 	},
 	{
 		"id": 5,
@@ -81,7 +86,8 @@
 		"desc": "Przekonaj się czym jest American Dream",
 		"galleryUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg/1920px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg",
 		"price": 21829,
-		"currency": "PLN"
+		"currency": "PLN",
+		"rate": 0
 	},
 	{
 		"id": 6,
@@ -95,7 +101,8 @@
 		"desc": "Zobacz na własne oczy piękno Dubaju",
 		"galleryUrl": "https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTnavcE0R1cW9vbZSJU9A_92W41dYEqmnQRVz51osw9lq-dYLXMRz2uqIIL1LrWzvQN",
 		"price": 13999,
-		"currency": "PLN"
+		"currency": "PLN",
+		"rate": 0
 	},
 	{
 		"id": 7,
@@ -109,7 +116,8 @@
 		"desc": "Poznaj naszego sąsiada",
 		"galleryUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Brandenburger_Tor_abends.jpg",
 		"price": 3999,
-		"currency": "PLN"
+		"currency": "PLN",
+		"rate": 0
 	},
 	{
 		"id": 8,
@@ -123,7 +131,8 @@
 		"desc": "Poznaj naszego sąsiada",
 		"galleryUrl": "https://ocdn.eu/pulscms-transforms/1/pCek9kpTURBXy8xY2ZlNDE3ZjQwN2NmYzE2NjZhN2RkNDk4NWMwNjc5Ni5qcGeTlQMAzJDNEfjNChuTBc0DFM0BvJMJpmMyMzUxMgbeAAGhMAU/czechy-ciekawostki-dla-podroznych.webp",
 		"price": 3999,
-		"currency": "PLN"
+		"currency": "PLN",
+		"rate": 0
 	},
 	{
 		"id": 9,
@@ -137,7 +146,8 @@
 		"desc": "Odpocznij i się opal",
 		"galleryUrl": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/156000/156102-Trulli-Bari-Province.jpg?impolicy=fcrop&w=1040&h=580&q=mediumHigh",
 		"price": 4599,
-		"currency": "PLN"
+		"currency": "PLN",
+		"rate": 0
 	}
 ]
 

@@ -1,0 +1,16 @@
+.star {
+	&__icon {
+		width: 2rem;
+		height: 2rem;
+		fill: none;
+		stroke: gold;
+		stroke-width: 2;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+
+		&--filed {
+			fill: gold;
+		}
+	}
+}
+

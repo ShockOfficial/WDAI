@@ -2,12 +2,28 @@
 	<app-nav class="nav"></app-nav>
 	<app-side-nav class="side-nav"></app-side-nav>
 	<div class="trip-list">
+		<div class="trips__btn-box">
+			<button
+				class="trips__btn btn btn--big btn--primary"
+				*ngIf="!isAddingTrip; else form"
+				(click)="handleFromButton()"
+			>
+				Dodaj wycieczkę
+			</button>
+		</div>
+		<ng-template #form>
+			<app-create-form
+				class="form"
+				(onSubmit)="addTrip($event)"
+			></app-create-form>
+		</ng-template>
 		<app-trip
 			class="trip-item"
 			*ngFor="let trip of trips"
 			[trip]="trip"
 			[isMostExpensive]="trip.isMostExpensive"
 			(distinctTripsHandler)="distinctSpecialTrips()"
+			(onRemoveTrip)="removeTrip($event)"
 		></app-trip>
 	</div>
 </div>

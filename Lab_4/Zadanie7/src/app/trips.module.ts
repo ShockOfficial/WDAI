@@ -8,6 +8,9 @@ import { TripComponent } from './trip/trip.component';
 import { CurrencySwitcherComponent } from './currency-switcher/currency-switcher.component';
 import { ExchangeMoneyPipe } from './currency-switcher/exchange-money.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CreateFormComponent } from './create-form/create-form.component';
+import { RatingStarComponent } from './rating-star/rating-star.component';
 
 @NgModule({
 	declarations: [
@@ -17,8 +20,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 		TripComponent,
 		CurrencySwitcherComponent,
 		ExchangeMoneyPipe,
+		CreateFormComponent,
+		RatingStarComponent,
 	],
-	imports: [BrowserModule, BrowserAnimationsModule],
+	imports: [BrowserModule, BrowserAnimationsModule, ReactiveFormsModule],
 	providers: [],
 	bootstrap: [TripsComponent],
 })

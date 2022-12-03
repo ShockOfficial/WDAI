@@ -18,8 +18,11 @@ import { Trip } from '../trips.component';
 export class TripComponent implements OnInit {
 	@Input() trip: Trip;
 	@Output() distinctTripsHandler = new EventEmitter();
+	@Output() onRemoveTrip = new EventEmitter<Trip>();
 	@Input() isMostExpensive?: boolean;
 	reservedAmount: number = 0;
+	rate: number = 0;
+	stars = [1, 2, 3, 4, 5];
 	constructor(
 		private currencyService: CurrencyService,
 		private cartService: CartServiceService,
@@ -51,6 +54,15 @@ export class TripComponent implements OnInit {
 			this.isMostExpensive = undefined;
 			this.distinctTripsHandler.emit();
 		}
+	}
+
+	onRemoveClick() {
+		this.onRemoveTrip.emit(this.trip);
+		this.distinctTripsHandler.emit();
+	}
+
+	rateTrip(rate: number) {
+		this.rate = rate;
 	}
 }
 

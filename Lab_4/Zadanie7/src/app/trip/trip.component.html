@@ -54,7 +54,7 @@
 	</div>
 	<div class="trip__cta-box">
 		<button
-			class="trip__btn"
+			class="btn"
 			[ngClass]="{ hidden: trip.currentAmount === 0 }"
 			(click)="onButtonClick($event, true)"
 		>
@@ -62,12 +62,23 @@
 		</button>
 		<p class="trip__quantity">Dostępnych: {{ trip.currentAmount }}</p>
 		<button
-			class="trip__btn"
+			class="btn"
 			[ngClass]="{ hidden: reservedAmount === 0 }"
 			(click)="onButtonClick($event, false)"
 		>
 			-
 		</button>
 	</div>
+	<div class="trip__star-box">
+		<app-rating-star
+			[value]="index + 1"
+			[pickedValue]="rate"
+			(onStarClick)="rateTrip($event)"
+			*ngFor="let star of stars; let index"
+		></app-rating-star>
+	</div>
+	<button class="trip__btn btn btn--big btn--primary" (click)="onRemoveClick()">
+		Usuń
+	</button>
 </div>
 

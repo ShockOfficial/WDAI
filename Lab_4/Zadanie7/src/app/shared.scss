@@ -1,0 +1,36 @@
+@import './variables.scss';
+.btn {
+	border: none;
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+	background-color: $white-color;
+	padding: 0.5rem 1rem;
+	font-weight: bold;
+	cursor: pointer;
+	transition: transform 0.2s;
+
+	&:hover {
+		transform: translateY(-2px);
+	}
+	&:active {
+		transform: translateY(-1px);
+	}
+
+	&--big {
+		text-transform: uppercase;
+		font-size: 1.4rem;
+		padding: 1rem 2rem;
+	}
+	&--primary {
+		background-color: $primary-color--500;
+		color: #fff;
+	}
+	&:disabled {
+		background-color: $primary-color--300;
+
+		&:hover {
+			transform: none;
+		}
+	}
+}
+

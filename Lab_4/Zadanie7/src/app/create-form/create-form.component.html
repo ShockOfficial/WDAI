@@ -1,0 +1,107 @@
+<form class="form" [formGroup]="tripForm" (ngSubmit)="onSubmitHandler()">
+	<div class="form__item">
+		<label class="form__label">Nazwa wycieczki</label>
+		<input type="text" class="form__input" formControlName="tripName" />
+	</div>
+	<span
+		class="form__error"
+		*ngIf="
+			!tripForm.get('tripName')?.valid && tripForm.get('tripName')?.touched
+		"
+		>Wpisz prawidłową nazwę wycieczki!</span
+	>
+	<div class="form__item">
+		<label class="form__label">Kraj startowy</label>
+		<input type="text" class="form__input" formControlName="countryName" />
+	</div>
+	<span
+		class="form__error"
+		*ngIf="
+			!tripForm.get('countryName')?.valid &&
+			tripForm.get('countryName')?.touched
+		"
+		>Wpisz prawidłowy kraj początku wycieczki!</span
+	>
+	<div class="form__item">
+		<label class="form__label">Kraj wycieczki</label>
+		<input type="text" class="form__input" formControlName="destCountry" />
+	</div>
+	<span
+		class="form__error"
+		*ngIf="
+			!tripForm.get('destCountry')?.valid &&
+			tripForm.get('destCountry')?.touched
+		"
+		>Wpisz prawidłowy kraj wycieczki!</span
+	>
+	<div class="form__item">
+		<label class="form__label">Data startowa</label>
+		<input type="date" class="form__input" formControlName="startDate" />
+	</div>
+	<span
+		class="form__error"
+		*ngIf="
+			!tripForm.get('startDate')?.valid && tripForm.get('startDate')?.touched
+		"
+		>Wybierz prawidłową datę rozpoczęcia!</span
+	>
+	<div class="form__item">
+		<label class="form__label">Data końcowa</label>
+		<input type="date" class="form__input" formControlName="endDate" />
+	</div>
+	<span
+		class="form__error"
+		*ngIf="!tripForm.get('endDate')?.valid && tripForm.get('endDate')?.touched"
+		>Wybierz prawidłową datę zakończenia!</span
+	>
+	<div class="form__item">
+		<label class="form__label">Max ilość miejsc</label>
+		<input type="number" class="form__input" formControlName="totalAmount" />
+	</div>
+	<span
+		class="form__error"
+		*ngIf="
+			!tripForm.get('totalAmount')?.valid &&
+			tripForm.get('totalAmount')?.touched
+		"
+		>Wpisz prawidłową ilość miejsc!</span
+	>
+	<div class="form__item">
+		<label class="form__label">Krótki opis </label>
+		<input type="text" class="form__input" formControlName="description" />
+	</div>
+	<span
+		class="form__error"
+		*ngIf="
+			!tripForm.get('description')?.valid &&
+			tripForm.get('description')?.touched
+		"
+		>Wpisz prawidłowy opis!</span
+	>
+	<div class="form__item">
+		<label class="form__label">URL do zdjęcia</label>
+		<input type="text" class="form__input" formControlName="imgUrl" />
+	</div>
+	<span
+		class="form__error"
+		*ngIf="!tripForm.get('imgUrl')?.valid && tripForm.get('imgUrl')?.touched"
+		>Podaj poprawny adres URL!</span
+	>
+	<div class="form__item">
+		<label class="form__label">cena</label>
+		<input type="number" class="form__input" formControlName="price" />
+	</div>
+	<span
+		class="form__error"
+		*ngIf="!tripForm.get('price')?.valid && tripForm.get('price')?.touched"
+		>Podaj poprawną cenę!</span
+	>
+	<button
+		type="submit"
+		class="form__btn btn btn--primary btn--big"
+		[disabled]="!tripForm.valid"
+	>
+		Stwórz
+	</button>
+</form>
+

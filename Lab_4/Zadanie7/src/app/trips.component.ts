@@ -19,6 +19,7 @@ export interface Trip {
 	price: number;
 	currency: Currency;
 	isMostExpensive?: boolean;
+	rate: number;
 }
 
 @Component({
@@ -29,6 +30,7 @@ export interface Trip {
 export class TripsComponent implements OnInit {
 	title = 'Zadanie6';
 	trips: Trip[];
+	isAddingTrip: boolean = false;
 
 	constructor(private currencyService: CurrencyService) {
 		this.trips = tripsData.map((trip) => ({
@@ -56,6 +58,17 @@ export class TripsComponent implements OnInit {
 		);
 		mostExpensiveTrip.isMostExpensive = true;
 		cheapestTrip.isMostExpensive = false;
+	}
+
+	addTrip(trip: Trip) {
+		this.trips.push(trip);
+		this.isAddingTrip = false;
+	}
+	removeTrip(trip: Trip) {
+		this.trips = this.trips.filter((tripItem) => tripItem !== trip);
+	}
+	handleFromButton() {
+		this.isAddingTrip = !this.isAddingTrip;
 	}
 }
 

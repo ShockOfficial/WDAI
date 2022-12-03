@@ -1,9 +1,20 @@
+@import './shared.scss';
 .trips {
 	display: grid;
 	grid-template-rows: 10rem 1fr;
 	grid-template-columns: 20rem 1fr;
 	height: 100%;
 	background-color: #fdfdfd;
+
+	&__btn {
+		padding: 2rem 3rem;
+	}
+	&__btn-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
 }
 .nav {
 	grid-row: 1 /1;
@@ -24,6 +35,12 @@
 .trip-item {
 	display: inline-block;
 	width: min-content;
+}
+.form {
+	width: 70%;
+	padding: 2rem;
+	border-radius: 8px;
+	box-shadow: 1px 3px 1rem rgba(0, 0, 0, 0.3);
 }
 
 :host {

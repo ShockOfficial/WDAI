@@ -16,9 +16,7 @@ export class CartServiceService {
 
 	removeFromCart(item: Trip) {
 		const index = this.items.indexOf(item);
-		this.items = this.items
-			.splice(0, index)
-			.concat(this.items.splice(index + 1));
+		this.items = this.items.slice(0, index).concat(this.items.slice(index + 1));
 	}
 }
 
