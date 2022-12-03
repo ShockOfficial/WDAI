@@ -72,7 +72,7 @@
 	<div class="trip__star-box">
 		<app-rating-star
 			[value]="index + 1"
-			[pickedValue]="rate"
+			[pickedValue]="trip.rate"
 			(onStarClick)="rateTrip($event)"
 			*ngFor="let star of stars; let index"
 		></app-rating-star>

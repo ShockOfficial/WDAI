@@ -21,7 +21,6 @@ export class TripComponent implements OnInit {
 	@Output() onRemoveTrip = new EventEmitter<Trip>();
 	@Input() isMostExpensive?: boolean;
 	reservedAmount: number = 0;
-	rate: number = 0;
 	stars = [1, 2, 3, 4, 5];
 	constructor(
 		private currencyService: CurrencyService,
@@ -62,7 +61,7 @@ export class TripComponent implements OnInit {
 	}
 
 	rateTrip(rate: number) {
-		this.rate = rate;
+		this.trip.rate = rate;
 	}
 }
 

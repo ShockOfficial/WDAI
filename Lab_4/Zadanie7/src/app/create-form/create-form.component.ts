@@ -66,8 +66,7 @@ export class CreateFormComponent implements OnInit {
 			price,
 			destCountry,
 		} = this.tripForm.value;
-		console.log(startDate);
-		console.log(endDate);
+
 		this.onSubmit.emit({
 			id: Date.now(),
 			title: tripName,
