@@ -7,6 +7,11 @@
 	height: 100%;
 	background-color: #fdfdfd;
 
+	@media screen and (max-width: 550px) {
+		grid-template-rows: 10rem min-content 4fr;
+		grid-template-columns: 1fr;
+	}
+
 	&__btn {
 		padding: 2rem 3rem;
 	}
@@ -23,6 +28,10 @@
 }
 .side_nav {
 	grid-row: 2 / -1;
+	@media screen and (max-width: 550px) {
+		grid-row: 2 / 3;
+		grid-column: 1 / -1;
+	}
 }
 .trip-list {
 	display: flex;
@@ -32,6 +41,10 @@
 	padding: 2rem;
 	grid-row: 2/ -1;
 	grid-column: 2/ -1;
+	@media screen and (max-width: 550px) {
+		grid-row: 3/ -1;
+		grid-column: 1 / -1;
+	}
 }
 .trip-item {
 	display: inline-block;

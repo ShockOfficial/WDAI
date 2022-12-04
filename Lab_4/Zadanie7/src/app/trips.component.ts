@@ -73,7 +73,6 @@ export class TripsComponent implements OnInit {
 		this.trips.push(trip);
 		this.isAddingTrip = false;
 		this.filtersService.notify.emit();
-		// TODO Refresh inputs after adding trip
 	}
 	removeTrip(trip: Trip) {
 		this.trips = this.trips.filter((tripItem) => tripItem !== trip);

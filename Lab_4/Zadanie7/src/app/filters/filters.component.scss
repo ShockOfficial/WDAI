@@ -4,6 +4,7 @@
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
+
 	&__item {
 		display: flex;
 		justify-content: center;
@@ -27,12 +28,22 @@
 		align-items: center;
 		justify-content: space-evenly;
 
+		@media screen and (max-width: 550px) {
+			width: 100%;
+			justify-content: center;
+			gap: 2rem;
+		}
+
 		&--column {
 			flex-direction: column;
 			align-items: start;
 			justify-content: start;
 			max-height: 15rem;
 			overflow-y: scroll;
+
+			@media screen and (max-width: 550px) {
+				width: 100%;
+			}
 		}
 		&--mosaic {
 			flex-wrap: wrap;
