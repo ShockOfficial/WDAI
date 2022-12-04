@@ -8,12 +8,16 @@ import { TripComponent } from './trip/trip.component';
 import { CurrencySwitcherComponent } from './currency-switcher/currency-switcher.component';
 import { ExchangeMoneyPipe } from './currency-switcher/exchange-money.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateFormComponent } from './create-form/create-form.component';
 import { RatingStarComponent } from './rating-star/rating-star.component';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { FiltersComponent } from './filters/filters.component';
+import { RateFilterPipe } from './rate-filter.pipe';
+import { LocationFilterPipe } from './location-filter.pipe';
+import { PriceFilterPipe } from './price-filter.pipe';
+import { DateFilterPipe } from './date-filter.pipe';
 
 @NgModule({
 	declarations: [
@@ -25,11 +29,20 @@ import { FiltersComponent } from './filters/filters.component';
 		ExchangeMoneyPipe,
 		CreateFormComponent,
 		RatingStarComponent,
-  CartComponent,
-  CartItemComponent,
-  FiltersComponent,
+		CartComponent,
+		CartItemComponent,
+		FiltersComponent,
+		RateFilterPipe,
+		LocationFilterPipe,
+  PriceFilterPipe,
+  DateFilterPipe,
 	],
-	imports: [BrowserModule, BrowserAnimationsModule, ReactiveFormsModule],
+	imports: [
+		BrowserModule,
+		BrowserAnimationsModule,
+		ReactiveFormsModule,
+		FormsModule,
+	],
 	providers: [],
 	bootstrap: [TripsComponent],
 })

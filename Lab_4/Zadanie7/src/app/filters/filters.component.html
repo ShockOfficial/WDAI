@@ -1,33 +1,59 @@
 <div class="filters">
 	<div class="filters__item">
-		<p class="filters__item-name">Cena</p>
+		<div class="filters__top-box">
+			<p class="filters__item-name">Cena</p>
+		</div>
 		<div class="filters__item-box">
 			<span class="filters__span">od</span>
-			<input type="number" class="filters__input" #priceFrom />
+			<input
+				type="number"
+				class="filters__input"
+				#priceFrom
+				[(ngModel)]="priceFromValue"
+				(ngModelChange)="handlePriceFromInput($event)"
+			/>
 			<span class="filters__span">do</span>
-			<input type="number" class="filters__input" #priceTo />
+			<input
+				type="number"
+				class="filters__input"
+				#priceTo
+				[(ngModel)]="priceToValue"
+				(ngModelChange)="handlePriceToInput($event)"
+			/>
 		</div>
 	</div>
 	<div class="filters__item">
-		<p class="filters__item-name">Data</p>
+		<div class="filters__top-box">
+			<p class="filters__item-name">Data</p>
+		</div>
 		<div class="filters__item-box">
 			<span class="filters__span">od</span>
 			<input
 				type="date"
 				class="filters__input filters__input--date"
+				[(ngModel)]="dateFromValue"
+				(ngModelChange)="handleDateFromInput($event)"
 				#dateFrom
 			/>
 			<span class="filters__span">do</span>
-			<input type="date" class="filters__input filters__input--date" #dateTo />
+			<input
+				type="date"
+				class="filters__input filters__input--date"
+				#dateTo
+				(ngModelChange)="handleDateToInput($event)"
+				[(ngModel)]="dateToValue"
+			/>
 		</div>
 	</div>
 	<div class="filters__item">
-		<p class="filters__item-name">Oceny</p>
+		<div class="filters__top-box">
+			<p class="filters__item-name">Oceny</p>
+		</div>
 		<div class="filters__item-box">
 			<p
 				class="filters__list-item-name"
 				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
+				[ngClass]="{ active: isRateSelected(1) }"
 				data-rate="1"
 			>
 				1
@@ -35,7 +61,7 @@
 			<p
 				class="filters__list-item-name"
 				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(2) }"
+				[ngClass]="{ active: isRateSelected(2) }"
 				data-rate="2"
 			>
 				2
@@ -43,7 +69,7 @@
 			<p
 				class="filters__list-item-name"
 				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(3) }"
+				[ngClass]="{ active: isRateSelected(3) }"
 				data-rate="3"
 			>
 				3
@@ -51,7 +77,7 @@
 			<p
 				class="filters__list-item-name"
 				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(4) }"
+				[ngClass]="{ active: isRateSelected(4) }"
 				data-rate="4"
 			>
 				4
@@ -59,7 +85,7 @@
 			<p
 				class="filters__list-item-name"
 				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(5) }"
+				[ngClass]="{ active: isRateSelected(5) }"
 				data-rate="5"
 			>
 				5
@@ -75,102 +101,16 @@
 			<p
 				class="filters__list-item-name"
 				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
+				*ngFor="let destLocation of getTripDest()"
+				[ngClass]="{ active: isLocationSelected(destLocation) }"
+				[id]="destLocation"
 			>
-				Polska
-			</p>
-			<p
-				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
-			>
-				Polskaxx
-			</p>
-			<p
-				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
-			>
-				Polskaasdasd
-			</p>
-			<p
-				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
-			>
-				Polskaxxx
-			</p>
-			<p
-				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
-			>
-				Polskaasdashdasdhbassadasdasdas
-			</p>
-			<p
-				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
-			>
-				Polskaxx
-			</p>
-			<p
-				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
-			>
-				Polskaasdasd
-			</p>
-			<p
-				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
-			>
-				Polskaxxx
-			</p>
-			<p
-				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
-			>
-				Polskaxx
-			</p>
-			<p
-				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
-			>
-				Polskaasdasd
-			</p>
-			<p
-				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
-			>
-				Polskaxxx
-			</p>
-			<p
-				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
-			>
-				Polskaxx
-			</p>
-			<p
-				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
-			>
-				Polskaasdasd
-			</p>
-			<p
-				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
-				[ngClass]="{ active: selectedRates.includes(1) }"
-			>
-				Polskaxxx
+				{{ destLocation }}
 			</p>
 		</div>
+	</div>
+	<div class="filters__item">
+		<button class="filters__btn btn btn--primary">Reset</button>
 	</div>
 </div>
 

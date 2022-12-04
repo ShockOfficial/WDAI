@@ -2,6 +2,7 @@ import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import tripsData from '../data/trips.json';
 import { CartService } from './cart/cart-service.service';
 import { Currency } from './currency-switcher/currency-service.service';
+import { FiltersService } from './filters/filters.service';
 
 export interface Trip {
 	id: number;
@@ -30,7 +31,10 @@ export class TripsComponent implements OnInit {
 	trips: Trip[];
 	isAddingTrip: boolean = false;
 
-	constructor(private cartService: CartService) {
+	constructor(
+		private cartService: CartService,
+		private filtersService: FiltersService,
+	) {
 		this.trips = tripsData.map((trip) => ({
 			...trip,
 			startDate: new Date(trip.startDate),
@@ -40,7 +44,14 @@ export class TripsComponent implements OnInit {
 		this.distinctSpecialTrips();
 	}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.filtersService.notify.subscribe(() => {
+			this.trips = [...this.trips];
+		});
+		this.filtersService.fetchTrips.subscribe(() => {
+			this.filtersService.trips = this.trips;
+		});
+	}
 
 	distinctSpecialTrips() {
 		this.trips.forEach((trip) => (trip.isMostExpensive = undefined));
@@ -61,6 +72,8 @@ export class TripsComponent implements OnInit {
 	addTrip(trip: Trip) {
 		this.trips.push(trip);
 		this.isAddingTrip = false;
+		this.filtersService.notify.emit();
+		// TODO Refresh inputs after adding trip
 	}
 	removeTrip(trip: Trip) {
 		this.trips = this.trips.filter((tripItem) => tripItem !== trip);

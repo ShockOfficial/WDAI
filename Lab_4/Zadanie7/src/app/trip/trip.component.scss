@@ -119,8 +119,6 @@
 	position: relative;
 	background-image: linear-gradient(90deg, #ffb347 0%, #ffcc33 100%);
 	&::after {
-		position: absolute;
-		top: 15.5rem;
 		content: 'Ostatnie miejsca';
 		text-transform: uppercase;
 		font-size: 1.8rem;

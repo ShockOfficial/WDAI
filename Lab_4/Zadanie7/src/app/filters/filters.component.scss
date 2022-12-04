@@ -19,7 +19,7 @@
 		width: 100%;
 		display: flex;
 		align-items: center;
-		margin-bottom: 1.5rem;
+		padding-bottom: 1rem;
 	}
 	&__item-box {
 		width: 100%;
@@ -47,7 +47,7 @@
 		color: rgba(106, 106, 106, 0.733);
 	}
 	&__input {
-		width: 5rem;
+		width: 7rem;
 		&--date {
 			width: 5rem;
 		}
@@ -73,6 +73,9 @@
 			background-color: $primary-color;
 			color: #fff;
 		}
+	}
+	&__btn {
+		margin-bottom: 1rem;
 	}
 }
 

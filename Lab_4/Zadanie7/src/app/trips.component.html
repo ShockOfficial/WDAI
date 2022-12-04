@@ -20,7 +20,13 @@
 		</ng-template>
 		<app-trip
 			class="trip-item"
-			*ngFor="let trip of trips"
+			*ngFor="
+				let trip of trips
+					| rateFilter
+					| locationFilter
+					| priceFilter
+					| dateFilter
+			"
 			[trip]="trip"
 			[isMostExpensive]="trip.isMostExpensive"
 			(distinctTripsHandler)="distinctSpecialTrips()"
