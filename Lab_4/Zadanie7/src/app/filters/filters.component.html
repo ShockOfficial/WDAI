@@ -95,13 +95,13 @@
 	<div class="filters__item">
 		<div class="filters__top-box">
 			<p class="filters__item-name">Lokalizacja</p>
-			<p class="filters__sort">sort</p>
+			<p class="filters__sort" (click)="sortLocations()">sort</p>
 		</div>
 		<div class="filters__item-box filters__item-box--mosaic">
 			<p
 				class="filters__list-item-name"
 				(click)="clickHanlder($event)"
-				*ngFor="let destLocation of getTripDest()"
+				*ngFor="let destLocation of locations"
 				[ngClass]="{ active: isLocationSelected(destLocation) }"
 				[id]="destLocation"
 			>
@@ -110,7 +110,9 @@
 		</div>
 	</div>
 	<div class="filters__item">
-		<button class="filters__btn btn btn--primary">Reset</button>
+		<button class="filters__btn btn btn--primary" (click)="resetFilters()">
+			Reset
+		</button>
 	</div>
 </div>
 

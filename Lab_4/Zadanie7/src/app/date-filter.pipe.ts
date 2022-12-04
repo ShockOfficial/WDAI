@@ -15,7 +15,9 @@ export class DateFilterPipe implements PipeTransform {
 		const dateTo = this.filtersService.getFilters(FilterType.dateTo) as Date;
 
 		if (!value) return [];
-		if (dateFrom === new Date('01/01/1' || dateTo === new Date('01/01/99999')))
+		if (
+			dateFrom === new Date('01/01/1410' || dateTo === new Date('01/01/99999'))
+		)
 			return value;
 
 		return value.filter(

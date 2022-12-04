@@ -98,5 +98,16 @@ export class FiltersService {
 		this.fetchTrips.emit();
 		return this.trips;
 	}
+	reset() {
+		this.currentFilters = {
+			localization: [],
+			rates: [],
+			dateFrom: new Date('01/01/1'),
+			dateTo: new Date('01/01/99999'),
+			priceFrom: 0,
+			priceTo: Number.MAX_VALUE,
+		};
+		this.notify.emit();
+	}
 }
 

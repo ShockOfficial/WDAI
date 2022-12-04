@@ -27,13 +27,13 @@ import { FiltersService, FilterType } from './filters.service';
 export class FiltersComponent implements OnInit {
 	@ViewChild('priceFrom', { static: true }) priceFromInput: ElementRef;
 	@ViewChild('priceTo', { static: true }) priceToInput: ElementRef;
-	@ViewChild('dateFrom', { static: true }) dateFromInput: ElementRef;
-	@ViewChild('dateTo', { static: true }) dateToInput: ElementRef;
 	priceFromValue: number;
 	priceToValue: number;
 	dateFromValue: string;
 	dateToValue: string;
 	isPriceFilterSet: boolean;
+	locations: string[];
+	isSorted = false;
 	constructor(
 		private filtersService: FiltersService,
 		private locationPipe: LocationFilterPipe,
@@ -44,6 +44,7 @@ export class FiltersComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.setInputsDefaultValues();
+		this.getTripDest();
 		this.filtersService.notify.subscribe(() => {
 			this.setInputsDefaultValues();
 		});
@@ -76,7 +77,7 @@ export class FiltersComponent implements OnInit {
 	getTripDest() {
 		const trips = this.filtersService.getTrips();
 		const uniqPlaces = new Set(trips.map((trip) => trip.dest));
-		return Array.from(uniqPlaces);
+		this.locations = Array.from(uniqPlaces);
 	}
 
 	setInputsDefaultValues() {
@@ -119,6 +120,23 @@ export class FiltersComponent implements OnInit {
 	}
 	handleDateToInput(e: string) {
 		this.filtersService.setFilters(new Date(e), FilterType.dateTo);
+	}
+
+	resetFilters() {
+		this.isPriceFilterSet = false;
+		this.dateFromValue = '';
+		this.dateToValue = '';
+		this.filtersService.reset();
+		this.setInputsDefaultValues();
+		this.getTripDest();
+	}
+	sortLocations() {
+		if (this.isSorted) {
+			this.locations = this.locations.sort().reverse();
+		} else {
+			this.locations = this.locations.sort();
+		}
+		this.isSorted = !this.isSorted;
 	}
 }
 
