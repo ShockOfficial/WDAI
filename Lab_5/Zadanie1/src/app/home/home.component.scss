@@ -1,0 +1,24 @@
+.card {
+  font-family: sans-serif;
+  box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.25);
+  padding: 3rem;
+  border-radius: 8px;
+  min-height: 20rem;
+  &__title {
+    margin-bottom: 1.5rem;
+
+    @media screen and (max-width: 450px) {
+      text-align: center;
+    }
+  }
+  &__desc {
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}

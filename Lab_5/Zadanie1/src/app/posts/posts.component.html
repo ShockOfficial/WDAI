@@ -1,0 +1,34 @@
+<h1 class="title">Fetched Posts</h1>
+<app-card class="form__wrapper">
+  <form class="form" (submit)="onSubmit($event)">
+    <input
+      class="form__input"
+      type="text"
+      id="title"
+      placeholder="Tytuł"
+      #inputTitle
+    />
+    <textarea
+      class="form__input form__input--big"
+      type="text"
+      id="post"
+      cols="40"
+      rows="10"
+      placeholder="Treść posta"
+      #inputArea
+    ></textarea>
+    <button class="form__btn" type="submit">Wyślij</button>
+  </form>
+</app-card>
+<div class="posts">
+  <p class="loading" *ngIf="posts.length === 0">Loading...</p>
+
+  <app-card
+    [title]="post.title"
+    [isPost]="true"
+    *ngFor="let post of posts | slice : 0 : 20"
+    class="post"
+  >
+    {{ post.body }}
+  </app-card>
+</div>

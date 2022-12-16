@@ -1,0 +1,15 @@
+.photo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: sans-serif;
+  &__title {
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+  &__img {
+    max-width: 80%;
+    object-fit: cover;
+    margin: auto;
+  }
+}

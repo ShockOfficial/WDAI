@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <p class="loading" *ngIf="photos.length === 0">Loading...</p>
+  <app-card
+    [title]="photo.title"
+    [isPhoto]="true"
+    *ngFor="let photo of photos | slice : 0 : 20"
+  >
+    <div class="img__wrapper" (click)="navigateToDetails(photo.id, photo.url)">
+      <img [src]="photo.thumbnailUrl" class="img" />
+    </div>
+  </app-card>
+</div>

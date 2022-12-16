@@ -122,8 +122,6 @@ const createItems = (dataaa, agregatedData) => {
 			const data = agregatedData[subregion];
 			const template = createBigRowEl({ ...data, subregion });
 
-			// TODO insert to array insted of DOM
-			// $tableBody.insertAdjacentHTML('beforeend', template);
 			$currentState.itemToRender = [...$currentState.itemToRender, template];
 		}
 	}
