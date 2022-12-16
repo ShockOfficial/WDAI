@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Post } from './post. model';
 import { DataService } from '../data.service';
 
@@ -9,8 +9,8 @@ import { DataService } from '../data.service';
 })
 export class PostsComponent implements OnInit {
   posts: Post[] = [];
-  @ViewChild('inputTitle') inputTitle: ElementRef;
-  @ViewChild('inputArea') inputArea: ElementRef;
+  @Input() inputTitleValue: string;
+  @Input() inputAreaValue: string;
 
   constructor(private dataService: DataService) {}
 
@@ -24,14 +24,13 @@ export class PostsComponent implements OnInit {
     e.preventDefault();
     const data = {
       id: Date.now(),
-      title: this.inputTitle.nativeElement.value,
-      body: this.inputArea.nativeElement.value,
+      title: this.inputTitleValue,
+      body: this.inputAreaValue,
     };
 
     this.dataService.uploadPost(data).subscribe(() => {
-      // Bad way
-      this.inputArea.nativeElement.value = '';
-      this.inputTitle.nativeElement.value = '';
+      this.inputAreaValue = '';
+      this.inputTitleValue = '';
     });
   }
 }

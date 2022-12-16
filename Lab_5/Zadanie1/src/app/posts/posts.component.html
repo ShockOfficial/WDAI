@@ -4,9 +4,9 @@
     <input
       class="form__input"
       type="text"
-      id="title"
       placeholder="Tytuł"
-      #inputTitle
+      name="title"
+      [(ngModel)]="inputTitleValue"
     />
     <textarea
       class="form__input form__input--big"
@@ -15,7 +15,8 @@
       cols="40"
       rows="10"
       placeholder="Treść posta"
-      #inputArea
+      name="textArea"
+      [(ngModel)]="inputAreaValue"
     ></textarea>
     <button class="form__btn" type="submit">Wyślij</button>
   </form>
