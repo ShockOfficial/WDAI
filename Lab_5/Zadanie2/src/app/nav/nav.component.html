@@ -24,7 +24,7 @@
 	</div>
 
 	<div class="nav__right-box">
-		<p
+		<div
 			[ngClass]="{
 				shake: isShaking,
 				red: getCartItmesSize() < 10,
@@ -32,8 +32,16 @@
 			}"
 			class="nav__in-cart"
 		>
-			{{ getCartItmesSize() }}
-		</p>
+			<p class="nav__cart-sum">
+				{{
+					getCartSum() | exchangeMoney : getCurrency() : getCurrentCurrency()
+				}}
+				{{ getCurrentCurrency() }}
+			</p>
+			<p class="nav__cart-amount">
+				{{ getCartItmesSize() }}
+			</p>
+		</div>
 		<div class="nav__cart-box" (click)="onCartClick()">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

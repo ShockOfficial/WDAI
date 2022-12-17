@@ -23,29 +23,10 @@ export class CartComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
-		const map = new Map<Trip, number>();
-		this.cartService.items.forEach((item) => {
-			const quantity = this.cartService.items.reduce((acc, curr) => {
-				if (curr === item) {
-					return acc + 1;
-				} else {
-					return acc;
-				}
-			}, 0);
-			map.set(item, quantity);
-		});
-		this.cartList = Array.from(map, ([trip, quantity]) => ({
-			...trip,
-			quantity,
-		}));
-
-		this.totalSum = this.cartList.reduce(
-			(acc, curr) => acc + curr.quantity * curr.price,
-			0,
-		);
-		if (this.cartList.length) {
-			this.tripCurrency = this.cartList[0].currency;
-		}
+		const { cartList, currency, totalSum } = this.cartService.getCartInfo();
+		this.cartList = cartList;
+		this.totalSum = totalSum;
+		this.tripCurrency = currency;
 	}
 	getCurrency() {
 		return this.currencyService.currenctCurrency;

@@ -1,6 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Trip } from '../trips.component';
 import { TripsService } from '../trips.service';
+import { Currency } from '../currency-switcher/currency-service.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -35,6 +36,37 @@ export class CartService {
 			count = item.id === trip.id ? count + 1 : count;
 		});
 		return count;
+	}
+
+	getCartInfo(): {
+		cartList: (Trip & { quantity: number })[];
+		totalSum: number;
+		currency: Currency;
+	} {
+		const map = new Map<Trip, number>();
+		this.items.forEach((item) => {
+			const quantity = this.items.reduce((acc, curr) => {
+				if (curr === item) {
+					return acc + 1;
+				} else {
+					return acc;
+				}
+			}, 0);
+			map.set(item, quantity);
+		});
+		const cartList = Array.from(map, ([trip, quantity]) => ({
+			...trip,
+			quantity,
+		}));
+
+		const totalSum = cartList.reduce(
+			(acc, curr) => acc + curr.quantity * curr.price,
+			0,
+		);
+
+		const tripCurrency = cartList[0]?.currency || 'PLN';
+
+		return { cartList, totalSum, currency: tripCurrency };
 	}
 }
 
