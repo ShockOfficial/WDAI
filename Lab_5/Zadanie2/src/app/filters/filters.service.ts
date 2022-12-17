@@ -1,6 +1,4 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
-import { Trip } from '../trips.component';
-import { TripsService } from '../trips.service';
 
 export enum FilterType {
 	localization,
@@ -31,10 +29,7 @@ export class FiltersService {
 		priceFrom: 0,
 		priceTo: Number.MAX_VALUE,
 	};
-	trips: Trip[] = [];
-	constructor(private tripsService: TripsService) {
-		this.trips = this.tripsService.trips;
-	}
+	constructor() {}
 
 	setFilters(data: DataType, type: FilterType) {
 		switch (type) {
@@ -94,11 +89,6 @@ export class FiltersService {
 		} else {
 			filters.push(data);
 		}
-	}
-
-	getTrips() {
-		this.trips = this.tripsService.trips;
-		return this.trips;
 	}
 
 	reset() {

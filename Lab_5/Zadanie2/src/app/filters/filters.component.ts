@@ -12,17 +12,12 @@ import { LocationFilterPipe } from '../location-filter.pipe';
 import { PriceFilterPipe } from '../price-filter.pipe';
 import { RateFilterPipe } from '../rate-filter.pipe';
 import { FiltersService, FilterType } from './filters.service';
+import { TripsService } from '../trips.service';
 
 @Component({
 	selector: 'app-filters',
 	templateUrl: './filters.component.html',
 	styleUrls: ['./filters.component.scss'],
-	providers: [
-		RateFilterPipe,
-		LocationFilterPipe,
-		PriceFilterPipe,
-		DateFilterPipe,
-	],
 })
 export class FiltersComponent implements OnInit {
 	@ViewChild('priceFrom', { static: true }) priceFromInput: ElementRef;
@@ -36,10 +31,7 @@ export class FiltersComponent implements OnInit {
 	isSorted = false;
 	constructor(
 		private filtersService: FiltersService,
-		private locationPipe: LocationFilterPipe,
-		private ratePipe: RateFilterPipe,
-		private pricePipe: PriceFilterPipe,
-		private datePipe: DateFilterPipe,
+		private tripService: TripsService,
 	) {}
 
 	ngOnInit(): void {
@@ -60,6 +52,7 @@ export class FiltersComponent implements OnInit {
 			this.filtersService.setFilters(localization, FilterType.localization);
 		}
 		this.setInputsDefaultValues();
+		this.tripService.distinctSpecialTrips();
 	}
 
 	isRateSelected(rate: number) {
@@ -75,21 +68,14 @@ export class FiltersComponent implements OnInit {
 	}
 
 	getTripDest() {
-		const trips = this.filtersService.getTrips();
+		const trips = this.tripService.trips;
 		const uniqPlaces = new Set(trips.map((trip) => trip.dest));
 		this.locations = Array.from(uniqPlaces);
 	}
 
 	setInputsDefaultValues() {
 		if (this.isPriceFilterSet) return;
-
-		const trips = this.datePipe.transform(
-			this.locationPipe.transform(
-				this.ratePipe.transform(
-					this.pricePipe.transform(this.filtersService.getTrips()),
-				),
-			),
-		);
+		const trips = this.tripService.getFilteredTrips();
 		const highestPrice = trips.reduce(
 			(prev, current) => (prev > current.price ? prev : current.price),
 			0,

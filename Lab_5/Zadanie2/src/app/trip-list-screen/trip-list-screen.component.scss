@@ -9,7 +9,6 @@
 	background-color: #fdfdfd;
 
 	@media screen and (max-width: 550px) {
-		grid-template-rows: 10rem min-content 4fr;
 		grid-template-columns: 1fr;
 	}
 

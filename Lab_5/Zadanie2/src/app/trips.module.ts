@@ -39,8 +39,8 @@ import { AddTripScreenComponent } from './add-trip-screen/add-trip-screen.compon
 		LocationFilterPipe,
 		PriceFilterPipe,
 		DateFilterPipe,
-  TripListScreenComponent,
-  AddTripScreenComponent,
+		TripListScreenComponent,
+		AddTripScreenComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -49,8 +49,13 @@ import { AddTripScreenComponent } from './add-trip-screen/add-trip-screen.compon
 		FormsModule,
 		AppRoutingModule,
 	],
-	providers: [],
 	bootstrap: [TripsComponent],
+	providers: [
+		RateFilterPipe,
+		LocationFilterPipe,
+		PriceFilterPipe,
+		DateFilterPipe,
+	],
 })
 export class TripsModule {}
 
