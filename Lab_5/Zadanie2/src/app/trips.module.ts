@@ -21,6 +21,7 @@ import { DateFilterPipe } from './date-filter.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { TripListScreenComponent } from './trip-list-screen/trip-list-screen.component';
 import { AddTripScreenComponent } from './add-trip-screen/add-trip-screen.component';
+import { ProfileSreenComponent } from './profile-sreen/profile-sreen.component';
 
 @NgModule({
 	declarations: [
@@ -41,6 +42,7 @@ import { AddTripScreenComponent } from './add-trip-screen/add-trip-screen.compon
 		DateFilterPipe,
 		TripListScreenComponent,
 		AddTripScreenComponent,
+  ProfileSreenComponent,
 	],
 	imports: [
 		BrowserModule,

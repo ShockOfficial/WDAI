@@ -49,14 +49,13 @@
 		}
 	}
 	&__link-box {
-		// width: 60%;
 		height: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		transition: transform 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
 		gap: 4rem;
-		@media screen and (max-width: 855px) {
+		@media screen and (max-width: 880px) {
 			width: 50%;
 			gap: 0;
 		}
@@ -165,8 +164,8 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 2.4rem;
-		height: 2.4rem;
+		width: 2rem;
+		height: 2rem;
 		fill: none;
 		stroke-width: 2px;
 		stroke: $secondary-color--300;
@@ -174,6 +173,7 @@
 		stroke-linecap: round;
 	}
 	&__right-box {
+		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -189,12 +189,26 @@
 		border-radius: 8px;
 		user-select: none;
 		background-color: $white-color;
+		@media screen and (max-width: 400px) {
+			position: absolute;
+			width: 5.5rem;
+			left: -1rem;
+			bottom: -150%;
+		}
+
 		&::after {
 			content: '';
 			position: absolute;
 			right: -2.3rem;
 			border: 1.2rem solid transparent;
 			border-left-color: $white-color;
+
+			@media screen and (max-width: 400px) {
+				top: -40%;
+				right: 1.5rem;
+				border-left-color: transparent;
+				border-bottom-color: $white-color;
+			}
 		}
 	}
 	&__cart-sum {
@@ -212,6 +226,10 @@
 
 	&::after {
 		border-left-color: $tertiary-color;
+		@media screen and (max-width: 400px) {
+			border-left-color: transparent;
+			border-bottom-color: $tertiary-color;
+		}
 	}
 }
 .green {
@@ -219,6 +237,10 @@
 
 	&::after {
 		border-left-color: $secondary-color;
+		@media screen and (max-width: 400px) {
+			border-left-color: transparent;
+			border-bottom-color: $secondary-color;
+		}
 	}
 }
 

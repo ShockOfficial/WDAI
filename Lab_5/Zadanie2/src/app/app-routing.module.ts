@@ -5,6 +5,7 @@ import { TripsComponent } from './trips.component';
 import { TripListScreenComponent } from './trip-list-screen/trip-list-screen.component';
 import { CartComponent } from './cart/cart.component';
 import { AddTripScreenComponent } from './add-trip-screen/add-trip-screen.component';
+import { ProfileSreenComponent } from './profile-sreen/profile-sreen.component';
 
 const appRoutes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const appRoutes: Routes = [
 	{ path: 'cart', component: CartComponent },
 	{ path: 'add', component: AddTripScreenComponent },
 	{ path: 'history', component: CartComponent },
+	{ path: 'profile', component: ProfileSreenComponent },
 	{ path: '**', redirectTo: '' },
 ];
 @NgModule({

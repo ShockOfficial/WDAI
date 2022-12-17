@@ -33,10 +33,18 @@ export class NavComponent implements OnInit {
 	onResize(event: Event) {
 		const target = event.target as Window;
 		this.isMobbile = target.innerWidth <= 650;
+
+		if (!this.isMobbile) {
+			this.isMenuOpen = false;
+		}
 	}
 
 	onCartClick() {
 		this.router.navigate(['cart']);
+	}
+
+	onProfileClick() {
+		this.router.navigate(['profile']);
 	}
 
 	toggleMenu() {
