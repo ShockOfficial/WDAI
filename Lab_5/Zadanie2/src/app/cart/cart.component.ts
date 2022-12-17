@@ -5,6 +5,7 @@ import {
 } from '../currency-switcher/currency-service.service';
 import { Trip } from '../trips.component';
 import { CartService } from './cart-service.service';
+import { TripsService } from '../trips.service';
 
 @Component({
 	selector: 'app-cart',
@@ -18,6 +19,7 @@ export class CartComponent implements OnInit {
 	constructor(
 		private cartService: CartService,
 		private currencyService: CurrencyService,
+		private tripsService: TripsService,
 	) {}
 
 	ngOnInit(): void {

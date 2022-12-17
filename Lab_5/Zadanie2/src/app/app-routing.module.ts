@@ -6,8 +6,8 @@ import { TripListScreenComponent } from './trip-list-screen/trip-list-screen.com
 import { CartComponent } from './cart/cart.component';
 
 const appRoutes: Routes = [
-	{ path: '', redirectTo: 'Home', pathMatch: 'full' },
-	{ path: 'Home', component: TripListScreenComponent }, // TODO create home
+	{ path: '', redirectTo: 'home', pathMatch: 'full' },
+	{ path: 'home', component: TripListScreenComponent }, // TODO create home
 	{ path: 'trips', component: TripListScreenComponent },
 	{ path: 'cart', component: CartComponent },
 	{ path: 'add', component: CartComponent },

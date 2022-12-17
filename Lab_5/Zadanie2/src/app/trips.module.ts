@@ -20,6 +20,7 @@ import { PriceFilterPipe } from './price-filter.pipe';
 import { DateFilterPipe } from './date-filter.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { TripListScreenComponent } from './trip-list-screen/trip-list-screen.component';
+import { AddTripScreenComponent } from './add-trip-screen/add-trip-screen.component';
 
 @NgModule({
 	declarations: [
@@ -39,6 +40,7 @@ import { TripListScreenComponent } from './trip-list-screen/trip-list-screen.com
 		PriceFilterPipe,
 		DateFilterPipe,
   TripListScreenComponent,
+  AddTripScreenComponent,
 	],
 	imports: [
 		BrowserModule,

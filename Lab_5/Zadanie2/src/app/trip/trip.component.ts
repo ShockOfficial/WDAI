@@ -27,7 +27,9 @@ export class TripComponent implements OnInit {
 		private cartService: CartService,
 	) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.reservedAmount = this.cartService.getQuantity(this.trip);
+	}
 
 	getCurrentCurrency() {
 		return this.currencyService.currenctCurrency;

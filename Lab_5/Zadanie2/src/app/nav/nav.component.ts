@@ -38,7 +38,7 @@ export class NavComponent implements OnInit {
 	}
 
 	getCartItmesSize() {
-		return this.cartService.items.length;
+		return this.cartService.getCartSize();
 	}
 }
 

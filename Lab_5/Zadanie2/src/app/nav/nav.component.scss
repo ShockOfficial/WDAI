@@ -49,15 +49,16 @@
 		}
 	}
 	&__link-box {
-		width: 60%;
+		// width: 60%;
 		height: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		transition: transform 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
-
-		@media screen and (max-width: 805px) {
-			width: 55%;
+		gap: 4rem;
+		@media screen and (max-width: 855px) {
+			width: 50%;
+			gap: 0;
 		}
 
 		@media screen and (max-width: 650px) {

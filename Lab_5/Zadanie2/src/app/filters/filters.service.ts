@@ -1,5 +1,6 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Trip } from '../trips.component';
+import { TripsService } from '../trips.service';
 
 export enum FilterType {
 	localization,
@@ -15,7 +16,6 @@ type DataType = string | number | Date;
 })
 export class FiltersService {
 	@Output() notify = new EventEmitter(); // used to notify ngFor to update list
-	@Output() fetchTrips = new EventEmitter();
 	currentFilters: {
 		localization: string[];
 		rates: number[];
@@ -32,7 +32,9 @@ export class FiltersService {
 		priceTo: Number.MAX_VALUE,
 	};
 	trips: Trip[] = [];
-	constructor() {}
+	constructor(private tripsService: TripsService) {
+		this.trips = this.tripsService.trips;
+	}
 
 	setFilters(data: DataType, type: FilterType) {
 		switch (type) {
@@ -95,9 +97,9 @@ export class FiltersService {
 	}
 
 	getTrips() {
-		this.fetchTrips.emit();
 		return this.trips;
 	}
+
 	reset() {
 		this.currentFilters = {
 			localization: [],
