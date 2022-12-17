@@ -244,6 +244,17 @@
 	}
 }
 
+.badge {
+	position: absolute;
+	top: 25%;
+	right: 1rem;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background-color: $secondary-color;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .active {
 	color: #000 !important;
 

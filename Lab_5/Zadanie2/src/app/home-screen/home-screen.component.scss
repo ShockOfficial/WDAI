@@ -1,0 +1,171 @@
+@import '../variables.scss';
+@import '../shared.scss';
+
+.header {
+	display: flex;
+	align-items: flex-start;
+	height: 70vh;
+	padding-top: 10rem;
+	padding-left: 5rem;
+	background: linear-gradient(
+			30deg,
+			rgba($primary-color, 0.7),
+			rgba(0, 0, 0, 0.3)
+		),
+		url('https://cdn.pixabay.com/photo/2016/03/04/19/36/beach-1236581_1280.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+	clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.header__text-box {
+	width: 80%;
+	flex-basis: 50%;
+	animation: slide-to-right 1s ease-in-out;
+}
+.header__title {
+	font-size: 3.5rem;
+	margin-bottom: 2rem;
+	color: $white-color;
+}
+
+.header__description {
+	margin-bottom: 2rem;
+	color: $white-color;
+}
+
+.header__button {
+	outline: 0;
+	border: 1px solid white;
+	font-weight: normal;
+	color: white;
+	background-color: $primary-color;
+	padding: 1rem 3rem;
+	border-radius: 0.4rem;
+	cursor: pointer;
+	align-self: flex-start;
+	border: none;
+	transition: background-color 0.3s, transform 0.3s;
+}
+
+.header__button:hover {
+	background-color: $primary-color--300;
+	transform: translateY(-3px);
+}
+
+.main {
+	padding-top: 5rem;
+}
+
+.about {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 5rem;
+	&__title {
+		font-size: 3rem;
+		align-self: flex-start;
+		text-transform: uppercase;
+		margin-bottom: 3rem;
+		color: $primary-color;
+	}
+
+	&__text-title {
+		font-size: 2rem;
+		font-weight: bold;
+		margin-bottom: 1.5rem;
+	}
+
+	&__box {
+		width: 70%;
+		padding: 4rem;
+		box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.5);
+		border-radius: 8px;
+		background-image: linear-gradient(120deg, #f6d46590 0%, #fd9f85a4 100%);
+		&:not(:last-of-type) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.trips {
+	padding: 5rem;
+	padding-top: 15rem;
+	clip-path: polygon(0 10rem, 100% 0, 100% 100%, 0 100%);
+	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+	&__title {
+		font-size: 3rem;
+		margin-bottom: 2rem;
+		color: $primary-color;
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 3rem;
+	}
+
+	&__box {
+		width: 30rem;
+		flex-shrink: 0;
+		padding: 4rem;
+		box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.5);
+		border-radius: 8px;
+		background-color: $white-color;
+		transition: background-color 0.3s;
+
+		&:hover {
+			background-color: $primary-color;
+		}
+
+		&:hover * {
+			color: #f5f7fa;
+		}
+	}
+}
+
+.mapouter {
+	position: relative;
+	text-align: right;
+	margin-top: 4rem;
+	width: 100%;
+	height: 400px;
+}
+.gmap_canvas {
+	overflow: hidden;
+	background: none !important;
+	width: 100%;
+	height: 400px;
+}
+.gmap_iframe {
+	height: 400px !important;
+}
+
+.footer {
+	background-color: #141414;
+	padding: 2rem;
+	&__box {
+		display: flex;
+		justify-self: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 1.2rem;
+		color: #eeebeb;
+		text-align: center;
+	}
+
+	&__name {
+		font-size: 1.8rem;
+	}
+	&__icon {
+		font-size: 3rem;
+	}
+	&__copyright {
+		font-size: 1.5rem;
+	}
+}
+
