@@ -1,0 +1,36 @@
+<div class="cart__item" [ngClass]="{ last: isLast }">
+	<p class="cart__item-name">{{ trip.title }}</p>
+	<div class="cart__date-box">
+		<p class="cart__date">
+			od
+			<span class="cart__date-span">{{
+				trip.startDate | date : 'shortDate'
+			}}</span>
+			do
+			<span class="cart__date-span">{{
+				trip.endDate | date : 'shortDate'
+			}}</span>
+		</p>
+	</div>
+	<div class="cart__price-box">
+		<div class="cart__price-inner-box">
+			<p class="cart__price">
+				{{
+					trip.price * trip.quantity
+						| exchangeMoney : trip.currency : getCurrentCurrency()
+				}}
+			</p>
+			<span class="cart__currency"> {{ getCurrentCurrency() }}</span>
+		</div>
+		<div class="cart__price-inner-box cart__price-inner-box--top">
+			<span class="cart__quantity">{{ trip.quantity }} x</span>
+			<p class="cart__price cart__price--inner">
+				{{ trip.price | exchangeMoney : trip.currency : getCurrentCurrency() }}
+			</p>
+			<span class="cart__currency cart__currency--inner">{{
+				getCurrentCurrency()
+			}}</span>
+		</div>
+	</div>
+</div>
+

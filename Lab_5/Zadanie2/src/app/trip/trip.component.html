@@ -1,0 +1,84 @@
+<div
+	class="trip"
+	[ngClass]="{
+		'out-of-stock': trip.currentAmount === 0,
+		'last-places': trip.currentAmount < 3,
+		'most-expensive': isMostExpensive === true,
+		'cheapest-one': isMostExpensive === false
+	}"
+>
+	<div class="trip__box-top">
+		<img [src]="trip.galleryUrl" alt="góry" class="trip__img" />
+		<p class="trip__title">{{ trip.title | uppercase }}</p>
+	</div>
+	<div class="trip__box-bottom">
+		<div class="trip__box-item">
+			<p class="trip__item-name">Dokąd:</p>
+			<span class="trip__item-content">{{ trip.dest }}</span>
+		</div>
+		<div class="trip__box-item">
+			<p class="trip__item-name">Kraj:</p>
+			<span class="trip__item-content">{{ trip.country | uppercase }}</span>
+		</div>
+		<div class="trip__box-item">
+			<p class="trip__item-name">Od:</p>
+			<span class="trip__item-content">{{
+				trip.startDate.toLocaleDateString()
+			}}</span>
+		</div>
+		<div class="trip__box-item">
+			<p class="trip__item-name">Do:</p>
+			<span class="trip__item-content">{{
+				trip.endDate.toLocaleDateString()
+			}}</span>
+		</div>
+		<div class="trip__box-item">
+			<p class="trip__item-name">Max Ilość miejsc:</p>
+			<span class="trip__item-content">{{ trip.totalAmount }}</span>
+		</div>
+		<div class="trip__box-item">
+			<p class="trip__item-name">opis:</p>
+			<span class="trip__item-content">{{ trip.desc }}</span>
+		</div>
+		<div class="trip__box-item">
+			<p class="trip__item-name">Zdjęcia:</p>
+			<a [href]="trip.galleryUrl" class="trip__link" target="_blank">Klik!</a>
+		</div>
+		<div class="trip__box-item trip__box-item--center">
+			<p class="trip__item-name">cena:</p>
+			<span class="trip__item-content trip__item-content--price">{{
+				trip.price | exchangeMoney : trip.currency : getCurrentCurrency()
+			}}</span
+			><span class="trip__valut">{{ getCurrentCurrency() }}</span>
+		</div>
+	</div>
+	<div class="trip__cta-box">
+		<button
+			class="btn"
+			[ngClass]="{ hidden: trip.currentAmount === 0 }"
+			(click)="onButtonClick($event, true)"
+		>
+			+
+		</button>
+		<p class="trip__quantity">Dostępnych: {{ trip.currentAmount }}</p>
+		<button
+			class="btn"
+			[ngClass]="{ hidden: reservedAmount === 0 }"
+			(click)="onButtonClick($event, false)"
+		>
+			-
+		</button>
+	</div>
+	<div class="trip__star-box">
+		<app-rating-star
+			[value]="index"
+			[pickedValue]="trip.rate"
+			(onStarClick)="rateTrip($event)"
+			*ngFor="let star of stars; let index"
+		></app-rating-star>
+	</div>
+	<button class="trip__btn btn btn--big btn--primary" (click)="onRemoveClick()">
+		Usuń
+	</button>
+</div>
+

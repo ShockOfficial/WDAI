@@ -1,0 +1,57 @@
+@import '../shared.scss';
+
+.trips {
+	position: relative;
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 20rem 1fr;
+	height: 100%;
+	background-color: #fdfdfd;
+
+	@media screen and (max-width: 550px) {
+		grid-template-rows: 10rem min-content 4fr;
+		grid-template-columns: 1fr;
+	}
+
+	&__btn {
+		padding: 2rem 3rem;
+	}
+	&__btn-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+}
+
+.side_nav {
+	grid-row: 2 / -1;
+	@media screen and (max-width: 550px) {
+		grid-row: 2 / 3;
+		grid-column: 1 / -1;
+	}
+}
+.trip-list {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 3rem;
+	padding: 2rem;
+	grid-row: 2/ -1;
+	grid-column: 2/ -1;
+	@media screen and (max-width: 550px) {
+		grid-row: 3/ -1;
+		grid-column: 1 / -1;
+	}
+}
+.trip-item {
+	display: inline-block;
+	width: min-content;
+}
+.form {
+	width: 70%;
+	padding: 2rem;
+	border-radius: 8px;
+	box-shadow: 1px 3px 1rem rgba(0, 0, 0, 0.5);
+}
+

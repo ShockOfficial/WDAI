@@ -1,0 +1,118 @@
+<div class="filters">
+	<div class="filters__item">
+		<div class="filters__top-box">
+			<p class="filters__item-name">Cena</p>
+		</div>
+		<div class="filters__item-box">
+			<span class="filters__span">od</span>
+			<input
+				type="number"
+				class="filters__input"
+				#priceFrom
+				[(ngModel)]="priceFromValue"
+				(ngModelChange)="handlePriceFromInput($event)"
+			/>
+			<span class="filters__span">do</span>
+			<input
+				type="number"
+				class="filters__input"
+				#priceTo
+				[(ngModel)]="priceToValue"
+				(ngModelChange)="handlePriceToInput($event)"
+			/>
+		</div>
+	</div>
+	<div class="filters__item">
+		<div class="filters__top-box">
+			<p class="filters__item-name">Data</p>
+		</div>
+		<div class="filters__item-box">
+			<span class="filters__span">od</span>
+			<input
+				type="date"
+				class="filters__input filters__input--date"
+				[(ngModel)]="dateFromValue"
+				(ngModelChange)="handleDateFromInput($event)"
+				#dateFrom
+			/>
+			<span class="filters__span">do</span>
+			<input
+				type="date"
+				class="filters__input filters__input--date"
+				#dateTo
+				(ngModelChange)="handleDateToInput($event)"
+				[(ngModel)]="dateToValue"
+			/>
+		</div>
+	</div>
+	<div class="filters__item">
+		<div class="filters__top-box">
+			<p class="filters__item-name">Oceny</p>
+		</div>
+		<div class="filters__item-box">
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: isRateSelected(1) }"
+				data-rate="1"
+			>
+				1
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: isRateSelected(2) }"
+				data-rate="2"
+			>
+				2
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: isRateSelected(3) }"
+				data-rate="3"
+			>
+				3
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: isRateSelected(4) }"
+				data-rate="4"
+			>
+				4
+			</p>
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				[ngClass]="{ active: isRateSelected(5) }"
+				data-rate="5"
+			>
+				5
+			</p>
+		</div>
+	</div>
+	<div class="filters__item">
+		<div class="filters__top-box">
+			<p class="filters__item-name">Lokalizacja</p>
+			<p class="filters__sort" (click)="sortLocations()">sort</p>
+		</div>
+		<div class="filters__item-box filters__item-box--mosaic">
+			<p
+				class="filters__list-item-name"
+				(click)="clickHanlder($event)"
+				*ngFor="let destLocation of locations"
+				[ngClass]="{ active: isLocationSelected(destLocation) }"
+				[id]="destLocation"
+			>
+				{{ destLocation }}
+			</p>
+		</div>
+	</div>
+	<div class="filters__item">
+		<button class="filters__btn btn btn--primary" (click)="resetFilters()">
+			Reset
+		</button>
+	</div>
+</div>
+

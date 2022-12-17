@@ -1,0 +1,25 @@
+@import './shared.scss';
+
+.cart {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	z-index: 2;
+}
+
+.main {
+	padding-top: 10rem;
+}
+
+.nav {
+	top: 0;
+}
+
+:host {
+	height: 100%;
+}
+

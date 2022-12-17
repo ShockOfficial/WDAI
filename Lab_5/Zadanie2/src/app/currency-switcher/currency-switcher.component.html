@@ -1,0 +1,27 @@
+<div class="swittcher">
+	<p class="swittcher__text">Wybierz walute</p>
+	<div class="swittcher__box">
+		<p
+			class="swittcher__button"
+			[ngClass]="{ active: getActiveCurrency() === 'PLN' }"
+			(click)="onClickHandler('PLN')"
+		>
+			PLN
+		</p>
+		<p
+			class="swittcher__button"
+			[ngClass]="{ active: getActiveCurrency() === 'EUR' }"
+			(click)="onClickHandler('EUR')"
+		>
+			EUR
+		</p>
+		<p
+			class="swittcher__button"
+			[ngClass]="{ active: getActiveCurrency() === 'USD' }"
+			(click)="onClickHandler('USD')"
+		>
+			USD
+		</p>
+	</div>
+</div>
+

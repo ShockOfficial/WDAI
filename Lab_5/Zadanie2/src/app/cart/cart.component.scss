@@ -1,0 +1,50 @@
+@import '../shared.scss';
+
+.cart {
+	&__box {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		box-sizing: border-box;
+		padding-top: 3rem;
+		border-radius: 5px;
+		background-color: $white-color;
+		min-height: 100%;
+	}
+	&__title {
+		padding: 0 2rem;
+		font-size: 3rem;
+		font-weight: bold;
+		color: $primary-color;
+		margin-bottom: 3rem;
+		width: 10%;
+		padding-bottom: 1rem;
+	}
+	&__bottom-box {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		display: flex;
+		font-size: 2.3rem;
+		padding: 1.5rem 3rem;
+		margin-top: auto;
+		gap: 1rem;
+		background-color: $primary-color;
+		border-radius: 0 0 3px 3px;
+		color: #fff;
+	}
+	&__text {
+		text-transform: uppercase;
+	}
+	&__price {
+		margin-left: auto;
+		font-weight: bold;
+	}
+	&__currency {
+		font-weight: bold;
+	}
+	&__top-box {
+		display: flex;
+	}
+}
+

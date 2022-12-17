@@ -1,0 +1,22 @@
+<div class="cart">
+	<div class="cart__box">
+		<div class="cart__top-box">
+			<h2 class="cart__title">Koszyk</h2>
+		</div>
+		<app-cart-item
+			class="cart__item"
+			*ngFor="let trip of cartList; let i = index"
+			[trip]="trip"
+			[isLast]="i === cartList.length - 1"
+		>
+		</app-cart-item>
+		<div class="cart__bottom-box">
+			<p class="cart__text">Suma</p>
+			<p class="cart__price">
+				{{ totalSum | exchangeMoney : tripCurrency : getCurrency() }}
+			</p>
+			<span class="cart__currency">{{ getCurrency() }}</span>
+		</div>
+	</div>
+</div>
+

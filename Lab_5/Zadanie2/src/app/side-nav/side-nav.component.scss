@@ -1,0 +1,19 @@
+@import '../variables.scss';
+
+.nav {
+	position: fixed;
+	width: 20rem;
+	min-height: 100vh;
+	height: 100%;
+	padding: 0 1rem;
+	background-color: $white-color--nav;
+
+	@media screen and (max-width: 550px) {
+		position: relative;
+		width: unset;
+		padding: 0 5rem;
+		min-height: unset;
+		height: unset;
+	}
+}
+
