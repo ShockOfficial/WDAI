@@ -19,6 +19,12 @@ export class DataService {
     return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
   }
 
+  fetchPhoto(id: string) {
+    return this.http.get<Photo>(
+      `https://jsonplaceholder.typicode.com/photos/${id}`
+    );
+  }
+
   uploadPost(data: { title: string; body: string; id: number }) {
     return this.http.post('https://jsonplaceholder.typicode.com/posts', data);
   }
