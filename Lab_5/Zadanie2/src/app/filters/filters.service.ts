@@ -97,6 +97,7 @@ export class FiltersService {
 	}
 
 	getTrips() {
+		this.trips = this.tripsService.trips;
 		return this.trips;
 	}
 

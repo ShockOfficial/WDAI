@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Trip } from '../trips.component';
 import { FiltersService } from '../filters/filters.service';
+import { TripsService } from '../trips.service';
 
 @Component({
 	selector: 'app-add-trip-screen',
@@ -8,19 +9,15 @@ import { FiltersService } from '../filters/filters.service';
 	styleUrls: ['./add-trip-screen.component.scss'],
 })
 export class AddTripScreenComponent implements OnInit {
-	isAddingTrip: boolean = false;
-
-	constructor(private filtersService: FiltersService) {}
+	constructor(
+		private filtersService: FiltersService,
+		private tripsService: TripsService,
+	) {}
 
 	ngOnInit(): void {}
 
-	handleFromButton() {
-		this.isAddingTrip = !this.isAddingTrip;
-	}
-
 	addTrip(trip: Trip) {
-		// this.trips.push(trip);
-		this.isAddingTrip = false;
+		this.tripsService.addTrip(trip);
 		this.filtersService.notify.emit();
 	}
 }

@@ -30,6 +30,7 @@ export class TripListScreenComponent implements OnInit {
 
 	onRemoveTrip(trip: Trip) {
 		this.trips = this.tripsService.removeTrip(trip);
+		this.filtersService.notify.emit();
 	}
 
 	onDistinctTrip() {

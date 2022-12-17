@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import tripsData from '../data/trips.json';
 import { Trip } from './trips.component';
 import { Currency } from './currency-switcher/currency-service.service';
+import { FiltersService } from './filters/filters.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -36,7 +37,13 @@ export class TripsService {
 
 	removeTrip(trip: Trip) {
 		this.trips = this.trips.filter((tripItem) => tripItem !== trip);
+		this.distinctSpecialTrips();
 		return this.trips;
+	}
+
+	addTrip(trip: Trip) {
+		this.trips.push(trip);
+		this.distinctSpecialTrips();
 	}
 }
 
