@@ -24,6 +24,7 @@ import { AddTripScreenComponent } from './add-trip-screen/add-trip-screen.compon
 import { ProfileSreenComponent } from './profile-sreen/profile-sreen.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { TripDetailsComponent } from './trip-details/trip-details.component';
+import { OpinionFormComponent } from './opinion-form/opinion-form.component';
 
 @NgModule({
 	declarations: [
@@ -47,6 +48,7 @@ import { TripDetailsComponent } from './trip-details/trip-details.component';
   ProfileSreenComponent,
   HomeScreenComponent,
   TripDetailsComponent,
+  OpinionFormComponent,
 	],
 	imports: [
 		BrowserModule,

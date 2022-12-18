@@ -1,0 +1,61 @@
+<form class="form" [formGroup]="opinionForm" (ngSubmit)="onSubmitHandler()">
+	<div class="form__item">
+		<label class="form__label">Nick</label>
+		<input type="text" class="form__input" formControlName="nick" />
+	</div>
+	<span
+		class="form__error"
+		*ngIf="!opinionForm.get('nick')?.valid && opinionForm.get('nick')?.touched"
+		>Wpisz swoją nazwę</span
+	>
+	<div class="form__item">
+		<label class="form__label">Nazwa wycieczki</label>
+		<input type="text" class="form__input" formControlName="tripName" />
+	</div>
+	<span
+		class="form__error"
+		*ngIf="
+			!opinionForm.get('tripName')?.valid &&
+			opinionForm.get('tripName')?.touched
+		"
+		>Wpisz prawidłową nazwę wycieczki!</span
+	>
+
+	<div class="form__item">
+		<label class="form__label">Data zakupu</label>
+		<input type="date" class="form__input" formControlName="buyDate" />
+	</div>
+	<span
+		class="form__error"
+		*ngIf="
+			!opinionForm.get('buyDate')?.valid && opinionForm.get('buyDate')?.touched
+		"
+		>Wybierz prawidłową datę!</span
+	>
+
+	<div class="form__item">
+		<textarea
+			class="form__input form__area"
+			cols="30"
+			rows="10"
+			formControlName="opinion"
+			placeholder="Napisz swoją opinię"
+		></textarea>
+	</div>
+	<span
+		class="form__error"
+		*ngIf="
+			!opinionForm.get('description')?.valid &&
+			opinionForm.get('description')?.touched
+		"
+		>Wpisz prawidłowy opis!</span
+	>
+	<button type="submit" class="form__btn btn btn--primary btn--big">
+		Oceń
+	</button>
+</form>
+
+<div class="error-table" *ngIf="errorMessages.length">
+	<p class="error" *ngFor="let error of errorMessages">{{ error }}</p>
+</div>
+

@@ -5,6 +5,7 @@ import { TripsService } from '../trips.service';
 import { CurrencyService } from '../currency-switcher/currency-service.service';
 import { CartService } from '../cart/cart-service.service';
 import { Location } from '@angular/common';
+import { Opinion } from '../opinion-form/opinion.model';
 
 @Component({
 	selector: 'app-trip-details',
@@ -15,6 +16,8 @@ export class TripDetailsComponent implements OnInit {
 	trip?: Trip;
 	reservedAmount: number = 0;
 	stars = [1, 2, 3, 4, 5];
+	isFormOpen: boolean = false;
+	opinions: Opinion[];
 
 	constructor(
 		private location: Location,
@@ -27,6 +30,7 @@ export class TripDetailsComponent implements OnInit {
 	ngOnInit(): void {
 		this.trip = this.tripsService.getById(+this.route.snapshot.params['id']);
 		this.reservedAmount = +this.route.snapshot.queryParams['reservedAmount'];
+		this.opinions = this.trip ? this.trip.opinions : [];
 	}
 
 	getCurrency() {
@@ -54,6 +58,14 @@ export class TripDetailsComponent implements OnInit {
 			this.trip.rate = rate;
 
 			if (this.trip.rateNumber === 0) this.trip.rateNumber += 1;
+		}
+	}
+	openForm() {
+		this.isFormOpen = !this.isFormOpen;
+	}
+	addOpinion(opinion: Opinion) {
+		if (this.trip) {
+			this.trip.opinions.push(opinion);
 		}
 	}
 }

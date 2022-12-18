@@ -62,69 +62,25 @@
 	</div>
 
 	<div class="opinion">
-		<p>formularz</p>
-
-		<div class="opinion__item">
+		<button class="btn btn--primary btn--big" (click)="openForm()">
+			{{ !isFormOpen ? 'Otwórz formularz' : 'Zamknij formularz' }}
+		</button>
+		<app-opinion-form
+			(onSubmit)="addOpinion($event)"
+			[tripName]="trip.title"
+			class="form-box"
+			*ngIf="isFormOpen"
+		></app-opinion-form>
+		<div class="opinion__item" *ngFor="let opinion of opinions">
 			<div class="opinion__top-box">
-				<p class="opinion__trip-name">{{ trip.title }}</p>
-				<p class="opinion__nick">ShocK</p>
+				<p class="opinion__trip-name">{{ opinion.tripName }}</p>
+				<p class="opinion__nick">{{ opinion.nick }}</p>
 				<p class="opinion__date">
-					{{ trip.startDate | date : 'shortDate' }}
-					<span class="opinion__span">-</span>
-					{{ trip.endDate | date : 'shortDate' }}
+					{{ opinion.date | date : 'shortDate' }}
 				</p>
 			</div>
 			<p class="opinion__text">
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-				ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-				dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-				ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
-				quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
-				arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-				Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
-				dapibu
-			</p>
-		</div>
-		<div class="opinion__item">
-			<div class="opinion__top-box">
-				<p class="opinion__trip-name">{{ trip.title }}</p>
-				<p class="opinion__nick">ShocK</p>
-				<p class="opinion__date">
-					{{ trip.startDate | date : 'shortDate' }}
-					<span class="opinion__span">-</span>
-					{{ trip.endDate | date : 'shortDate' }}
-				</p>
-			</div>
-			<p class="opinion__text">
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-				ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-				dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-				ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
-				quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
-				arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-				Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
-				dapibu
-			</p>
-		</div>
-		<div class="opinion__item">
-			<div class="opinion__top-box">
-				<p class="opinion__trip-name">{{ trip.title }}</p>
-				<p class="opinion__nick">ShocK</p>
-				<p class="opinion__date">
-					{{ trip.startDate | date : 'shortDate' }}
-					<span class="opinion__span">-</span>
-					{{ trip.endDate | date : 'shortDate' }}
-				</p>
-			</div>
-			<p class="opinion__text">
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-				ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-				dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-				ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
-				quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
-				arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-				Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
-				dapibu
+				{{ opinion.opinion }}
 			</p>
 		</div>
 	</div>

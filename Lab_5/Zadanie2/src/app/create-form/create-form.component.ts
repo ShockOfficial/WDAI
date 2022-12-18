@@ -82,6 +82,7 @@ export class CreateFormComponent implements OnInit {
 			currency: 'PLN',
 			rate: 0,
 			rateNumber: 0,
+			opinions: [],
 		});
 		this.tripForm.reset();
 	}

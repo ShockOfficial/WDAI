@@ -132,6 +132,7 @@
 		padding: 1rem;
 		border-radius: 8px;
 		background-color: rgb(237, 237, 237);
+		word-break: break-all;
 	}
 }
 
@@ -175,5 +176,9 @@
 		color: $invalid-color;
 		font-size: 3rem;
 	}
+}
+
+.form-box {
+	width: 80%;
 }
 
