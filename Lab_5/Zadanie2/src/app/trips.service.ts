@@ -65,5 +65,9 @@ export class TripsService {
 			),
 		);
 	}
+
+	getById(id: number) {
+		return this.trips.find((trip) => trip.id === id);
+	}
 }
 

@@ -1,0 +1,179 @@
+@import '../shared.scss';
+@import '../variables.scss';
+.details {
+	display: flex;
+	padding: 4rem;
+	padding-bottom: 0;
+	gap: 3rem;
+
+	@media screen and (max-width: 835px) {
+		flex-direction: column;
+	}
+
+	@media screen and (max-width: 600px) {
+		padding: 2rem;
+	}
+
+	&__left-box {
+	}
+	&__img {
+		width: 50rem;
+		border-radius: 8px;
+		box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.6);
+		@media screen and (max-width: 835px) {
+			width: 100%;
+		}
+	}
+	&__right-box {
+		display: flex;
+		flex-direction: column;
+	}
+	&__title-box {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		padding: 2rem 0;
+	}
+	&__title {
+		font-size: 4rem;
+		text-transform: uppercase;
+		font-weight: bold;
+		color: $primary-color;
+	}
+	&__countries {
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-bottom: 1.5rem;
+	}
+	&__date {
+		display: flex;
+		gap: 1rem;
+		color: $primary-color;
+		font-weight: bold;
+	}
+	&__span {
+		font-weight: normal;
+		color: black;
+	}
+	&__desc {
+		margin-bottom: 2rem;
+	}
+	&__capacity {
+		font-weight: bold;
+	}
+	&__current-capacity {
+		font-weight: bold;
+	}
+	&__emph {
+		font-weight: bold;
+		color: $primary-color;
+	}
+	&__btn {
+		width: 10rem;
+		background-color: $primary-color;
+		color: #fff;
+		margin: 2rem;
+	}
+	&__star-box {
+		display: flex;
+		padding: 1rem 0;
+		border-radius: 20rem;
+		background-color: $white-color;
+	}
+}
+.wrapper {
+	@media screen and (max-width: 600px) {
+		padding: 2rem;
+	}
+}
+
+.opinion {
+	padding: 2rem 4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 2rem;
+	width: 100%;
+
+	@media screen and (max-width: 600px) {
+		padding: 2rem 0;
+	}
+
+	&__item {
+		padding: 2rem;
+		width: 80%;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+		background-color: $white-color;
+		@media screen and (max-width: 600px) {
+			width: 100%;
+		}
+	}
+	&__top-box {
+		display: flex;
+		flex-direction: column;
+		color: $primary-color;
+		margin-bottom: 1rem;
+	}
+	&__trip-name {
+		font-size: 2rem;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	&__nick {
+	}
+	&__date {
+		color: rgb(104, 104, 104);
+	}
+	&__span {
+	}
+	&__text {
+		padding: 1rem;
+		border-radius: 8px;
+		background-color: rgb(237, 237, 237);
+	}
+}
+
+.cta {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 2rem 4rem;
+	gap: 1rem;
+	margin-bottom: 1rem;
+
+	@media screen and (max-width: 400px) {
+		padding: 2rem;
+	}
+
+	&__quantity {
+		font-weight: bold;
+		color: $primary-color;
+	}
+	&__btn {
+		padding: 1rem 3rem;
+		font-size: 2rem;
+	}
+}
+.hidden {
+	opacity: 0;
+	visibility: hidden;
+}
+.error {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	padding: 5rem;
+	&__title {
+		font-size: 6rem;
+		color: $invalid-color;
+	}
+	&__text {
+		color: $invalid-color;
+		font-size: 3rem;
+	}
+}
+

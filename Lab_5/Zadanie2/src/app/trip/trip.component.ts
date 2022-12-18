@@ -9,6 +9,7 @@ import {
 import { CartService } from '../cart/cart-service.service';
 import { CurrencyService } from '../currency-switcher/currency-service.service';
 import { Trip } from '../trips.component';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-trip',
@@ -21,10 +22,10 @@ export class TripComponent implements OnInit {
 	@Output() onRemoveTrip = new EventEmitter<Trip>();
 	@Input() isMostExpensive?: boolean;
 	reservedAmount: number = 0;
-	stars = [1, 2, 3, 4, 5];
 	constructor(
 		private currencyService: CurrencyService,
 		private cartService: CartService,
+		private router: Router,
 	) {}
 
 	ngOnInit(): void {
@@ -35,7 +36,7 @@ export class TripComponent implements OnInit {
 		return this.currencyService.currenctCurrency;
 	}
 
-	onButtonClick(e: Event, isAdding: boolean) {
+	onButtonClick(isAdding: boolean) {
 		// TODO refactor maybe?
 		if (isAdding) {
 			this.reservedAmount++;
@@ -62,8 +63,10 @@ export class TripComponent implements OnInit {
 		this.distinctTripsHandler.emit();
 	}
 
-	rateTrip(rate: number) {
-		this.trip.rate = rate;
+	goToDetails() {
+		this.router.navigate(['details', this.trip.id], {
+			queryParams: { reservedAmount: this.reservedAmount },
+		});
 	}
 }
 

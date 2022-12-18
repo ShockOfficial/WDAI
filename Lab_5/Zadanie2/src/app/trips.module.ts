@@ -23,6 +23,7 @@ import { TripListScreenComponent } from './trip-list-screen/trip-list-screen.com
 import { AddTripScreenComponent } from './add-trip-screen/add-trip-screen.component';
 import { ProfileSreenComponent } from './profile-sreen/profile-sreen.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
+import { TripDetailsComponent } from './trip-details/trip-details.component';
 
 @NgModule({
 	declarations: [
@@ -45,6 +46,7 @@ import { HomeScreenComponent } from './home-screen/home-screen.component';
 		AddTripScreenComponent,
   ProfileSreenComponent,
   HomeScreenComponent,
+  TripDetailsComponent,
 	],
 	imports: [
 		BrowserModule,

@@ -8,7 +8,9 @@
 	}"
 >
 	<div class="trip__box-top">
-		<img [src]="trip.galleryUrl" alt="góry" class="trip__img" />
+		<div class="trip__img-box" (click)="goToDetails()">
+			<img [src]="trip.galleryUrl" alt="góry" class="trip__img" />
+		</div>
 		<p class="trip__title">{{ trip.title | uppercase }}</p>
 	</div>
 	<div class="trip__box-bottom">
@@ -56,7 +58,7 @@
 		<button
 			class="btn"
 			[ngClass]="{ hidden: trip.currentAmount === 0 }"
-			(click)="onButtonClick($event, true)"
+			(click)="onButtonClick(true)"
 		>
 			+
 		</button>
@@ -64,19 +66,12 @@
 		<button
 			class="btn"
 			[ngClass]="{ hidden: reservedAmount === 0 }"
-			(click)="onButtonClick($event, false)"
+			(click)="onButtonClick(false)"
 		>
 			-
 		</button>
 	</div>
-	<div class="trip__star-box">
-		<app-rating-star
-			[value]="index"
-			[pickedValue]="trip.rate"
-			(onStarClick)="rateTrip($event)"
-			*ngFor="let star of stars; let index"
-		></app-rating-star>
-	</div>
+
 	<button class="trip__btn btn btn--big btn--primary" (click)="onRemoveClick()">
 		Usuń
 	</button>

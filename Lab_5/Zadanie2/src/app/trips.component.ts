@@ -18,6 +18,7 @@ export interface Trip {
 	currency: Currency;
 	isMostExpensive?: boolean;
 	rate: number;
+	rateNumber: number;
 }
 
 @Component({

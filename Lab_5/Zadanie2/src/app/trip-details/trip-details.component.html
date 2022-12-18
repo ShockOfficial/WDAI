@@ -1,0 +1,139 @@
+<p class="btn details__btn" (click)="goBack()">&larr; Wstecz</p>
+<div class="wrapper" *ngIf="trip; else error">
+	<div class="details">
+		<div class="details__left-box">
+			<img [src]="trip.galleryUrl" class="details__img" />
+		</div>
+		<div class="details__right-box">
+			<div class="details__title-box">
+				<h1 class="details__title">{{ trip.title }}</h1>
+				<div class="details__star-box">
+					<app-rating-star
+						[value]="index"
+						[pickedValue]="trip.rate"
+						(onStarClick)="rateTrip($event)"
+						*ngFor="let star of stars; let index"
+					></app-rating-star>
+					<p class="details__star-count">({{ this.trip.rateNumber }})</p>
+				</div>
+				<p class="details__countries">
+					{{ trip.country }} &rarr; {{ trip.dest }}
+				</p>
+				<p class="details__date">
+					<span class="details__span">od</span
+					>{{ trip.startDate | date : 'shortDate' }}
+					<span class="details__span">do</span>
+					{{ trip.endDate | date : 'shortDate' }}
+				</p>
+			</div>
+			<p class="details__desc">
+				{{ trip.desc }}
+			</p>
+			<p class="details__capacity">
+				Cena:
+				<span class="details__emph"
+					>{{ trip.price | exchangeMoney : trip.currency : getCurrency() }}
+					{{ getCurrency() }}</span
+				>
+			</p>
+			<p class="details__capacity">Max ilość miejsc: {{ trip.totalAmount }}</p>
+			<p class="details__current-capacity">
+				Wolnych miejsc: {{ trip.currentAmount }}
+			</p>
+		</div>
+	</div>
+
+	<div class="cta">
+		<button
+			class="btn cta__btn"
+			[ngClass]="{ hidden: trip.currentAmount === 0 }"
+			(click)="onButtonClick(true)"
+		>
+			+
+		</button>
+		<p class="cta__quantity">Dostępnych: {{ trip.currentAmount }}</p>
+		<button
+			class="btn cta__btn"
+			[ngClass]="{ hidden: reservedAmount === 0 }"
+			(click)="onButtonClick(false)"
+		>
+			-
+		</button>
+	</div>
+
+	<div class="opinion">
+		<p>formularz</p>
+
+		<div class="opinion__item">
+			<div class="opinion__top-box">
+				<p class="opinion__trip-name">{{ trip.title }}</p>
+				<p class="opinion__nick">ShocK</p>
+				<p class="opinion__date">
+					{{ trip.startDate | date : 'shortDate' }}
+					<span class="opinion__span">-</span>
+					{{ trip.endDate | date : 'shortDate' }}
+				</p>
+			</div>
+			<p class="opinion__text">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+				ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+				dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+				ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+				quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+				arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+				Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+				dapibu
+			</p>
+		</div>
+		<div class="opinion__item">
+			<div class="opinion__top-box">
+				<p class="opinion__trip-name">{{ trip.title }}</p>
+				<p class="opinion__nick">ShocK</p>
+				<p class="opinion__date">
+					{{ trip.startDate | date : 'shortDate' }}
+					<span class="opinion__span">-</span>
+					{{ trip.endDate | date : 'shortDate' }}
+				</p>
+			</div>
+			<p class="opinion__text">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+				ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+				dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+				ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+				quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+				arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+				Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+				dapibu
+			</p>
+		</div>
+		<div class="opinion__item">
+			<div class="opinion__top-box">
+				<p class="opinion__trip-name">{{ trip.title }}</p>
+				<p class="opinion__nick">ShocK</p>
+				<p class="opinion__date">
+					{{ trip.startDate | date : 'shortDate' }}
+					<span class="opinion__span">-</span>
+					{{ trip.endDate | date : 'shortDate' }}
+				</p>
+			</div>
+			<p class="opinion__text">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+				ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+				dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+				ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+				quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+				arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+				Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+				dapibu
+			</p>
+		</div>
+	</div>
+</div>
+
+<ng-template #error>
+	<div class="error">
+		<h1 class="error__title">ERROR!</h1>
+		<p class="error__text">Illeagal Operation</p>
+	</div>
+</ng-template>
+
