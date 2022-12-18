@@ -3,9 +3,9 @@ import {
 	Currency,
 	CurrencyService,
 } from '../currency-switcher/currency-service.service';
-import { Trip } from '../trips.component';
 import { CartService } from './cart-service.service';
 import { TripsService } from '../trips.service';
+import { Trip } from '../trip/trip.model';
 
 @Component({
 	selector: 'app-cart',
@@ -23,13 +23,23 @@ export class CartComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
+		this.refreshCartInfo();
+	}
+	getCurrency() {
+		return this.currencyService.currenctCurrency;
+	}
+
+	buyTrip(trip: Trip & { quantity: number }) {
+		this.tripsService.buyTrip(trip);
+		this.cartService.removeTripFromCart(trip);
+		this.refreshCartInfo();
+	}
+
+	refreshCartInfo() {
 		const { cartList, currency, totalSum } = this.cartService.getCartInfo();
 		this.cartList = cartList;
 		this.totalSum = totalSum;
 		this.tripCurrency = currency;
-	}
-	getCurrency() {
-		return this.currencyService.currenctCurrency;
 	}
 }
 

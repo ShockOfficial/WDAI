@@ -8,6 +8,7 @@ import { AddTripScreenComponent } from './add-trip-screen/add-trip-screen.compon
 import { ProfileSreenComponent } from './profile-sreen/profile-sreen.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { TripDetailsComponent } from './trip-details/trip-details.component';
+import { TripHistoryComponent } from './trip-history/trip-history.component';
 
 const appRoutes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,7 +17,7 @@ const appRoutes: Routes = [
 	{ path: 'details/:id', component: TripDetailsComponent },
 	{ path: 'cart', component: CartComponent },
 	{ path: 'add', component: AddTripScreenComponent },
-	{ path: 'history', component: CartComponent },
+	{ path: 'history', component: TripHistoryComponent },
 	{ path: 'profile', component: ProfileSreenComponent },
 	{ path: '**', redirectTo: '' },
 ];

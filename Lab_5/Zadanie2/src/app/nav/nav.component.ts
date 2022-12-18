@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { CartService } from '../cart/cart-service.service';
 import { Router } from '@angular/router';
 import { CurrencyService } from '../currency-switcher/currency-service.service';
+import { TripsService } from '../trips.service';
 
 @Component({
 	selector: 'app-nav',
@@ -12,12 +13,14 @@ export class NavComponent implements OnInit {
 	isShaking = false;
 	isMenuOpen = false;
 	isMobbile = false;
+	isIncoming = false;
 	totalSum: number;
 
 	constructor(
 		private cartService: CartService,
 		private router: Router,
 		private currencyService: CurrencyService,
+		private tripService: TripsService,
 	) {}
 	ngOnInit(): void {
 		this.cartService.onAddToCart.subscribe(() => {
@@ -27,6 +30,10 @@ export class NavComponent implements OnInit {
 				this.isShaking = false;
 			}, 500);
 		});
+
+		this.tripService.incomingTrip.subscribe(
+			(isIncoming) => (this.isIncoming = isIncoming),
+		);
 	}
 
 	@HostListener('window:resize', ['$event'])

@@ -20,7 +20,7 @@
 		>
 		<a routerLink="history" class="nav__link" routerLinkActive="active"
 			><p class="nav__link-text">
-				Historia Wycieczek <span class="badge">&nbsp;</span>
+				Historia Wycieczek <span *ngIf="isIncoming" class="badge">&nbsp;</span>
 			</p></a
 		>
 	</div>

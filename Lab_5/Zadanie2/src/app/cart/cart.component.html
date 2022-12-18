@@ -8,6 +8,7 @@
 			*ngFor="let trip of cartList; let i = index"
 			[trip]="trip"
 			[isLast]="i === cartList.length - 1"
+			(onBuyTrip)="buyTrip($event)"
 		>
 		</app-cart-item>
 		<div class="cart__bottom-box">

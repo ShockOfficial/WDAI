@@ -1,0 +1,20 @@
+<div class="card">
+	<div class="card__top">
+		<p class="card__title">{{ trip.title }}</p>
+		<p class="card__location">
+			<span class="card__emph">{{ trip.country }}</span> do
+			<span class="card__emph">{{ trip.dest }}</span>
+		</p>
+	</div>
+	<p class="card__date">
+		od
+		<span class="card__emph">{{ trip.startDate | date : 'shortDate' }}</span> do
+		<span class="card__emph">{{ trip.endDate | date : 'shortDate' }}</span>
+	</p>
+	<p class="card__amount">x{{ trip.quantity }}</p>
+	<p class="card__purchaseDate">
+		Kupiono: <span class="card__date-emph">{{ trip.purchaseDate | date }}</span>
+	</p>
+	<p class="card__status">{{ getStatus() }}</p>
+</div>
+

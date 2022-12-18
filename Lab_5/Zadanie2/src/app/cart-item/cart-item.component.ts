@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CurrencyService } from '../currency-switcher/currency-service.service';
-import { Trip } from '../trips.component';
-
+import { Trip } from '../trip/trip.model';
 @Component({
 	selector: 'app-cart-item',
 	templateUrl: './cart-item.component.html',
@@ -10,6 +9,7 @@ import { Trip } from '../trips.component';
 export class CartItemComponent implements OnInit {
 	@Input() trip: Trip & { quantity: number };
 	@Input() isLast: boolean = false;
+	@Output() onBuyTrip = new EventEmitter<Trip & { quantity: number }>();
 	constructor(private currencyService: CurrencyService) {}
 
 	getCurrentCurrency() {
@@ -17,5 +17,9 @@ export class CartItemComponent implements OnInit {
 	}
 
 	ngOnInit(): void {}
+
+	buyTrip() {
+		this.onBuyTrip.emit(this.trip);
+	}
 }
 

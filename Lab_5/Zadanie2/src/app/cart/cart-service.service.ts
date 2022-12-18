@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { Trip } from '../trips.component';
 import { TripsService } from '../trips.service';
 import { Currency } from '../currency-switcher/currency-service.service';
+import { Trip } from '../trip/trip.model';
 
 @Injectable({
 	providedIn: 'root',
@@ -20,6 +20,10 @@ export class CartService {
 	removeFromCart(item: Trip) {
 		const index = this.items.indexOf(item);
 		this.items = this.items.slice(0, index).concat(this.items.slice(index + 1));
+	}
+
+	removeTripFromCart(trip: Trip) {
+		this.items = this.items.filter((item) => item.id !== trip.id);
 	}
 
 	getCartSize() {

@@ -52,7 +52,7 @@
 		<div class="filters__item-box">
 			<p
 				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
+				(click)="clickHandler($event)"
 				[ngClass]="{ active: isRateSelected(1) }"
 				data-rate="1"
 			>
@@ -60,7 +60,7 @@
 			</p>
 			<p
 				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
+				(click)="clickHandler($event)"
 				[ngClass]="{ active: isRateSelected(2) }"
 				data-rate="2"
 			>
@@ -68,7 +68,7 @@
 			</p>
 			<p
 				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
+				(click)="clickHandler($event)"
 				[ngClass]="{ active: isRateSelected(3) }"
 				data-rate="3"
 			>
@@ -76,7 +76,7 @@
 			</p>
 			<p
 				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
+				(click)="clickHandler($event)"
 				[ngClass]="{ active: isRateSelected(4) }"
 				data-rate="4"
 			>
@@ -84,7 +84,7 @@
 			</p>
 			<p
 				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
+				(click)="clickHandler($event)"
 				[ngClass]="{ active: isRateSelected(5) }"
 				data-rate="5"
 			>
@@ -100,7 +100,7 @@
 		<div class="filters__item-box filters__item-box--mosaic">
 			<p
 				class="filters__list-item-name"
-				(click)="clickHanlder($event)"
+				(click)="clickHandler($event)"
 				*ngFor="let destLocation of locations"
 				[ngClass]="{ active: isLocationSelected(destLocation) }"
 				[id]="destLocation"

@@ -1,0 +1,22 @@
+<div class="history">
+	<div class="history__filters">
+		<div class="history__item-box history__item-box--mosaic">
+			<p
+				class="history__list-item-name"
+				(click)="clickHandler($event)"
+				*ngFor="let filter of filters"
+				[ngClass]="{ active: isSelectedHandler(filter) }"
+				[id]="filter"
+			>
+				{{ filter }}
+			</p>
+		</div>
+	</div>
+
+	<app-history-card
+		class="card"
+		*ngFor="let trip of tripsInHistory | statusFilter : activeFilters"
+		[trip]="trip"
+	></app-history-card>
+</div>
+

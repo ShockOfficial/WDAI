@@ -42,7 +42,7 @@ export class FiltersComponent implements OnInit {
 		});
 	}
 
-	clickHanlder(e: Event) {
+	clickHandler(e: Event) {
 		const el = e.target as HTMLElement;
 		const rate = el.dataset['rate'];
 		const localization = el.id;

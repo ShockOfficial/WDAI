@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Trip } from '../trips.component';
+import { Trip, TripStatus } from '../trip/trip.model';
 
 @Component({
 	selector: 'app-create-form',
@@ -83,6 +83,7 @@ export class CreateFormComponent implements OnInit {
 			rate: 0,
 			rateNumber: 0,
 			opinions: [],
+			status: TripStatus.Normal,
 		});
 		this.tripForm.reset();
 	}

@@ -1,0 +1,71 @@
+@import '../variables.scss', '../shared.scss';
+
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	padding: 3rem;
+	height: 100%;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+	border-radius: 8px;
+	background-color: #fff;
+
+	&__top {
+		padding: 1rem 0;
+		border-bottom: 1px solid rgba(#000, $alpha: 0.1);
+	}
+	&__title {
+		font-size: 2.6rem;
+		color: $primary-color;
+		font-weight: bold;
+		margin-top: 1rem;
+	}
+	&__location {
+		font-size: 1.4rem;
+		padding: 0.5rem 0;
+		border-radius: 8px;
+		width: fit-content;
+		line-height: 2.1rem;
+	}
+	&__emph {
+		color: $primary-color;
+		font-weight: bold;
+		padding: 0.5rem;
+		background-color: rgb(235, 235, 235);
+		border-radius: 8px;
+		width: fit-content;
+		line-height: 3rem;
+	}
+	&__date {
+	}
+	&__amount {
+		position: absolute;
+		border-radius: 50%;
+		padding: 1rem;
+		background-color: $primary-color--500;
+		color: $white-color;
+		font-weight: bold;
+		box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.6);
+		right: 1rem;
+		top: 1rem;
+	}
+	&__purchaseDate {
+	}
+	&__date-emph {
+		font-weight: bold;
+	}
+	&__status {
+		padding: 1.5rem 3rem;
+		text-align: center;
+		border-radius: 8px;
+		background-color: $primary-color;
+		color: $white-color;
+		font-weight: bold;
+		text-transform: uppercase;
+		box-shadow: 0 2px 0.5rem rgba(0, 0, 0, 0.6);
+		margin-top: auto;
+	}
+}
+

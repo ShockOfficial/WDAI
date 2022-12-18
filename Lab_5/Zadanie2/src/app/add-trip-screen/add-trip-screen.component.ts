@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Trip } from '../trips.component';
 import { FiltersService } from '../filters/filters.service';
 import { TripsService } from '../trips.service';
+import { Trip } from '../trip/trip.model';
 
 @Component({
 	selector: 'app-add-trip-screen',

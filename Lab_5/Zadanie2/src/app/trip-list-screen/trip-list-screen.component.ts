@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Trip } from '../trips.component';
 import { FiltersService } from '../filters/filters.service';
-import { CartService } from '../cart/cart-service.service';
-import { Currency } from '../currency-switcher/currency-service.service';
 import { TripsService } from '../trips.service';
+import { Trip } from '../trip/trip.model';
 
 @Component({
 	selector: 'app-trip-list-screen',

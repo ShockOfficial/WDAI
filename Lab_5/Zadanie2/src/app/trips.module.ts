@@ -25,6 +25,9 @@ import { ProfileSreenComponent } from './profile-sreen/profile-sreen.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { TripDetailsComponent } from './trip-details/trip-details.component';
 import { OpinionFormComponent } from './opinion-form/opinion-form.component';
+import { TripHistoryComponent } from './trip-history/trip-history.component';
+import { HistoryCardComponent } from './history-card/history-card.component';
+import { StatusFilterPipe } from './status-filter.pipe';
 
 @NgModule({
 	declarations: [
@@ -49,6 +52,9 @@ import { OpinionFormComponent } from './opinion-form/opinion-form.component';
   HomeScreenComponent,
   TripDetailsComponent,
   OpinionFormComponent,
+  TripHistoryComponent,
+  HistoryCardComponent,
+  StatusFilterPipe,
 	],
 	imports: [
 		BrowserModule,

@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { FiltersService, FilterType } from './filters/filters.service';
-import { Trip } from './trips.component';
+import { Trip } from './trip/trip.model';
 
 @Pipe({
 	name: 'locationFilter',

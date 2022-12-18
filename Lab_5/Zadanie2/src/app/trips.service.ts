@@ -1,18 +1,20 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import tripsData from '../data/trips.json';
-import { Trip } from './trips.component';
 import { Currency } from './currency-switcher/currency-service.service';
 import { FiltersService } from './filters/filters.service';
 import { LocationFilterPipe } from './location-filter.pipe';
 import { DateFilterPipe } from './date-filter.pipe';
 import { PriceFilterPipe } from './price-filter.pipe';
 import { RateFilterPipe } from './rate-filter.pipe';
+import { Trip, TripStatus } from './trip/trip.model';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class TripsService {
+	boughtTrips: (Trip & { quantity: number; purchaseDate: number })[] = [];
 	trips: Trip[] = [];
+	incomingTrip = new EventEmitter<true>();
 	constructor(
 		private locationPipe: LocationFilterPipe,
 		private ratePipe: RateFilterPipe,
@@ -24,6 +26,7 @@ export class TripsService {
 			startDate: new Date(trip.startDate),
 			endDate: new Date(trip.endDate),
 			currency: trip.currency as Currency, // I know that the data is correct at this point
+			status: TripStatus.Normal,
 		}));
 		this.distinctSpecialTrips();
 	}
@@ -68,6 +71,31 @@ export class TripsService {
 
 	getById(id: number) {
 		return this.trips.find((trip) => trip.id === id);
+	}
+
+	buyTrip(trip: Trip & { quantity: number }) {
+		trip.status = TripStatus.Before;
+		this.boughtTrips.push({ ...trip, purchaseDate: Date.now() });
+
+		// Active and incoming trip are activating badge
+		this.boughtTrips.forEach((item) => {
+			if (
+				item.startDate.getTime() >= Date.now() &&
+				this.subtractDays(14, new Date(item.startDate)).getTime() <=
+					Date.now() &&
+				item.endDate.getTime() >= Date.now()
+			) {
+				this.incomingTrip.emit(true);
+			}
+		});
+	}
+
+	subtractDays(numOfDays: number, date = new Date()) {
+		const dateCopy = new Date(date.getTime());
+
+		dateCopy.setDate(dateCopy.getDate() - numOfDays);
+
+		return dateCopy;
 	}
 }
 

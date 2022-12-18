@@ -1,0 +1,65 @@
+@import '../shared.scss', '../variables.scss';
+
+.history {
+	padding: 2rem;
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	flex-wrap: wrap;
+
+	&__filters {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $white-color;
+		background-color: #f5eeff;
+		padding: 3rem;
+		border-radius: 8px;
+	}
+	&__item {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		flex-wrap: wrap;
+		padding: 2rem 0;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	&__list-item-name {
+		max-width: 90%;
+		background-color: $white-color;
+		border-radius: 3px;
+		box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+		padding: 1rem;
+		transition: background-color 0.2s, color 0.2s, transform 0.2s;
+		overflow-wrap: break-word;
+		cursor: pointer;
+		&:hover {
+			background-color: $primary-color;
+			color: #fff;
+		}
+	}
+	&__item-box {
+		width: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		gap: 2rem;
+
+		@media screen and (max-width: 550px) {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+}
+
+.card {
+	flex-basis: 22%;
+}
+
+.active {
+	background-color: $primary-color;
+	color: #fff;
+	transform: translateY(-2px);
+}
+

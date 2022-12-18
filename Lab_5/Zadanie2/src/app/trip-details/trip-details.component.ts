@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Trip } from '../trips.component';
 import { TripsService } from '../trips.service';
 import { CurrencyService } from '../currency-switcher/currency-service.service';
 import { CartService } from '../cart/cart-service.service';
 import { Location } from '@angular/common';
 import { Opinion } from '../opinion-form/opinion.model';
+import { Trip } from '../trip/trip.model';
 
 @Component({
 	selector: 'app-trip-details',

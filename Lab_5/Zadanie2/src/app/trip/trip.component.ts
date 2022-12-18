@@ -8,8 +8,8 @@ import {
 } from '@angular/core';
 import { CartService } from '../cart/cart-service.service';
 import { CurrencyService } from '../currency-switcher/currency-service.service';
-import { Trip } from '../trips.component';
 import { Router } from '@angular/router';
+import { Trip } from './trip.model';
 
 @Component({
 	selector: 'app-trip',
