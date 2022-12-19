@@ -40,6 +40,11 @@ export class FiltersComponent implements OnInit {
 		this.filtersService.notify.subscribe(() => {
 			this.setInputsDefaultValues();
 		});
+
+		this.tripService.getTripsFromDb().subscribe(() => {
+			this.setInputsDefaultValues();
+			this.getTripDest();
+		});
 	}
 
 	clickHandler(e: Event) {

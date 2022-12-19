@@ -15,6 +15,9 @@ export class TripHistoryComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.tripsInHistory = this.tripsService.boughtTrips;
+		this.tripsService.getBoughtTripsFromDb().subscribe((data) => {
+			this.tripsInHistory = data;
+		});
 
 		this.tripsInHistory = this.tripsInHistory.map((item) => {
 			if (

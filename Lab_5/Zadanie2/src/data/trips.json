@@ -1,6 +1,6 @@
 [
 	{
-		"id": 0,
+		"id": "0",
 		"title": "Podhale",
 		"dest": "Zakopane",
 		"country": "Polska",
@@ -20,10 +20,11 @@
 			"https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1618250777156-e864a6e38a8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1613052903569-764fe275c138?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
-		]
+		],
+		"isMostExpensive": "Normal"
 	},
 	{
-		"id": 1,
+		"id": "1",
 		"title": "Morze ci pomoże",
 		"dest": "Gdańsk",
 		"country": "Polska",
@@ -43,10 +44,11 @@
 			"https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1618250777156-e864a6e38a8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1613052903569-764fe275c138?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
-		]
+		],
+		"isMostExpensive": "Normal"
 	},
 	{
-		"id": 2,
+		"id": "2",
 		"title": "Stolica",
 		"dest": "Warszawa",
 		"country": "Polska",
@@ -66,10 +68,11 @@
 			"https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1618250777156-e864a6e38a8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1613052903569-764fe275c138?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
-		]
+		],
+		"isMostExpensive": "Normal"
 	},
 	{
-		"id": 3,
+		"id": "3",
 		"title": "Druga Stolica",
 		"dest": "Kraków",
 		"country": "Polska",
@@ -89,10 +92,11 @@
 			"https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1618250777156-e864a6e38a8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1613052903569-764fe275c138?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
-		]
+		],
+		"isMostExpensive": "Normal"
 	},
 	{
-		"id": 4,
+		"id": "4",
 		"title": "Pierwsza Stolica",
 		"dest": "Gniezno",
 		"country": "Polska",
@@ -112,10 +116,11 @@
 			"https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1618250777156-e864a6e38a8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1613052903569-764fe275c138?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
-		]
+		],
+		"isMostExpensive": "Normal"
 	},
 	{
-		"id": 5,
+		"id": "5",
 		"title": "Poznaj USA",
 		"dest": "New York",
 		"country": "USA",
@@ -135,10 +140,11 @@
 			"https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1618250777156-e864a6e38a8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1613052903569-764fe275c138?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
-		]
+		],
+		"isMostExpensive": "Normal"
 	},
 	{
-		"id": 6,
+		"id": "6",
 		"title": "Najwyższy wieżowiec",
 		"dest": "Dubaj",
 		"country": " Zjednoczone Emiraty Arabskie",
@@ -158,10 +164,11 @@
 			"https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1618250777156-e864a6e38a8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1613052903569-764fe275c138?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
-		]
+		],
+		"isMostExpensive": "Normal"
 	},
 	{
-		"id": 7,
+		"id": "7",
 		"title": "Nasz sąsiad",
 		"dest": "Berlin",
 		"country": " Niemcy",
@@ -181,10 +188,11 @@
 			"https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1618250777156-e864a6e38a8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1613052903569-764fe275c138?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
-		]
+		],
+		"isMostExpensive": "Normal"
 	},
 	{
-		"id": 8,
+		"id": "8",
 		"title": "Nasz sąsiad",
 		"dest": "Praga",
 		"country": " Czechy",
@@ -204,10 +212,11 @@
 			"https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1618250777156-e864a6e38a8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1613052903569-764fe275c138?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
-		]
+		],
+		"isMostExpensive": "Normal"
 	},
 	{
-		"id": 9,
+		"id": "9",
 		"title": "Gorąca plaża",
 		"dest": "Bari",
 		"country": " Włochy",
@@ -227,7 +236,8 @@
 			"https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1618250777156-e864a6e38a8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
 			"https://images.unsplash.com/photo-1613052903569-764fe275c138?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
-		]
+		],
+		"isMostExpensive": "Normal"
 	}
 ]
 

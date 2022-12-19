@@ -2,7 +2,7 @@ import { Currency } from '../currency-switcher/currency-service.service';
 import { Opinion } from '../opinion-form/opinion.model';
 
 export interface Trip {
-	id: number;
+	id: string;
 	title: string;
 	dest: string;
 	country: string;
@@ -15,8 +15,8 @@ export interface Trip {
 	imageUrls: string[];
 	price: number;
 	currency: Currency;
-	isMostExpensive?: boolean;
-	rate: number;
+	isMostExpensive: ExpensiveStatus;
+	rate: number; // change this to array of numbers in the future
 	rateNumber: number;
 	opinions: Opinion[];
 	status: TripStatus;
@@ -28,4 +28,6 @@ export enum TripStatus {
 	'After',
 	'Active',
 }
+
+export type ExpensiveStatus = 'Expensive' | 'Cheap' | 'Normal';
 

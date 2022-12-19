@@ -16,5 +16,14 @@
 			(onRemoveTrip)="onRemoveTrip($event)"
 		></app-trip>
 	</div>
+	<div class="spinner__wrapper" *ngIf="!trips.length">
+		<div
+			class="spinner-border"
+			style="width: 3rem; height: 3rem; padding: 2rem"
+			role="status"
+		>
+			<span class="visually-hidden">Loading...</span>
+		</div>
+	</div>
 </div>
 

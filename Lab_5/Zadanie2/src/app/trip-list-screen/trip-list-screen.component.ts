@@ -21,6 +21,10 @@ export class TripListScreenComponent implements OnInit {
 		this.filtersService.notify.subscribe(() => {
 			this.trips = [...this.trips];
 		});
+
+		this.tripsService.getTripsFromDb().subscribe(() => {
+			this.trips = [...this.tripsService.trips];
+		});
 	}
 
 	onRemoveTrip(trip: Trip) {

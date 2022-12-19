@@ -23,6 +23,7 @@ export class TripDetailsComponent implements OnInit {
 	stars = [1, 2, 3, 4, 5];
 	isFormOpen: boolean = false;
 	opinions: Opinion[];
+	isFetching: boolean = true;
 	images: string[];
 
 	constructor(
@@ -34,10 +35,15 @@ export class TripDetailsComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
-		this.trip = this.tripsService.getById(+this.route.snapshot.params['id']);
+		this.trip = this.tripsService.getById(this.route.snapshot.params['id']);
 		this.reservedAmount = +this.route.snapshot.queryParams['reservedAmount'];
 		this.opinions = this.trip ? this.trip.opinions : [];
 		this.images = this.trip ? this.trip.imageUrls : [];
+
+		setTimeout(() => {
+			this.trip = this.tripsService.getById(this.route.snapshot.params['id']);
+			this.isFetching = false;
+		}, 5000);
 	}
 
 	getCurrency() {
@@ -63,8 +69,8 @@ export class TripDetailsComponent implements OnInit {
 	rateTrip(rate: number) {
 		if (this.trip) {
 			this.trip.rate = rate;
-
 			if (this.trip.rateNumber === 0) this.trip.rateNumber += 1;
+			this.tripsService.modifyObjectInDb(this.trip);
 		}
 	}
 	openForm() {

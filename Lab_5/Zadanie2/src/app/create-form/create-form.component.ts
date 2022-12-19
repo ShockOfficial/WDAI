@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Trip, TripStatus } from '../trip/trip.model';
+import { TripsService } from '../trips.service';
 
 @Component({
 	selector: 'app-create-form',
@@ -10,7 +11,7 @@ import { Trip, TripStatus } from '../trip/trip.model';
 export class CreateFormComponent implements OnInit {
 	tripForm: FormGroup;
 	@Output() onSubmit = new EventEmitter<Trip>();
-	constructor() {}
+	constructor(private tripService: TripsService) {}
 
 	ngOnInit(): void {
 		this.tripForm = new FormGroup({
@@ -68,7 +69,7 @@ export class CreateFormComponent implements OnInit {
 		} = this.tripForm.value;
 
 		this.onSubmit.emit({
-			id: Date.now(),
+			id: this.tripService.generateId(),
 			title: tripName,
 			country: countryName,
 			desc: description,
@@ -83,6 +84,7 @@ export class CreateFormComponent implements OnInit {
 			rate: 0,
 			rateNumber: 0,
 			opinions: [],
+			isMostExpensive: 'Normal',
 			status: TripStatus.Normal,
 			imageUrls: [
 				'https://images.unsplash.com/photo-1599946347371-68eb71b16afc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',

@@ -30,6 +30,12 @@ import { HistoryCardComponent } from './history-card/history-card.component';
 import { StatusFilterPipe } from './status-filter.pipe';
 import { CarouselComponent } from './carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideDatabase, getDatabase } from '@angular/fire/database';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
@@ -66,6 +72,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 		FormsModule,
 		AppRoutingModule,
 		NgbModule,
+		provideFirebaseApp(() => initializeApp(environment.firebase)),
+		provideDatabase(() => getDatabase()),
+		AngularFireModule.initializeApp(environment.firebase),
+		AngularFireDatabaseModule,
+		HttpClientModule,
 	],
 	bootstrap: [TripsComponent],
 	providers: [

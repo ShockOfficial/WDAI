@@ -40,6 +40,8 @@ export class CartComponent implements OnInit {
 		this.tripsService.buyTrip(trip);
 		this.cartService.removeTripFromCart(trip);
 		this.refreshCartInfo();
+		this.tripsService.modifyObjectInDb(trip);
+		this.tripsService.saveBoughtTripsInDb();
 	}
 
 	refreshCartInfo() {

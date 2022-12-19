@@ -104,7 +104,18 @@
 </div>
 
 <ng-template #error>
-	<div class="error">
+	<div class="spinner__wrapper">
+		<div
+			*ngIf="!trip && isFetching"
+			class="spinner-border"
+			style="width: 3rem; height: 3rem; padding: 2rem"
+			role="status"
+		>
+			<span class="visually-hidden">Loading...</span>
+		</div>
+	</div>
+
+	<div class="error" *ngIf="!isFetching">
 		<h1 class="error__title">ERROR!</h1>
 		<p class="error__text">Illeagal Operation</p>
 	</div>

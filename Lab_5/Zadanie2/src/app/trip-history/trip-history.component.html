@@ -18,5 +18,16 @@
 		*ngFor="let trip of tripsInHistory | statusFilter : activeFilters"
 		[trip]="trip"
 	></app-history-card>
+
+	<div class="spinner__wrapper">
+		<div
+			*ngIf="!tripsInHistory.length"
+			class="spinner-border"
+			style="width: 3rem; height: 3rem; padding: 2rem"
+			role="status"
+		>
+			<span class="visually-hidden">Loading...</span>
+		</div>
+	</div>
 </div>
 

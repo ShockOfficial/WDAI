@@ -9,7 +9,7 @@ import {
 import { CartService } from '../cart/cart-service.service';
 import { CurrencyService } from '../currency-switcher/currency-service.service';
 import { Router } from '@angular/router';
-import { Trip } from './trip.model';
+import { ExpensiveStatus, Trip } from './trip.model';
 
 @Component({
 	selector: 'app-trip',
@@ -20,7 +20,7 @@ export class TripComponent implements OnInit {
 	@Input() trip: Trip;
 	@Output() distinctTripsHandler = new EventEmitter();
 	@Output() onRemoveTrip = new EventEmitter<Trip>();
-	@Input() isMostExpensive?: boolean;
+	@Input() isMostExpensive: ExpensiveStatus;
 	reservedAmount: number = 0;
 	constructor(
 		private currencyService: CurrencyService,
@@ -51,9 +51,9 @@ export class TripComponent implements OnInit {
 
 		if (
 			this.trip.currentAmount === 0 &&
-			this.trip.isMostExpensive !== undefined
+			this.trip.isMostExpensive !== 'Normal'
 		) {
-			this.isMostExpensive = undefined;
+			this.isMostExpensive = 'Normal';
 			this.distinctTripsHandler.emit();
 		}
 	}
@@ -67,6 +67,10 @@ export class TripComponent implements OnInit {
 		this.router.navigate(['details', this.trip.id], {
 			queryParams: { reservedAmount: this.reservedAmount },
 		});
+	}
+
+	getPriceStatus() {
+		return this.trip.isMostExpensive.toString();
 	}
 }
 

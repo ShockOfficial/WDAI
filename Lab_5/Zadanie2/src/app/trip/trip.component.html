@@ -3,8 +3,8 @@
 	[ngClass]="{
 		'out-of-stock': trip.currentAmount === 0,
 		'last-places': trip.currentAmount < 3,
-		'most-expensive': isMostExpensive === true,
-		'cheapest-one': isMostExpensive === false
+		'most-expensive': getPriceStatus() === 'Expensive',
+		'cheapest-one': getPriceStatus() === 'Cheap'
 	}"
 >
 	<div class="trip__box-top">
