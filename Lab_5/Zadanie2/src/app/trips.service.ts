@@ -54,7 +54,7 @@ export class TripsService {
 	}
 
 	async removeFromDb(trip: Trip) {
-		// return; // Tymczasowo wyłączone, ale zaimplementowane
+		return; // Tymczasowo wyłączone, ale zaimplementowane
 
 		await this.db.object(`/trips/${trip.id}`).remove();
 	}
