@@ -1,16 +1,19 @@
 @import '../variables.scss';
 @import '../shared.scss';
+@import 'normalize.css';
+
 .nav {
-	position: fixed;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	padding: 0rem 3rem;
-	height: 10rem;
-	background-color: $primary-color;
-	z-index: 4;
-	box-sizing: border-box;
+	position: fixed !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	width: 100% !important;
+	padding: 0rem 3rem !important;
+	height: 10rem !important;
+	background-color: $primary-color !important;
+	z-index: 4 !important;
+	box-sizing: border-box !important;
+	flex-wrap: nowrap;
 	&__logo {
 		font-size: 4rem;
 		text-transform: uppercase;
@@ -54,10 +57,11 @@
 		justify-content: space-between;
 		align-items: center;
 		transition: transform 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
-		gap: 4rem;
+		gap: 2rem;
 		@media screen and (max-width: 880px) {
 			width: 50%;
-			gap: 0;
+			font-size: 1.4rem;
+			gap: 1rem;
 		}
 
 		@media screen and (max-width: 650px) {
@@ -67,6 +71,7 @@
 			bottom: -100%;
 			display: block;
 			width: 100vh;
+			font-size: 1.6rem;
 		}
 	}
 	&__link {
@@ -193,7 +198,7 @@
 			position: absolute;
 			width: 5.5rem;
 			left: -1rem;
-			bottom: -150%;
+			bottom: -190%;
 		}
 
 		&::after {
@@ -204,7 +209,7 @@
 			border-left-color: $white-color;
 
 			@media screen and (max-width: 400px) {
-				top: -40%;
+				top: -38%;
 				right: 1.5rem;
 				border-left-color: transparent;
 				border-bottom-color: $white-color;

@@ -1,4 +1,4 @@
-<p class="btn details__btn" (click)="goBack()">&larr; Wstecz</p>
+<p class="myBtn details__btn" (click)="goBack()">&larr; Wstecz</p>
 <div class="wrapper" *ngIf="trip; else error">
 	<div class="details">
 		<div class="details__left-box">
@@ -45,7 +45,7 @@
 
 	<div class="cta">
 		<button
-			class="btn cta__btn"
+			class="myBtn cta__btn"
 			[ngClass]="{ hidden: trip.currentAmount === 0 }"
 			(click)="onButtonClick(true)"
 		>
@@ -53,7 +53,7 @@
 		</button>
 		<p class="cta__quantity">Dostępnych: {{ trip.currentAmount }}</p>
 		<button
-			class="btn cta__btn"
+			class="myBtn cta__btn"
 			[ngClass]="{ hidden: reservedAmount === 0 }"
 			(click)="onButtonClick(false)"
 		>
@@ -61,8 +61,25 @@
 		</button>
 	</div>
 
+	<div class="slider__wrapper">
+		<ngb-carousel
+			#carousel
+			[interval]="5000"
+			[pauseOnHover]="pauseOnHover"
+			[pauseOnFocus]="pauseOnFocus"
+			(slide)="onSlide($event)"
+			class="slider__box"
+		>
+			<ng-template ngbSlide *ngFor="let img of images; index as i">
+				<div class="picsum-img-wrapper slider">
+					<img [src]="img" class="slider__img" />
+				</div>
+			</ng-template>
+		</ngb-carousel>
+	</div>
+
 	<div class="opinion">
-		<button class="btn btn--primary btn--big" (click)="openForm()">
+		<button class="myBtn myBtn--primary myBtn--big" (click)="openForm()">
 			{{ !isFormOpen ? 'Otwórz formularz' : 'Zamknij formularz' }}
 		</button>
 		<app-opinion-form

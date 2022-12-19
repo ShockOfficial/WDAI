@@ -28,6 +28,8 @@ import { OpinionFormComponent } from './opinion-form/opinion-form.component';
 import { TripHistoryComponent } from './trip-history/trip-history.component';
 import { HistoryCardComponent } from './history-card/history-card.component';
 import { StatusFilterPipe } from './status-filter.pipe';
+import { CarouselComponent } from './carousel/carousel.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
 	declarations: [
@@ -48,13 +50,14 @@ import { StatusFilterPipe } from './status-filter.pipe';
 		DateFilterPipe,
 		TripListScreenComponent,
 		AddTripScreenComponent,
-  ProfileSreenComponent,
-  HomeScreenComponent,
-  TripDetailsComponent,
-  OpinionFormComponent,
-  TripHistoryComponent,
-  HistoryCardComponent,
-  StatusFilterPipe,
+		ProfileSreenComponent,
+		HomeScreenComponent,
+		TripDetailsComponent,
+		OpinionFormComponent,
+		TripHistoryComponent,
+		HistoryCardComponent,
+		StatusFilterPipe,
+		CarouselComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -62,6 +65,7 @@ import { StatusFilterPipe } from './status-filter.pipe';
 		ReactiveFormsModule,
 		FormsModule,
 		AppRoutingModule,
+		NgbModule,
 	],
 	bootstrap: [TripsComponent],
 	providers: [

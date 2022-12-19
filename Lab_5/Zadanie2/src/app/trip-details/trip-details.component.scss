@@ -1,5 +1,6 @@
 @import '../shared.scss';
 @import '../variables.scss';
+
 .details {
 	display: flex;
 	padding: 4rem;
@@ -43,7 +44,6 @@
 	&__countries {
 		font-weight: bold;
 		text-transform: uppercase;
-		margin-bottom: 1.5rem;
 	}
 	&__date {
 		display: flex;
@@ -177,8 +177,32 @@
 		font-size: 3rem;
 	}
 }
+.slider {
+	width: 100%;
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__box {
+		width: 50%;
 
+		@media screen and (max-width: 835px) {
+			width: 100%;
+		}
+	}
+	&__img {
+		width: 100%;
+	}
+}
 .form-box {
-	width: 80%;
+	width: 50%;
+
+	@media screen and (max-width: 835px) {
+		width: 80%;
+	}
+	@media screen and (max-width: 435px) {
+		width: 100%;
+	}
 }
 

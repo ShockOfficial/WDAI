@@ -1,4 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+	Component,
+	ElementRef,
+	OnInit,
+	ViewChild,
+	ViewEncapsulation,
+} from '@angular/core';
 import {
 	Currency,
 	CurrencyService,
@@ -11,6 +17,7 @@ import { Trip } from '../trip/trip.model';
 	selector: 'app-cart',
 	templateUrl: './cart.component.html',
 	styleUrls: ['./cart.component.scss'],
+	encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class CartComponent implements OnInit {
 	cartList: (Trip & { quantity: number })[];

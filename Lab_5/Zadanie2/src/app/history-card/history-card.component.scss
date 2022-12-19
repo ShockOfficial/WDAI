@@ -1,4 +1,6 @@
-@import '../variables.scss', '../shared.scss';
+@import '../variables.scss';
+@import '../shared.scss';
+@import 'normalize.css';
 
 .card {
 	position: relative;
@@ -11,6 +13,9 @@
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 	border-radius: 8px;
 	background-color: #fff;
+	min-height: unset;
+	border: none;
+	width: 27rem;
 
 	&__top {
 		padding: 1rem 0;

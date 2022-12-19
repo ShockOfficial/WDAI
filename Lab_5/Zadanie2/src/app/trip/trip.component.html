@@ -56,7 +56,7 @@
 	</div>
 	<div class="trip__cta-box">
 		<button
-			class="btn"
+			class="myBtn"
 			[ngClass]="{ hidden: trip.currentAmount === 0 }"
 			(click)="onButtonClick(true)"
 		>
@@ -64,7 +64,7 @@
 		</button>
 		<p class="trip__quantity">Dostępnych: {{ trip.currentAmount }}</p>
 		<button
-			class="btn"
+			class="myBtn"
 			[ngClass]="{ hidden: reservedAmount === 0 }"
 			(click)="onButtonClick(false)"
 		>
@@ -72,7 +72,10 @@
 		</button>
 	</div>
 
-	<button class="trip__btn btn btn--big btn--primary" (click)="onRemoveClick()">
+	<button
+		class="trip__btn myBtn myBtn--big myBtn--primary"
+		(click)="onRemoveClick()"
+	>
 		Usuń
 	</button>
 </div>

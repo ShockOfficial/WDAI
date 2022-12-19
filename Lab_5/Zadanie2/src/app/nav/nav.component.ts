@@ -1,4 +1,9 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import {
+	Component,
+	HostListener,
+	OnInit,
+	ViewEncapsulation,
+} from '@angular/core';
 import { CartService } from '../cart/cart-service.service';
 import { Router } from '@angular/router';
 import { CurrencyService } from '../currency-switcher/currency-service.service';
@@ -8,6 +13,7 @@ import { TripsService } from '../trips.service';
 	selector: 'app-nav',
 	templateUrl: './nav.component.html',
 	styleUrls: ['./nav.component.scss'],
+	encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class NavComponent implements OnInit {
 	isShaking = false;

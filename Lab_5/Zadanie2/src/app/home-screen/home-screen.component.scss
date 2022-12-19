@@ -1,5 +1,6 @@
 @import '../variables.scss';
 @import '../shared.scss';
+@import 'normalize.css';
 
 .header {
 	display: flex;
@@ -24,6 +25,7 @@
 	animation: slide-to-right 1s ease-in-out;
 }
 .header__title {
+	font-weight: bold;
 	font-size: 3.5rem;
 	margin-bottom: 2rem;
 	color: $white-color;
@@ -73,6 +75,7 @@
 		align-self: flex-start;
 		text-transform: uppercase;
 		margin-bottom: 3rem;
+		font-weight: bold;
 		color: $primary-color;
 	}
 
@@ -165,6 +168,7 @@
 	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 
 	&__title {
+		font-weight: bold;
 		font-size: 3rem;
 		margin-bottom: 2rem;
 		color: $primary-color;

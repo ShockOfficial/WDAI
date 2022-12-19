@@ -12,6 +12,7 @@ export interface Trip {
 	currentAmount: number;
 	desc: string;
 	galleryUrl: string;
+	imageUrls: string[];
 	price: number;
 	currency: Currency;
 	isMostExpensive?: boolean;

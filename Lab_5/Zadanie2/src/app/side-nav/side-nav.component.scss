@@ -1,8 +1,12 @@
 @import '../variables.scss';
+@import '../shared.scss';
+@import 'normalize.css';
 
 .nav {
+	display: block;
+	flex-wrap: nowrap;
 	position: fixed;
-	width: 20rem;
+	width: 22rem;
 	min-height: 100vh;
 	height: 100%;
 	padding: 0 1rem;

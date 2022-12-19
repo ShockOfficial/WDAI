@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Trip, TripStatus } from '../trip/trip.model';
 
 @Component({
 	selector: 'app-history-card',
 	templateUrl: './history-card.component.html',
 	styleUrls: ['./history-card.component.scss'],
+	encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class HistoryCardComponent implements OnInit {
 	@Input() trip: Trip & { quantity: number; purchaseDate: number };
