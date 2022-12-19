@@ -10,6 +10,7 @@ import { CartService } from '../cart/cart-service.service';
 import { CurrencyService } from '../currency-switcher/currency-service.service';
 import { Router } from '@angular/router';
 import { ExpensiveStatus, Trip } from './trip.model';
+import { TripsService } from '../trips.service';
 
 @Component({
 	selector: 'app-trip',
@@ -25,6 +26,7 @@ export class TripComponent implements OnInit {
 	constructor(
 		private currencyService: CurrencyService,
 		private cartService: CartService,
+		private tripService: TripsService,
 		private router: Router,
 	) {}
 

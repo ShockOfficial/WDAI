@@ -28,7 +28,6 @@ import { OpinionFormComponent } from './opinion-form/opinion-form.component';
 import { TripHistoryComponent } from './trip-history/trip-history.component';
 import { HistoryCardComponent } from './history-card/history-card.component';
 import { StatusFilterPipe } from './status-filter.pipe';
-import { CarouselComponent } from './carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
@@ -63,7 +62,6 @@ import { HttpClientModule } from '@angular/common/http';
 		TripHistoryComponent,
 		HistoryCardComponent,
 		StatusFilterPipe,
-		CarouselComponent,
 	],
 	imports: [
 		BrowserModule,

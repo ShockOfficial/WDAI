@@ -22,9 +22,12 @@ export class TripListScreenComponent implements OnInit {
 			this.trips = [...this.trips];
 		});
 
-		this.tripsService.getTripsFromDb().subscribe(() => {
-			this.trips = [...this.tripsService.trips];
-		});
+		const tripObservable = this.tripsService.getTripsFromDb();
+		if (tripObservable) {
+			tripObservable.subscribe(() => {
+				this.trips = [...this.tripsService.trips];
+			});
+		}
 	}
 
 	onRemoveTrip(trip: Trip) {

@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { EventEmitter, Injectable, OnDestroy } from '@angular/core';
 import tripsData from '../data/trips.json';
 import { Currency } from './currency-switcher/currency-service.service';
 import { LocationFilterPipe } from './location-filter.pipe';
@@ -30,18 +30,19 @@ export class TripsService {
 
 	getTripsFromDb() {
 		const dbTrips = this.db.list<Trip>('trips').valueChanges();
-		dbTrips.subscribe((data) => {
-			this.trips = data.map((trip) => ({
-				...trip,
-				startDate: new Date(trip.startDate),
-				endDate: new Date(trip.endDate),
-				currency: trip.currency as Currency, // I know that the data is correct at this point
-				status: TripStatus.Normal,
-			}));
 
+		dbTrips.subscribe((data) => {
+			if (this.trips.length === 0) {
+				this.trips = data.map((trip) => ({
+					...trip,
+					startDate: new Date(trip.startDate),
+					endDate: new Date(trip.endDate),
+					currency: trip.currency as Currency, // I know that the data is correct at this point
+					status: TripStatus.Normal,
+				}));
+			}
 			this.distinctSpecialTrips();
 		});
-
 		return dbTrips;
 	}
 

@@ -41,10 +41,14 @@ export class FiltersComponent implements OnInit {
 			this.setInputsDefaultValues();
 		});
 
-		this.tripService.getTripsFromDb().subscribe(() => {
-			this.setInputsDefaultValues();
-			this.getTripDest();
-		});
+		const tripsObs = this.tripService.getTripsFromDb();
+
+		if (tripsObs) {
+			tripsObs.subscribe(() => {
+				this.setInputsDefaultValues();
+				this.getTripDest();
+			});
+		}
 	}
 
 	clickHandler(e: Event) {
