@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 import { Student } from '../student';
 import { StudentService } from '../../services/student.service';
+import { FirebaseFirestore } from '@angular/fire';
 
 @Component({
 	selector: 'app-create-student',

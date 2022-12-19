@@ -4,5 +4,16 @@
 
 export const environment = {
 	production: false,
+	firebase: {
+		apiKey: 'AIzaSyBTK4iQihe9ihhiGQ-cRfFrPD3A4N3cr9Q',
+		authDomain: 'wdai-zadanie5-be764.firebaseapp.com',
+		databaseURL:
+			'https://wdai-zadanie5-be764-default-rtdb.europe-west1.firebasedatabase.app/',
+		projectId: 'wdai-zadanie5-be764',
+		storageBucket: 'wdai-zadanie5-be764.appspot.com',
+		messagingSenderId: '706211252366',
+		appId: '1:706211252366:web:4be93cfe1da97ced7661df',
+		measurementId: 'G-JD64P8TSN4',
+	},
 };
 

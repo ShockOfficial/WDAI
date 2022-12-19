@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { StudentDetailsComponent } from './students/student-details/student-details.component';
 import { StudentsListComponent } from './students/students-list/students-list.component';
 import { CreateStudentComponent } from './students/create-student/create-student.component';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @NgModule({
 	declarations: [
@@ -23,8 +24,8 @@ import { CreateStudentComponent } from './students/create-student/create-student
 		BrowserModule,
 		FormsModule,
 		AppRoutingModule,
-		AngularFireModule.initializeApp(environment.firebaseConfig),
-		AngularFirestoreModule,
+		AngularFireModule.initializeApp(environment.firebase),
+		AngularFireDatabaseModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
