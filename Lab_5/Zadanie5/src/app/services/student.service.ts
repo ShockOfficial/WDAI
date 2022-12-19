@@ -1,27 +1,38 @@
 import { Injectable } from '@angular/core';
 
 import { Student } from '../students/student';
-
-import { FirebaseDatabase } from '@angular/fire';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 @Injectable({
-	providedIn: 'root',
+  providedIn: 'root',
 })
 export class StudentService {
-	constructor(private db: AngularFireDatabase) {}
+  students: Student[];
+  constructor(private db: AngularFireDatabase) {}
 
-	createStudent(student: Student): void {
-		// this.fireStore.collection('students').doc(id).set({ data: 'ss' });
-		console.log('sukces');
-	}
+  async createStudent(student: Student) {
+    const id = this.db.createPushId();
+    await this.db.list('students').set(id, { ...student, key: id });
+  }
 
-	updateStudent(key: string, value: any) {}
+  async updateStudent(key: string, value: any) {
+    await this.db.list('students').set(key, value);
+  }
 
-	deleteStudent(key: string) {}
+  async deleteStudent(key: string) {
+    await this.db.object(`/students/${key}`).remove();
+  }
 
-	getStudentsList() {}
+  getStudentsList() {
+    const studentsObserver = this.db.list<Student>('students').valueChanges();
 
-	deleteAll() {}
+    studentsObserver.subscribe((data) => {
+      this.students = data;
+    });
+    return studentsObserver;
+  }
+
+  async deleteAll() {
+    await this.db.list<Student>('students').remove();
+  }
 }
-

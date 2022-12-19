@@ -2,34 +2,32 @@ import { Component, OnInit } from '@angular/core';
 
 import { Student } from '../student';
 import { StudentService } from '../../services/student.service';
-import { FirebaseFirestore } from '@angular/fire';
 
 @Component({
-	selector: 'app-create-student',
-	templateUrl: './create-student.component.html',
-	styleUrls: ['./create-student.component.css'],
+  selector: 'app-create-student',
+  templateUrl: './create-student.component.html',
+  styleUrls: ['./create-student.component.css'],
 })
 export class CreateStudentComponent implements OnInit {
-	student: Student = new Student();
-	submitted = false;
+  student: Student = new Student();
+  submitted = false;
 
-	constructor(private studentService: StudentService) {}
+  constructor(private studentService: StudentService) {}
 
-	ngOnInit() {}
+  ngOnInit() {}
 
-	newStudent(): void {
-		this.submitted = false;
-		this.student = new Student();
-	}
+  newStudent(): void {
+    this.submitted = false;
+    this.student = new Student();
+  }
 
-	save() {
-		this.studentService.createStudent(this.student);
-		this.student = new Student();
-	}
+  save() {
+    this.studentService.createStudent(this.student);
+    this.student = new Student();
+  }
 
-	onSubmit() {
-		this.submitted = true;
-		this.save();
-	}
+  onSubmit() {
+    this.submitted = true;
+    this.save();
+  }
 }
-

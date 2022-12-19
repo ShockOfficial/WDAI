@@ -5,19 +5,16 @@ import { Student } from '../student';
 @Component({
   selector: 'app-student-details',
   templateUrl: './student-details.component.html',
-  styleUrls: ['./student-details.component.css']
+  styleUrls: ['./student-details.component.css'],
 })
 export class StudentDetailsComponent implements OnInit {
-
   @Input() student: Student;
 
-  constructor(private studentService: StudentService) { }
+  constructor(private studentService: StudentService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   deleteStudent() {
-
+    this.studentService.deleteStudent(this.student.key);
   }
-
 }
