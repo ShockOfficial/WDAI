@@ -1,26 +1,25 @@
-@import 'bootstrap/scss/bootstrap';
-@import 'normalize.css';
-@import './app/shared.scss';
+@import "bootstrap/scss/bootstrap";
+@import "normalize.css";
+@import "./app/shared.scss";
 
 :root {
-	font-size: 62.5% !important;
-	padding: 0 !important;
-	margin: 0 !important;
-	box-sizing: border-box !important;
-	scroll-behavior: smooth !important;
+  font-size: 62.5% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  scroll-behavior: smooth !important;
 
-	@media screen and (max-width: 688px) {
-		font-size: 55% !important;
-	}
+  @media screen and (max-width: 688px) {
+    font-size: 55% !important;
+  }
 
-	@media screen and (max-width: 354px) {
-		font-size: 50% !important;
-	}
+  @media screen and (max-width: 354px) {
+    font-size: 50% !important;
+  }
 }
 
 body {
-	font-size: 1.6rem !important;
-	font-family: 'Lato', 'Roboto', sans-serif !important;
-	min-height: 100vh !important;
+  font-size: 1.6rem !important;
+  font-family: "Lato", "Roboto", sans-serif !important;
+  min-height: 100vh !important;
 }
-
