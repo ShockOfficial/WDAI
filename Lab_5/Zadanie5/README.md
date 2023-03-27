@@ -1,4 +1,7 @@
 # Zadanie5v2
+**⚠️Warning!⚠️** <br>
+This project was done for a course at AGH University of Science and Technology
+Not everything has been made in a best way and many things needs to be rewrited and rethinked.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
 
